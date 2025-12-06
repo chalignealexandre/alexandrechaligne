@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1200" height="630" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <linearGradient id="grad-og-image.jpg" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#f8f6f3;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#dfddda;stop-opacity:1" />
+        </linearGradient>
+    </defs>
+    <rect width="1200" height="630" fill="url(#grad-og-image.jpg)"/>
+    <text x="50%" y="50%" font-family="Georgia, serif" font-size="32" fill="#8b7355" text-anchor="middle" dominant-baseline="middle" font-weight="300">Alexandre CHALIGNÉ</text>
+</svg>
