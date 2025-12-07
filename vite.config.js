@@ -13,6 +13,10 @@ export default defineConfig({
         services: './pages/services.html',
         portfolio: './pages/portfolio.html',
         contact: './pages/contact.html',
+        'projects/jaquemus-courchevel': './pages/projects/jaquemus-courchevel.html',
+        'projects/villa-vandoeuvres': './pages/projects/villa-vandoeuvres.html',
+        'projects/chateau-glana': './pages/projects/chateau-glana.html',
+        'projects/tribunal-baux-loyers': './pages/projects/tribunal-baux-loyers.html',
       }
     }
   },
