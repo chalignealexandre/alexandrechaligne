@@ -14,17 +14,25 @@ const homeHero = document.querySelector('.hero');
 const hasHero = pageHero !== null || homeHero !== null;
 const heroSection = pageHero || homeHero;
 
-// Initialize navbar state
+// Check if we're on a page with image background hero (not home page)
+const isPageWithImageHero = pageHero !== null && !homeHero;
+
+// Initialize navbar state - transparent on pages with hero
 if (hasHero && window.pageYOffset === 0) {
-    navbar.classList.add('navbar-transparent');
+    if (homeHero && !isPageWithImageHero) {
+        navbar.classList.add('navbar-transparent');
+    } else if (isPageWithImageHero) {
+        // For pages with image hero (like about page)
+        navbar.classList.add('navbar-transparent');
+    }
 }
 
 window.addEventListener('scroll', () => {
     const currentScroll = window.pageYOffset;
 
-    // Handle transparent navbar for pages with hero sections
-    if (hasHero && heroSection) {
-        const heroHeight = heroSection.offsetHeight;
+    // Handle transparent navbar for home page hero
+    if (homeHero && !isPageWithImageHero) {
+        const heroHeight = homeHero.offsetHeight;
 
         if (currentScroll < heroHeight - 100) {
             // We're still in the hero section
@@ -35,8 +43,18 @@ window.addEventListener('scroll', () => {
             navbar.classList.remove('navbar-transparent');
             navbar.classList.add('scrolled');
         }
+    } else if (isPageWithImageHero) {
+        // For pages with image hero (like about page)
+        if (currentScroll > 50) {
+            navbar.classList.remove('navbar-transparent');
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.add('navbar-transparent');
+            navbar.classList.remove('scrolled');
+        }
     } else {
-        // No hero section, use standard behavior
+        // For pages without hero, always keep navbar white
+        navbar.classList.remove('navbar-transparent');
         if (currentScroll > 50) {
             navbar.classList.add('scrolled');
         } else {
@@ -137,8 +155,8 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // ===================================
 
 const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
+    threshold: 0.01,
+    rootMargin: '0px 0px 200px 0px'
 };
 
 const observer = new IntersectionObserver((entries) => {
@@ -146,21 +164,33 @@ const observer = new IntersectionObserver((entries) => {
         if (entry.isIntersecting) {
             entry.target.style.opacity = '1';
             entry.target.style.transform = 'translateY(0)';
-            observer.unobserve(entry.target); // Stop observing once animated
+            observer.unobserve(entry.target);
         }
     });
 }, observerOptions);
 
-// Animate elements on scroll
+// Animate elements on scroll with stagger effect
 const animateOnScroll = document.querySelectorAll(
-    '.expertise-card, .portfolio-item, .value-item, .intro-text, .intro-image'
+    '.expertise-card, .expertise-hex, .portfolio-item, .bento-item, .value-card-luxury, .value-item, .section-header, .feature-item, .application-card, .staff-content-grid > *'
 );
 
-animateOnScroll.forEach(el => {
+animateOnScroll.forEach((el, index) => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(30px)';
-    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    el.style.transition = `opacity 0.4s ease ${index * 0.05}s, transform 0.4s ease ${index * 0.05}s`;
     observer.observe(el);
+});
+
+// Parallax effect for specific elements
+window.addEventListener('scroll', () => {
+    const scrolled = window.pageYOffset;
+    const parallaxElements = document.querySelectorAll('[data-parallax]');
+
+    parallaxElements.forEach(el => {
+        const speed = el.getAttribute('data-parallax') || 0.5;
+        const yPos = -(scrolled * speed);
+        el.style.transform = `translateY(${yPos}px)`;
+    });
 });
 
 // ===================================
@@ -246,27 +276,54 @@ if (savedLang) {
 }
 
 // ===================================
-// FIXED CONTACT BUTTON VISIBILITY
+// FIXED CONTACT BUTTON
 // ===================================
 
-const fixedContactBtn = document.querySelector('.fixed-contact-btn');
-
-window.addEventListener('scroll', () => {
-    // Hide button when at the bottom of the page (near footer)
-    const footer = document.querySelector('.footer');
-    if (footer) {
-        const footerTop = footer.offsetTop;
-        const windowBottom = window.pageYOffset + window.innerHeight;
-
-        if (windowBottom >= footerTop - 100) {
-            fixedContactBtn.style.opacity = '0';
-            fixedContactBtn.style.pointerEvents = 'none';
-        } else {
-            fixedContactBtn.style.opacity = '1';
-            fixedContactBtn.style.pointerEvents = 'auto';
-        }
+// Create and inject fixed contact button
+function createFixedContactButton() {
+    // Don't show button on contact page
+    if (window.location.pathname.includes('/contact.html')) {
+        return null;
     }
-});
+
+    const fixedContactBtn = document.createElement('a');
+    fixedContactBtn.href = '/pages/contact.html';
+    fixedContactBtn.className = 'fixed-contact-btn';
+    fixedContactBtn.setAttribute('aria-label', 'Demander un devis');
+    fixedContactBtn.innerHTML = `
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+            <polyline points="22,6 12,13 2,6"></polyline>
+        </svg>
+        <span class="fixed-contact-text">Contact</span>
+    `;
+
+    document.body.appendChild(fixedContactBtn);
+    return fixedContactBtn;
+}
+
+// Initialize fixed contact button
+const fixedContactBtn = createFixedContactButton();
+
+// FIXED CONTACT BUTTON VISIBILITY
+if (fixedContactBtn) {
+    window.addEventListener('scroll', () => {
+        // Hide button when at the bottom of the page (near footer)
+        const footer = document.querySelector('.footer');
+        if (footer) {
+            const footerTop = footer.offsetTop;
+            const windowBottom = window.pageYOffset + window.innerHeight;
+
+            if (windowBottom >= footerTop - 100) {
+                fixedContactBtn.style.opacity = '0';
+                fixedContactBtn.style.pointerEvents = 'none';
+            } else {
+                fixedContactBtn.style.opacity = '1';
+                fixedContactBtn.style.pointerEvents = 'auto';
+            }
+        }
+    });
+}
 
 // ===================================
 // PERFORMANCE OPTIMIZATIONS
@@ -351,8 +408,8 @@ if (mobileMenuToggle) {
 // ===================================
 
 const observerOptionsEnhanced = {
-    threshold: 0.15,
-    rootMargin: '0px 0px -100px 0px'
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
 };
 
 const enhancedObserver = new IntersectionObserver((entries) => {
@@ -381,7 +438,7 @@ const animatedElements = document.querySelectorAll(
 
 animatedElements.forEach((el, index) => {
     el.classList.add('animate-on-scroll');
-    el.style.animationDelay = `${index * 0.1}s`;
+    el.style.animationDelay = `${index * 0.05}s`;
     enhancedObserver.observe(el);
 });
 
@@ -625,9 +682,100 @@ if (contactForm) {
         }
     });
 
-    // Form submission with animation
+    // Real-time validation function
+    function validateField(field) {
+        const errorElement = document.getElementById(field.id + '-error');
+        let isValid = true;
+        let errorMessage = '';
+
+        // Remove previous error state
+        field.classList.remove('form-input-error');
+        if (errorElement) {
+            errorElement.textContent = '';
+            errorElement.style.display = 'none';
+        }
+
+        // Check required fields
+        if (field.hasAttribute('required') && !field.value.trim()) {
+            isValid = false;
+            errorMessage = 'Ce champ est obligatoire';
+        }
+        // Validate email format
+        else if (field.type === 'email' && field.value) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(field.value)) {
+                isValid = false;
+                errorMessage = 'Veuillez entrer une adresse email valide';
+            }
+        }
+        // Validate minimum length for message
+        else if (field.tagName === 'TEXTAREA' && field.value.trim().length < 10) {
+            isValid = false;
+            errorMessage = 'Veuillez décrire votre projet (minimum 10 caractères)';
+        }
+
+        // Update UI
+        if (!isValid) {
+            field.classList.add('form-input-error');
+            if (errorElement) {
+                errorElement.textContent = errorMessage;
+                errorElement.style.display = 'block';
+            }
+            field.setAttribute('aria-invalid', 'true');
+        } else {
+            field.classList.remove('form-input-error');
+            if (errorElement) {
+                errorElement.textContent = '';
+                errorElement.style.display = 'none';
+            }
+            field.setAttribute('aria-invalid', 'false');
+        }
+
+        return isValid;
+    }
+
+    // Add real-time validation on blur and input
+    formInputs.forEach(input => {
+        // Validate on blur
+        input.addEventListener('blur', () => {
+            validateField(input);
+            if (!input.value) {
+                input.parentElement.classList.remove('focused');
+            }
+        });
+
+        // Clear error on input (for better UX)
+        input.addEventListener('input', () => {
+            if (input.classList.contains('form-input-error')) {
+                validateField(input);
+            }
+            if (input.value) {
+                input.parentElement.classList.add('focused');
+            }
+        });
+    });
+
+    // Form submission with validation
     contactForm.addEventListener('submit', (e) => {
         e.preventDefault();
+
+        // Validate all fields
+        let isFormValid = true;
+        formInputs.forEach(input => {
+            if (!validateField(input)) {
+                isFormValid = false;
+            }
+        });
+
+        if (!isFormValid) {
+            // Focus first invalid field
+            const firstInvalid = contactForm.querySelector('.form-input-error, [aria-invalid="true"]');
+            if (firstInvalid) {
+                firstInvalid.focus();
+                firstInvalid.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+            return;
+        }
 
         const submitBtn = contactForm.querySelector('button[type="submit"]');
         const originalText = submitBtn.innerHTML;
@@ -635,18 +783,27 @@ if (contactForm) {
         // Animate button
         submitBtn.innerHTML = '<span class="loading">Envoi en cours...</span>';
         submitBtn.disabled = true;
-        submitBtn.style.opacity = '0.7';
+        submitBtn.setAttribute('aria-busy', 'true');
 
         // Simulate form submission (replace with actual submission logic)
         setTimeout(() => {
             submitBtn.innerHTML = '✓ Message envoyé !';
             submitBtn.style.background = '#4ade80';
+            submitBtn.setAttribute('aria-busy', 'false');
 
             setTimeout(() => {
                 contactForm.reset();
+                formInputs.forEach(input => {
+                    input.parentElement.classList.remove('focused');
+                    input.classList.remove('form-input-error');
+                    const errorElement = document.getElementById(input.id + '-error');
+                    if (errorElement) {
+                        errorElement.textContent = '';
+                        errorElement.style.display = 'none';
+                    }
+                });
                 submitBtn.innerHTML = originalText;
                 submitBtn.disabled = false;
-                submitBtn.style.opacity = '1';
                 submitBtn.style.background = '';
             }, 3000);
         }, 2000);
@@ -812,10 +969,41 @@ if (faqItems.length > 0) {
 }
 
 // ===================================
+// FAQ ENHANCED ACCORDION (Contact Page)
+// ===================================
+
+const faqItemsEnhanced = document.querySelectorAll('[data-faq-item]');
+
+faqItemsEnhanced.forEach(item => {
+    const btn = item.querySelector('.faq-question-btn');
+
+    if (btn) {
+        btn.addEventListener('click', () => {
+            const isOpen = item.hasAttribute('data-faq-open');
+
+            // Close all items
+            faqItemsEnhanced.forEach(otherItem => {
+                otherItem.removeAttribute('data-faq-open');
+                const otherBtn = otherItem.querySelector('.faq-question-btn');
+                if (otherBtn) {
+                    otherBtn.setAttribute('aria-expanded', 'false');
+                }
+            });
+
+            // Toggle current item
+            if (!isOpen) {
+                item.setAttribute('data-faq-open', '');
+                btn.setAttribute('aria-expanded', 'true');
+            }
+        });
+    }
+});
+
+// ===================================
 // CONSOLE MESSAGE
 // ===================================
 
 console.log('%c✨ Site développé avec soin pour Alexandre CHALIGNÉ',
     'color: #8b7355; font-size: 16px; font-weight: bold;');
-console.log('%cArtisan Plâtrier d\'Exception',
+console.log('%cEntreprise au Service de l\'Exception',
     'color: #666; font-size: 12px;');

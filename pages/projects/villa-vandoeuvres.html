@@ -14,7 +14,7 @@
         <div class="container">
             <div class="nav-wrapper">
                 <a href="/" class="logo">
-                    <img src="/assets/images/logo.png" alt="Alexandre CHALIGNÉ" class="logo-image">
+                    <img src="/assets/images/logo-new.png" alt="Alexandre CHALIGNÉ" class="logo-image" width="200" height="127">
                 </a>
 
                 <button class="mobile-menu-toggle" aria-label="Toggle menu" id="mobileMenuToggle">
@@ -49,12 +49,23 @@
                     </svg>
                     <span>Retour aux réalisations</span>
                 </a>
-                <nav class="breadcrumb">
-                    <a href="/">Accueil</a>
-                    <span class="breadcrumb-separator">/</span>
-                    <a href="/pages/portfolio.html">Réalisations</a>
-                    <span class="breadcrumb-separator">/</span>
-                    <span>Villa Vandœuvres</span>
+                <nav class="breadcrumb" aria-label="Fil d'Ariane">
+                    <ol itemscope itemtype="https://schema.org/BreadcrumbList" style="display: flex; align-items: center; gap: 0.75rem; list-style: none; margin: 0; padding: 0;">
+                        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                            <a href="/" itemprop="item"><span itemprop="name">Accueil</span></a>
+                            <meta itemprop="position" content="1">
+                        </li>
+                        <span class="breadcrumb-separator" aria-hidden="true">/</span>
+                        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                            <a href="/pages/portfolio.html" itemprop="item"><span itemprop="name">Réalisations</span></a>
+                            <meta itemprop="position" content="2">
+                        </li>
+                        <span class="breadcrumb-separator" aria-hidden="true">/</span>
+                        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+                            <span itemprop="name">Villa Vandœuvres</span>
+                            <meta itemprop="position" content="3">
+                        </li>
+                    </ol>
                 </nav>
                 <div class="project-badge">Résidentiel de Prestige</div>
                 <h1 class="project-hero-title">Villa Privée à Vandœuvres</h1>
@@ -201,7 +212,7 @@
                             <polyline points="7 3 7 8 15 8"></polyline>
                         </svg>
                     </div>
-                    <h3>Restauration patrimoniale</h3>
+                    <h3>Restauration du patrimoine, monuments et sites</h3>
                     <p>Respect des techniques traditionnelles et des matériaux d'origine pour une authenticité préservée</p>
                 </div>
             </div>
@@ -341,20 +352,7 @@
                     </div>
                     <div class="nav-card-content">
                         <h3>Château du Glana</h3>
-                        <p>Rénovation patrimoniale alliant isolation thermique et restauration historique</p>
-                    </div>
-                </a>
-                <a href="/pages/projects/jaquemus-courchevel.html" class="project-nav-card">
-                    <div class="nav-card-image">
-                        <img src="/assets/images/project-1.jpg" alt="Boutique JAQUEMUS Courchevel">
-                        <div class="nav-card-overlay">
-                            <span class="nav-label">Projet Suivant</span>
-                            <span class="nav-arrow-icon">→</span>
-                        </div>
-                    </div>
-                    <div class="nav-card-content">
-                        <h3>Boutique JAQUEMUS à Courchevel</h3>
-                        <p>Rénovation complète d'un espace commercial d'exception</p>
+                        <p>Restauration du patrimoine, monuments et sites alliant isolation thermique et restauration historique</p>
                     </div>
                 </a>
             </div>
@@ -405,11 +403,11 @@
             <div class="footer-grid">
                 <div class="footer-col">
                     <div class="footer-logo">
-                        <img src="/assets/images/logo.png" alt="Alexandre CHALIGNÉ - Artisan Plâtrier" class="footer-logo-image">
+                        <img src="/assets/images/logo-new.png" alt="Alexandre CHALIGNÉ - Entreprise au Service de l'Exception" class="footer-logo-image" width="200" height="127">
                     </div>
                     <p class="footer-description">
-                        <span style="white-space: nowrap;">Création et rénovation de plafonds décoratifs d'exception.</span><br>
-                        <span style="white-space: nowrap;">Un savoir-faire artisanal haut de gamme.</span>
+                        <span style="white-space: nowrap;">Entreprise au service de la restauration</span><br>
+                        <span style="white-space: nowrap;">et de la création sur mesure.</span>
                     </p>
                 </div>
 
@@ -428,7 +426,7 @@
                     <h4 class="footer-title">Services</h4>
                     <ul class="footer-links">
                         <li><a href="/pages/services.html#plafonds-decoratifs">Plafonds Décoratifs</a></li>
-                        <li><a href="/pages/services.html#renovation">Rénovation Patrimoniale</a></li>
+                        <li><a href="/pages/services.html#renovation">Restauration du Patrimoine, Monuments et Sites</a></li>
                         <li><a href="/pages/services.html#sur-mesure">Projets Sur-Mesure</a></li>
                     </ul>
                 </div>

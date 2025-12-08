@@ -3,39 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Alexandre CHALIGNÉ - Artisan plâtrier spécialisé dans la création et rénovation de plafonds décoratifs d'exception. Interventions haut de gamme en France, Suisse et à l'international.">
-    <meta name="keywords" content="plâtrier, plafonds décoratifs, rénovation plafonds, artisan plâtre, Grand Est, Suisse, plâtrerie haut de gamme">
+    <meta name="description" content="Alexandre CHALIGNÉ - Staffeur ornemaniste et plâtrier traditionnel spécialisé dans le staff décoratif. Création d'ornements, moulures et corniches d'exception. Interventions en France, Suisse et international.">
+    <meta name="keywords" content="staffeur, ornemaniste, staff, plâtrerie traditionnelle, plâtrier traditionnel, ornements staff, moulures staff, corniches décoratives, staff décoratif, plâtrerie artisanale, Grand Est, Suisse, Bordeaux, Genève">
     <meta name="author" content="Alexandre CHALIGNÉ">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.alexandrechaligne.com/">
-    <meta property="og:title" content="Alexandre CHALIGNÉ - Artisan Plâtrier d'Exception">
-    <meta property="og:description" content="Création et rénovation de plafonds décoratifs d'exception. Savoir-faire artisanal haut de gamme.">
+    <meta property="og:title" content="Alexandre CHALIGNÉ - Staffeur Ornemaniste & Plâtrier Traditionnel">
+    <meta property="og:description" content="Spécialiste du staff décoratif et de la plâtrerie traditionnelle. Tout est possible et imaginable avec le Staff, il n'existe aucune limite...">
     <meta property="og:image" content="/assets/images/og-image.jpg">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://www.alexandrechaligne.com/">
-    <meta property="twitter:title" content="Alexandre CHALIGNÉ - Artisan Plâtrier d'Exception">
-    <meta property="twitter:description" content="Création et rénovation de plafonds décoratifs d'exception. Savoir-faire artisanal haut de gamme.">
+    <meta property="twitter:title" content="Alexandre CHALIGNÉ - Staffeur Ornemaniste & Plâtrier Traditionnel">
+    <meta property="twitter:description" content="Spécialiste du staff décoratif et de la plâtrerie traditionnelle. Tout est possible et imaginable avec le Staff, il n'existe aucune limite...">
     <meta property="twitter:image" content="/assets/images/og-image.jpg">
 
-    <title>Alexandre CHALIGNÉ - Artisan Plâtrier d'Exception | Plafonds Décoratifs Haut de Gamme</title>
+    <title>Alexandre CHALIGNÉ - Staffeur Ornemaniste & Plâtrier Traditionnel | Staff Décoratif d'Exception</title>
 
     <!-- Preload critical resources -->
     <link rel="preload" href="/assets/css/main.css" as="style">
+    <link rel="preload" href="/assets/css/ux-improvements.css" as="style">
 
     <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/ux-improvements.css">
     <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
 </head>
 <body>
+    <!-- Skip to main content link for keyboard navigation -->
+    <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+    
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="container">
             <div class="nav-wrapper">
                 <a href="/" class="logo">
-                    <img src="/assets/images/logo.png" alt="Alexandre CHALIGNÉ - Artisan Plâtrier" class="logo-image">
+                    <img src="/assets/images/logo-new.png" alt="Alexandre CHALIGNÉ - Entreprise au Service de l'Exception" class="logo-image" width="200" height="127" fetchpriority="high">
                 </a>
 
                 <button class="mobile-menu-toggle" aria-label="Toggle menu" id="mobileMenuToggle">
@@ -61,72 +66,297 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero hero-organic">
+    <section class="hero hero-v2">
         <div class="hero-background">
-            <video class="hero-video" autoplay muted loop playsinline>
+            <video class="hero-video" autoplay muted loop playsinline preload="metadata" poster="/assets/images/hero-bg.jpg">
                 <source src="/assets/videos/hero-video.mp4" type="video/mp4">
-                <source src="/assets/videos/hero-video.webm" type="video/webm">
             </video>
             <div class="hero-overlay"></div>
-            <div class="hero-shape hero-shape-1"></div>
-            <div class="hero-shape hero-shape-2"></div>
+            <div class="hero-gradient-overlay"></div>
         </div>
         <div class="container">
-            <div class="hero-content-wrapper">
-                <div class="hero-content">
-                    <div class="hero-badge">Artisan Plâtrier d'Exception</div>
-                    <h1 class="hero-title">
-                        <span class="hero-main">Transformer l'Espace<br>en Œuvre d'Art</span>
+            <div class="hero-content-v2">
+                <div class="hero-badge-wrapper">
+                    <span class="hero-label">
+                        <span class="hero-label-icon">✦</span>
+                        Staffeur Ornemaniste & Plâtrier Traditionnel
+                        <span class="hero-label-icon">✦</span>
+                    </span>
+                </div>
+
+                <h1 class="hero-heading">
+                    <span class="hero-heading-line">
+                        <span class="hero-word" data-word="Transformer">Transformer</span>
+                        <span class="hero-word" data-word="l'Espace">l'Espace</span>
+                    </span>
+                    <span class="hero-heading-line">
+                        <span class="hero-word" data-word="en">en</span>
+                        <span class="hero-word hero-word-accent" data-word="Œuvre">Œuvre</span>
+                        <span class="hero-word hero-word-accent" data-word="d'Art">d'Art</span>
+                    </span>
                     </h1>
-                    <p class="hero-description">
-                        Création et rénovation de plafonds décoratifs d'exception
-                    </p>
-                    <div class="hero-cta">
-                        <a href="/pages/portfolio.html" class="btn btn-primary btn-animated">
-                            <span>Découvrir mes réalisations</span>
+
+                <p class="hero-tagline">
+                    <span class="hero-tagline-line">Création d'ornements d'exception depuis 2006.</span>
+                    <span class="hero-tagline-line">Châteaux, monuments historiques et projets prestigieux.</span>
+                </p>
+
+                <div class="hero-actions">
+                    <a href="/pages/portfolio.html" class="hero-btn hero-btn-primary">
+                        <span class="hero-btn-text">Découvrir nos réalisations</span>
+                        <span class="hero-btn-icon">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <line x1="5" y1="12" x2="19" y2="12"></line>
                                 <polyline points="12 5 19 12 12 19"></polyline>
                             </svg>
+                        </span>
+                    </a>
+                    <a href="/pages/contact.html" class="hero-btn hero-btn-secondary">
+                        <span class="hero-btn-text">Demander un devis</span>
                         </a>
-                    </div>
                 </div>
             </div>
         </div>
-        <div class="hero-scroll-indicator">
-            <span>Découvrez</span>
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polyline points="6 9 12 15 18 9"></polyline>
-            </svg>
+
+        <div class="hero-decorative-elements">
+            <div class="hero-decoration hero-decoration-1"></div>
+            <div class="hero-decoration hero-decoration-2"></div>
+            <div class="hero-decoration hero-decoration-3"></div>
         </div>
     </section>
 
     <!-- Introduction Section -->
+    <main id="main-content">
     <section class="intro-section intro-modern">
+        <div class="intro-bg-pattern"></div>
         <div class="container">
             <div class="intro-grid">
-                <div class="intro-text" data-parallax="0.1">
-                    <span class="section-eyebrow">À Propos</span>
-                    <h2 class="section-title">Un Artisan au Service de l'Excellence</h2>
-                    <p class="intro-description">
-                        Spécialisé dans la création et la rénovation de plafonds et surfaces d'exception,
-                        je mets mon expertise au service de projets prestigieux en France, en Suisse et à l'international.
+                <div class="intro-text">
+                    <div class="intro-badge">
+                        <span class="section-eyebrow">Staffeur Ornemaniste</span>
+                    </div>
+                    <h2 class="section-title intro-title">
+                        <span class="title-line">L'Excellence du Staff</span>
+                        <span class="title-line title-line-accent">et de la Plâtrerie Traditionnelle</span>
+                    </h2>
+                    <div class="intro-description-wrapper">
+                        <p class="intro-description intro-description-highlight">
+                            <strong>Staffeur ornemaniste et plâtrier traditionnel</strong>, Alexandre Chaligné est spécialisé dans l'art du staff,
+                            cette technique ancestrale qui permet de créer des ornements, moulures et corniches d'une finesse exceptionnelle.
                     </p>
                     <p class="intro-description">
-                        Chaque intervention est guidée par une approche minutieuse et artistique,
-                        où l'exigence du détail rencontre l'écoute du client pour transformer des espaces avec élégance et précision.
-                    </p>
+                            Depuis 2006, l'entreprise met son expertise au service de projets prestigieux : châteaux bordelais
+                            (Canon, Montrose, Pichon Longueville, Du Glana), monuments historiques (Grand Théâtre de Bordeaux, églises),
+                            et projets uniques en Suisse et à l'international.
+                        </p>
+                        <p class="intro-description intro-quote">
+                            Le staff offre des possibilités infinies pour sublimer vos espaces avec élégance et authenticité.
+                        </p>
+                    </div>
+                    <div class="intro-cta-wrapper">
                     <a href="/pages/about.html" class="btn btn-outline btn-animated">
-                        <span>En savoir plus sur mon parcours</span>
+                            <span class="btn-text">Découvrir notre parcours</span>
+                            <span class="btn-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <line x1="5" y1="12" x2="19" y2="12"></line>
                             <polyline points="12 5 19 12 12 19"></polyline>
                         </svg>
-                    </a>
+                            </span>
+                        </a>
+                        <div class="intro-stats">
+                            <div class="intro-stat">
+                                <span class="intro-stat-number">19+</span>
+                                <span class="intro-stat-label">Ans d'expérience</span>
+                            </div>
+                            <div class="intro-stat">
+                                <span class="intro-stat-number">200+</span>
+                                <span class="intro-stat-label">Projets réalisés</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="intro-image" data-parallax="-0.1">
+                <div class="intro-image">
                     <div class="image-wrapper">
-                        <img src="/assets/images/intro-placeholder.jpg" alt="Alexandre CHALIGNÉ au travail" loading="lazy">
+                        <div class="image-frame"></div>
+                        <img src="/assets/images/intro-placeholder.jpg" alt="Alexandre CHALIGNÉ - Staffeur ornemaniste au travail" loading="lazy" width="800" height="600" fetchpriority="high">
+                        <div class="image-overlay"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Qu'est-ce que le Staff Section -->
+    <section class="staff-explanation-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-eyebrow">Savoir-Faire Unique</span>
+                <h2 class="section-title">Qu'est-ce que le Staff ?</h2>
+                <p class="section-subtitle">Découvrez cette technique ancestrale de plâtrerie décorative</p>
+            </div>
+
+            <div class="staff-content-grid">
+                <div class="staff-definition">
+                    <div class="staff-icon-large">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                            <path d="M2 17l10 5 10-5"></path>
+                            <path d="M2 12l10 5 10-5"></path>
+                        </svg>
+                    </div>
+                    <h3>Une Technique Millénaire</h3>
+                    <p>
+                        Le <strong>staff</strong> est un matériau composite traditionnel associant du plâtre,
+                        des fibres végétales et une armature métallique. Cette technique permet de créer
+                        des éléments décoratifs d'une finesse et d'une légèreté incomparables.
+                    </p>
+                    <p>
+                        Utilisé depuis l'Antiquité et perfectionné au fil des siècles, le staff est le matériau
+                        de prédilection pour les ornements architecturaux d'exception : moulures, corniches,
+                        rosaces, colonnes, chapiteaux et bien plus encore.
+                    </p>
+                    <blockquote class="staff-definition-quote">
+                        <svg class="quote-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/>
+                        </svg>
+                        <p class="quote-text">"Tout est possible et imaginable avec le Staff, il n'existe aucune limite..."</p>
+                        <cite class="quote-author">
+                            <span class="author-name">Alexandre Chaligné</span>
+                            <span class="author-title">Staffeur Ornemaniste</span>
+                        </cite>
+                    </blockquote>
+                </div>
+
+                <div class="staff-features">
+                    <h3>Les Avantages du Staff</h3>
+                    <div class="features-list">
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                                </svg>
+                            </div>
+                            <div class="feature-content">
+                                <h4>Légèreté</h4>
+                                <p>Résistant mais léger, parfait pour les plafonds et les grandes surfaces</p>
+                            </div>
+                        </div>
+
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                                </svg>
+                            </div>
+                            <div class="feature-content">
+                                <h4>Liberté de formes</h4>
+                                <p>Possibilités infinies de création : courbes, reliefs, ornements complexes</p>
+                            </div>
+                        </div>
+
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                                </svg>
+                            </div>
+                            <div class="feature-content">
+                                <h4>Finitions impeccables</h4>
+                                <p>Surface lisse et uniforme, prête à recevoir peintures et patines</p>
+                            </div>
+                        </div>
+
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                                </svg>
+                            </div>
+                            <div class="feature-content">
+                                <h4>Durabilité</h4>
+                                <p>Matériau pérenne qui traverse les siècles sans se dégrader</p>
+                            </div>
+                        </div>
+
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                                </svg>
+                            </div>
+                            <div class="feature-content">
+                                <h4>Restauration fidèle</h4>
+                                <p>Idéal pour reproduire à l'identique des ornements anciens</p>
+                            </div>
+                        </div>
+
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                                </svg>
+                            </div>
+                            <div class="feature-content">
+                                <h4>Écologique</h4>
+                                <p>Matériaux naturels et traditionnels, respectueux de l'environnement</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="staff-applications">
+                <h3>Applications du Staff</h3>
+                <div class="applications-grid">
+                    <div class="application-card">
+                        <div class="application-image-placeholder">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                <line x1="9" y1="9" x2="15" y2="9"></line>
+                                <line x1="9" y1="15" x2="15" y2="15"></line>
+                            </svg>
+                        </div>
+                        <h4>Moulures & Corniches</h4>
+                        <p>Création de décors raffinés pour sublimer la jonction entre murs et plafonds</p>
+                    </div>
+
+                    <div class="application-card">
+                        <div class="application-image-placeholder">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <circle cx="12" cy="12" r="6"></circle>
+                                <circle cx="12" cy="12" r="2"></circle>
+                            </svg>
+                        </div>
+                        <h4>Rosaces de Plafond</h4>
+                        <p>Ornements circulaires majestueux qui captent la lumière et structurent l'espace</p>
+                    </div>
+
+                    <div class="application-card">
+                        <div class="application-image-placeholder">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                            </svg>
+                        </div>
+                        <h4>Colonnes & Chapiteaux</h4>
+                        <p>Éléments architecturaux imposants réalisés avec légèreté</p>
+                    </div>
+
+                    <div class="application-card">
+                        <div class="application-image-placeholder">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                                <polyline points="2 17 12 22 22 17"></polyline>
+                            </svg>
+                        </div>
+                        <h4>Plafonds Ornementaux</h4>
+                        <p>Décors complets transformant vos plafonds en véritables œuvres d'art</p>
                     </div>
                 </div>
             </div>
@@ -139,69 +369,60 @@
             <div class="section-header">
                 <span class="section-eyebrow">Excellence</span>
                 <h2 class="section-title">Domaines d'Expertise</h2>
-                <p class="section-subtitle">Des interventions sur-mesure adaptées à chaque projet</p>
+                <p class="section-subtitle">Du staff décoratif à la plâtrerie traditionnelle</p>
             </div>
 
-            <div class="expertise-hexagon-grid">
-                <article class="expertise-hex">
-                    <div class="hex-shape">
-                        <div class="hex-content">
-                            <div class="hex-number">01</div>
-                            <div class="expertise-icon">
+            <div class="expertise-cards-grid">
+                <article class="expertise-card">
+                    <div class="expertise-card-number">01</div>
+                    <div class="expertise-card-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                            <path d="M2 17l10 5 10-5"></path>
+                            <path d="M2 12l10 5 10-5"></path>
+                        </svg>
+                    </div>
+                    <div class="expertise-card-content">
+                        <h3 class="expertise-card-title">Staff & Ornements</h3>
+                        <p class="expertise-card-description">
+                            Création d'ornements en staff : moulures, corniches, rosaces, colonnes.
+                            Maîtrise des techniques ancestrales pour des réalisations d'exception.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="expertise-card">
+                    <div class="expertise-card-number">02</div>
+                    <div class="expertise-card-icon">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                                     <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
                                     <line x1="9" y1="9" x2="15" y2="9"></line>
                                     <line x1="9" y1="15" x2="15" y2="15"></line>
                                 </svg>
                             </div>
-                            <h3 class="expertise-title">Plafonds Décoratifs</h3>
-                            <p class="expertise-description">
-                                Création de plafonds ornementaux, moulures, corniches et rosaces.
-                                Un travail d'orfèvre pour sublimer vos espaces.
-                            </p>
-                            <div class="hex-hover-effect"></div>
-                        </div>
+                    <div class="expertise-card-content">
+                        <h3 class="expertise-card-title">Plâtrerie Traditionnelle</h3>
+                        <p class="expertise-card-description">
+                            Plafonds décoratifs, enduits traditionnels et finitions artisanales.
+                            Un savoir-faire perpétué avec rigueur et passion.
+                        </p>
                     </div>
                 </article>
 
-                <article class="expertise-hex expertise-hex-center">
-                    <div class="hex-shape">
-                        <div class="hex-content">
-                            <div class="hex-number">02</div>
-                            <div class="expertise-icon">
+                <article class="expertise-card">
+                    <div class="expertise-card-number">03</div>
+                    <div class="expertise-card-icon">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                                     <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
                                     <polyline points="9 22 9 12 15 12 15 22"></polyline>
                                 </svg>
                             </div>
-                            <h3 class="expertise-title">Rénovation Patrimoniale</h3>
-                            <p class="expertise-description">
-                                Restauration et conservation de plafonds anciens et historiques.
-                                Respect des techniques traditionnelles et du patrimoine architectural.
-                            </p>
-                            <div class="hex-hover-effect"></div>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="expertise-hex">
-                    <div class="hex-shape">
-                        <div class="hex-content">
-                            <div class="hex-number">03</div>
-                            <div class="expertise-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                    <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
-                                    <polyline points="2 17 12 22 22 17"></polyline>
-                                    <polyline points="2 12 12 17 22 12"></polyline>
-                                </svg>
-                            </div>
-                            <h3 class="expertise-title">Projets Sur-Mesure</h3>
-                            <p class="expertise-description">
-                                Interventions techniques complexes dans appartements, hôtels et espaces prestigieux.
-                                Solutions adaptées à chaque contrainte.
-                            </p>
-                            <div class="hex-hover-effect"></div>
-                        </div>
+                    <div class="expertise-card-content">
+                        <h3 class="expertise-card-title">Restauration du Patrimoine, Monuments et Sites</h3>
+                        <p class="expertise-card-description">
+                            Restauration d'ornements anciens sur monuments historiques et châteaux.
+                            Respect des techniques traditionnelles et du patrimoine.
+                        </p>
                     </div>
                 </article>
             </div>
@@ -224,29 +445,14 @@
             <div class="section-header">
                 <span class="section-eyebrow">Portfolio</span>
                 <h2 class="section-title">Réalisations Remarquables</h2>
-                <p class="section-subtitle">Découvrez une sélection de mes projets les plus emblématiques</p>
+                <p class="section-subtitle">Découvrez une sélection des projets les plus emblématiques</p>
             </div>
 
             <div class="bento-grid">
-                <a href="/pages/projects/jaquemus-courchevel.html" class="bento-item bento-large">
-                    <div class="bento-inner">
-                        <div class="portfolio-image">
-                            <img src="/assets/images/project-1.jpg" alt="Boutique JAQUEMUS à Courchevel" loading="lazy">
-                        </div>
-                        <div class="portfolio-overlay">
-                            <div class="portfolio-badge">Projet Phare</div>
-                            <div class="portfolio-content">
-                                <h3 class="portfolio-title">Boutique JAQUEMUS à Courchevel</h3>
-                                <p class="portfolio-category">Rénovation complète</p>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-
                 <a href="/pages/projects/villa-vandoeuvres.html" class="bento-item bento-tall">
                     <div class="bento-inner">
                         <div class="portfolio-image">
-                            <img src="/assets/images/project-2.jpg" alt="Villa Privée à Vandœuvres" loading="lazy">
+                            <img src="/assets/images/project-2.jpg" alt="Villa Privée à Vandœuvres" loading="lazy" width="800" height="600">
                         </div>
                         <div class="portfolio-overlay">
                             <div class="portfolio-content">
@@ -260,7 +466,7 @@
                 <a href="/pages/projects/chateau-glana.html" class="bento-item bento-medium">
                     <div class="bento-inner">
                         <div class="portfolio-image">
-                            <img src="/assets/images/project-3.jpg" alt="Château du glana" loading="lazy">
+                            <img src="/assets/images/project-3.jpg" alt="Château du glana" loading="lazy" width="800" height="600">
                         </div>
                         <div class="portfolio-overlay">
                             <div class="portfolio-content">
@@ -393,7 +599,7 @@
                     <h2 class="cta-clean-title">Transformons votre vision en réalité</h2>
                     <p class="cta-clean-text">
                         Bénéficiez d'un accompagnement personnalisé pour votre projet de décoration intérieure.
-                        Du conseil à la réalisation, je mets mon expertise à votre service.
+                        Du conseil à la réalisation, l'entreprise met son expertise à votre service.
                     </p>
                 </div>
                 <div class="cta-clean-actions">
@@ -412,6 +618,7 @@
             </div>
         </div>
     </section>
+    </main>
 
     <!-- Footer -->
     <footer class="footer">
@@ -419,11 +626,11 @@
             <div class="footer-grid">
                 <div class="footer-col">
                     <div class="footer-logo">
-                        <img src="/assets/images/logo.png" alt="Alexandre CHALIGNÉ - Artisan Plâtrier" class="footer-logo-image">
+                        <img src="/assets/images/logo-new.png" alt="Alexandre CHALIGNÉ - Entreprise au Service de l'Exception" class="footer-logo-image" width="200" height="127">
                     </div>
                     <p class="footer-description">
-                        <span style="white-space: nowrap;">Création et rénovation de plafonds décoratifs d'exception.</span><br>
-                        <span style="white-space: nowrap;">Un savoir-faire artisanal haut de gamme.</span>
+                        <span style="white-space: nowrap;">Entreprise au service de la restauration</span><br>
+                        <span style="white-space: nowrap;">et de la création sur mesure.</span>
                     </p>
                 </div>
 
@@ -441,9 +648,9 @@
                 <div class="footer-col">
                     <h4 class="footer-title">Services</h4>
                     <ul class="footer-links">
-                        <li><a href="/pages/services.html#plafonds-decoratifs">Plafonds Décoratifs</a></li>
-                        <li><a href="/pages/services.html#renovation">Rénovation Patrimoniale</a></li>
-                        <li><a href="/pages/services.html#sur-mesure">Projets Sur-Mesure</a></li>
+                        <li><a href="/pages/services.html#staff-ornements">Staff & Ornements</a></li>
+                        <li><a href="/pages/services.html#platrerie-traditionnelle">Plâtrerie Traditionnelle</a></li>
+                        <li><a href="/pages/services.html#renovation">Restauration du Patrimoine, Monuments et Sites</a></li>
                     </ul>
                 </div>
 
@@ -490,6 +697,7 @@
         </div>
     </footer>
 
+    <script type="module" src="/assets/js/ux-enhancements.js"></script>
     <script type="module" src="/assets/js/creative-animations.js"></script>
     <script type="module" src="/assets/js/main.js"></script>
 </body>

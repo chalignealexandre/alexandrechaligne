@@ -1,7 +1,7 @@
 {
   "name": "alexandre-chaligne-website",
   "version": "1.0.0",
-  "description": "Site vitrine professionnel pour Alexandre CHALIGNÉ - Artisan plâtrier spécialisé en plafonds décoratifs",
+  "description": "Site vitrine professionnel pour Alexandre CHALIGNÉ - Entreprise au service de l'exception, spécialisée en création et rénovation de décors intérieur",
   "main": "index.js",
   "scripts": {
     "dev": "npx vite",
