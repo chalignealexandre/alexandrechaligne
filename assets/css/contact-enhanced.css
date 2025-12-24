@@ -201,7 +201,7 @@
 /* Contact Introduction Enhanced */
 .contact-intro-enhanced {
     padding: 4rem 0;
-    background: #ffffff;
+    background: var(--color-background);
     margin-top: 0;
 }
 
@@ -304,7 +304,7 @@
 /* Contact Main Section */
 .contact-main-section {
     padding: 4rem 0;
-    background: #f8f6f3;
+    background: var(--color-background);
     margin-top: 0;
     position: relative;
     z-index: 1;
@@ -320,7 +320,7 @@
 
 /* Contact Form Enhanced */
 .contact-form-wrapper-enhanced {
-    background: white;
+    background: var(--color-background-card);
     border-radius: 24px;
     padding: 3rem;
     box-shadow:
@@ -619,7 +619,7 @@
 }
 
 .sidebar-card {
-    background: white;
+    background: var(--color-background-card);
     border-radius: 20px;
     padding: 2.25rem;
     box-shadow:
@@ -813,10 +813,383 @@
     margin-top: 2px;
 }
 
+/* Partnership B2B Card */
+.partnership-card {
+    background: linear-gradient(
+        135deg,
+        var(--color-background-card) 0%,
+        rgba(139, 115, 85, 0.05) 100%
+    );
+    border: 1px solid rgba(139, 115, 85, 0.15);
+}
+
+.partnership-card:hover {
+    border-color: rgba(139, 115, 85, 0.3);
+}
+
+.partnership-icon {
+    background: linear-gradient(
+        135deg,
+        var(--color-secondary) 0%,
+        #a08968 100%
+    );
+    color: white;
+}
+
+.partnership-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.75rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.partnership-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.9375rem;
+    color: var(--color-text);
+    padding-left: 0.25rem;
+}
+
+.partnership-list li::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    background: linear-gradient(
+        135deg,
+        var(--color-secondary) 0%,
+        #a08968 100%
+    );
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.btn-partnership {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    width: 100%;
+    padding: 1rem 1.5rem;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    font-family: var(--font-heading);
+    color: white;
+    background: linear-gradient(
+        135deg,
+        var(--color-secondary) 0%,
+        #a08968 100%
+    );
+    border: none;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 16px rgba(139, 115, 85, 0.25);
+}
+
+.btn-partnership:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(139, 115, 85, 0.35);
+}
+
+.btn-partnership svg {
+    width: 18px;
+    height: 18px;
+    transition: transform 0.3s ease;
+}
+
+.btn-partnership:hover svg {
+    transform: translateX(4px);
+}
+
+/* ============================================
+   B2B PARTNERSHIP SECTION
+   ============================================ */
+
+.partnership-section {
+    padding: 6rem 0;
+    background: linear-gradient(
+        180deg,
+        var(--color-background-light) 0%,
+        var(--color-background) 100%
+    );
+    position: relative;
+}
+
+.partnership-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(139, 115, 85, 0.2) 50%,
+        transparent
+    );
+}
+
+.partnership-badge {
+    background: linear-gradient(
+        135deg,
+        rgba(139, 115, 85, 0.15) 0%,
+        rgba(139, 115, 85, 0.08) 100%
+    );
+}
+
+.partnership-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 3rem;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.partnership-form-wrapper {
+    background: var(--color-background-card);
+    border-radius: 24px;
+    padding: 2.5rem;
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.08),
+        0 4px 20px rgba(139, 115, 85, 0.06);
+    border: 1px solid rgba(139, 115, 85, 0.1);
+}
+
+.partnership-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.checkbox-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.checkbox-option {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    cursor: pointer;
+    font-size: 0.9375rem;
+    color: var(--color-text);
+    padding: 0.75rem 1rem;
+    background: #f8f6f3;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.checkbox-option:hover {
+    background: rgba(139, 115, 85, 0.08);
+}
+
+.checkbox-option:has(input:checked) {
+    background: rgba(139, 115, 85, 0.1);
+    border-color: var(--color-secondary);
+}
+
+.checkbox-option input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.checkbox-custom-small {
+    flex-shrink: 0;
+    width: 18px;
+    height: 18px;
+    border: 2px solid rgba(139, 115, 85, 0.3);
+    border-radius: 4px;
+    background: white;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.checkbox-custom-small::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 5px;
+    width: 5px;
+    height: 9px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg) scale(0);
+    transition: all 0.2s ease;
+}
+
+.checkbox-option input:checked + .checkbox-custom-small {
+    background: var(--color-secondary);
+    border-color: var(--color-secondary);
+}
+
+.checkbox-option input:checked + .checkbox-custom-small::after {
+    transform: rotate(45deg) scale(1);
+}
+
+.btn-partnership-submit {
+    background: linear-gradient(
+        135deg,
+        var(--color-secondary) 0%,
+        #a08968 100%
+    );
+    box-shadow: 0 8px 24px rgba(139, 115, 85, 0.3);
+}
+
+.btn-partnership-submit:hover {
+    box-shadow: 0 12px 32px rgba(139, 115, 85, 0.4);
+}
+
+/* Partnership Benefits */
+.partnership-benefits {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.benefits-card {
+    background: linear-gradient(
+        135deg,
+        var(--color-secondary) 0%,
+        #9d825f 100%
+    );
+    border-radius: 24px;
+    padding: 2.5rem;
+    color: white;
+    box-shadow: 0 20px 60px rgba(139, 115, 85, 0.3);
+}
+
+.benefits-title {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    color: white;
+}
+
+.benefit-item {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.benefit-item:last-child {
+    margin-bottom: 0;
+}
+
+.benefit-icon {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.benefit-icon svg {
+    width: 22px;
+    height: 22px;
+    color: white;
+}
+
+.benefit-content h4 {
+    font-family: var(--font-heading);
+    font-size: 1.0625rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+    color: white;
+}
+
+.benefit-content p {
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.5;
+    margin: 0;
+}
+
+.partnership-contact-direct {
+    background: var(--color-background-card);
+    border-radius: 16px;
+    padding: 1.5rem;
+    text-align: center;
+    border: 1px solid rgba(139, 115, 85, 0.15);
+}
+
+.partnership-contact-direct p {
+    font-size: 0.9375rem;
+    color: var(--color-text-light);
+    margin: 0 0 0.75rem 0;
+}
+
+.partnership-phone {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.625rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+    font-family: var(--font-heading);
+    color: var(--color-secondary);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.partnership-phone svg {
+    width: 22px;
+    height: 22px;
+}
+
+.partnership-phone:hover {
+    color: #6b5a45;
+    transform: scale(1.02);
+}
+
+/* Responsive Partnership Section */
+@media (max-width: 1024px) {
+    .partnership-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .partnership-benefits {
+        order: -1;
+    }
+}
+
+@media (max-width: 768px) {
+    .partnership-section {
+        padding: 4rem 0;
+    }
+
+    .partnership-form-wrapper {
+        padding: 2rem 1.5rem;
+    }
+
+    .benefits-card {
+        padding: 2rem;
+    }
+
+    .checkbox-group {
+        flex-direction: column;
+    }
+
+    .checkbox-option {
+        width: 100%;
+    }
+}
+
 /* FAQ Section Enhanced */
 .faq-section-enhanced {
     padding: 6rem 0;
-    background: white;
+    background: var(--color-background-light);
 }
 
 .section-header-enhanced {
@@ -869,7 +1242,7 @@
 }
 
 .faq-item-enhanced {
-    background: white;
+    background: var(--color-background-card);
     border: 1px solid rgba(139, 115, 85, 0.15);
     border-radius: 16px;
     overflow: hidden;

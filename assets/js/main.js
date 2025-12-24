@@ -11,20 +11,16 @@ const navLinks = document.querySelectorAll('.nav-link');
 let lastScroll = 0;
 const pageHero = document.querySelector('.page-hero');
 const homeHero = document.querySelector('.hero');
-const hasHero = pageHero !== null || homeHero !== null;
-const heroSection = pageHero || homeHero;
+const contactHero = document.querySelector('.contact-hero-enhanced');
+const hasHero = pageHero !== null || homeHero !== null || contactHero !== null;
+const heroSection = pageHero || homeHero || contactHero;
 
 // Check if we're on a page with image background hero (not home page)
-const isPageWithImageHero = pageHero !== null && !homeHero;
+const isPageWithImageHero = (pageHero !== null || contactHero !== null) && !homeHero;
 
 // Initialize navbar state - transparent on pages with hero
 if (hasHero && window.pageYOffset === 0) {
-    if (homeHero && !isPageWithImageHero) {
-        navbar.classList.add('navbar-transparent');
-    } else if (isPageWithImageHero) {
-        // For pages with image hero (like about page)
-        navbar.classList.add('navbar-transparent');
-    }
+    navbar.classList.add('navbar-transparent');
 }
 
 window.addEventListener('scroll', () => {
@@ -44,7 +40,7 @@ window.addEventListener('scroll', () => {
             navbar.classList.add('scrolled');
         }
     } else if (isPageWithImageHero) {
-        // For pages with image hero (like about page)
+        // For pages with image hero (about, contact, etc.)
         if (currentScroll > 50) {
             navbar.classList.remove('navbar-transparent');
             navbar.classList.add('scrolled');
@@ -998,6 +994,57 @@ faqItemsEnhanced.forEach(item => {
         });
     }
 });
+
+// ===================================
+// COOKIE BANNER
+// ===================================
+
+const cookieBanner = document.getElementById('cookieBanner');
+const cookieAccept = document.getElementById('cookieAccept');
+const cookieDecline = document.getElementById('cookieDecline');
+
+// Check if user has already made a choice
+function checkCookieConsent() {
+    const consent = localStorage.getItem('cookieConsent');
+    if (!consent && cookieBanner) {
+        // Show banner after a short delay for better UX
+        setTimeout(() => {
+            cookieBanner.classList.add('cookie-banner-visible');
+        }, 1500);
+    }
+}
+
+// Hide banner with animation
+function hideCookieBanner() {
+    if (cookieBanner) {
+        cookieBanner.classList.remove('cookie-banner-visible');
+        cookieBanner.classList.add('cookie-banner-hiding');
+        setTimeout(() => {
+            cookieBanner.style.display = 'none';
+        }, 500);
+    }
+}
+
+// Accept cookies
+if (cookieAccept) {
+    cookieAccept.addEventListener('click', () => {
+        localStorage.setItem('cookieConsent', 'accepted');
+        localStorage.setItem('cookieConsentDate', new Date().toISOString());
+        hideCookieBanner();
+    });
+}
+
+// Decline cookies
+if (cookieDecline) {
+    cookieDecline.addEventListener('click', () => {
+        localStorage.setItem('cookieConsent', 'declined');
+        localStorage.setItem('cookieConsentDate', new Date().toISOString());
+        hideCookieBanner();
+    });
+}
+
+// Initialize cookie banner
+checkCookieConsent();
 
 // ===================================
 // CONSOLE MESSAGE
