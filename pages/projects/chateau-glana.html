@@ -3,389 +3,403 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Isolation et design du Château du Glana">
+    <meta name="description" content="Château du Glana - Restauration alliant isolation thermique et restauration de décors historiques par Alexandre Chaligné">
     <title>Château du Glana - Alexandre CHALIGNÉ</title>
     <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/projects-premium.css">
     <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
+
+    <!-- Hreflang tags for SEO -->
+    <link rel="alternate" hreflang="fr" href="https://www.alexandrechaligne.com/pages/projects/chateau-glana.html">
+    <link rel="alternate" hreflang="en" href="https://www.alexandrechaligne.com/en/pages/projects/chateau-glana.html">
+    <link rel="alternate" hreflang="x-default" href="https://www.alexandrechaligne.com/pages/projects/chateau-glana.html">
+
+    <!-- Anti-FOUC: Hide content until i18n is ready -->
+    <style>
+        html:not(.i18n-ready) [data-i18n],
+        html:not(.i18n-ready) [data-i18n-placeholder],
+        html:not(.i18n-ready) [data-i18n-alt] {
+            opacity: 0;
+        }
+        html.i18n-ready [data-i18n],
+        html.i18n-ready [data-i18n-placeholder],
+        html.i18n-ready [data-i18n-alt] {
+            opacity: 1;
+            transition: opacity 0.15s ease-in-out;
+        }
+    </style>
+
+    <!-- Early language detection (before DOM ready) -->
+    <script>
+        (function() {
+            var lang = window.location.pathname.startsWith('/en') ? 'en' : 'fr';
+            document.documentElement.lang = lang;
+            document.documentElement.dataset.lang = lang;
+        })();
+    </script>
+
+    <!-- Preload critical resources -->
+    <link rel="preload" href="/locales/fr.json" as="fetch" crossorigin>
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar" id="navbar">
+    <nav class="navbar navbar-transparent" id="navbar">
         <div class="container">
             <div class="nav-wrapper">
                 <a href="/" class="logo">
-                    <img src="/assets/images/logo-new.png" alt="Alexandre CHALIGNÉ" class="logo-image" width="200" height="127">
+                    <img src="/assets/images/logo-new.png" data-i18n-alt="common.logo_alt" alt="Alexandre CHALIGNÉ" class="logo-image" width="200" height="127">
                 </a>
 
-                <button class="mobile-menu-toggle" aria-label="Toggle menu" id="mobileMenuToggle">
+                <button class="mobile-menu-toggle" data-i18n-aria-label="common.toggle_menu" aria-label="Toggle menu" id="mobileMenuToggle">
                     <span></span>
                     <span></span>
                     <span></span>
                 </button>
 
                 <ul class="nav-menu" id="navMenu">
-                    <li><a href="/" class="nav-link">Accueil</a></li>
-                    <li><a href="/pages/about.html" class="nav-link">À Propos</a></li>
-                    <li><a href="/pages/services.html" class="nav-link">Services</a></li>
-                    <li><a href="/pages/portfolio.html" class="nav-link active">Réalisations</a></li>
-                    <li><a href="/pages/contact.html" class="nav-link">Contact</a></li>
+                    <li><a href="/" class="nav-link" data-i18n="common.nav.home">Accueil</a></li>
+                    <li><a href="/pages/about.html" class="nav-link" data-i18n="common.nav.about">À Propos</a></li>
+                    <li><a href="/pages/services.html" class="nav-link" data-i18n="common.nav.services">Services</a></li>
+                    <li><a href="/pages/portfolio.html" class="nav-link active" data-i18n="common.nav.portfolio">Réalisations</a></li>
+                    <li><a href="/pages/contact.html" class="nav-link" data-i18n="common.nav.contact">Contact</a></li>
+                    <li class="language-switcher">
+                        <button class="lang-btn active" data-lang="fr">FR</button>
+                        <span class="lang-separator">/</span>
+                        <button class="lang-btn" data-lang="en">EN</button>
+                    </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- Project Hero -->
-    <section class="project-hero">
-        <div class="project-hero-image">
-            <img src="/assets/images/project-3.jpg" alt="Château du Glana" loading="lazy">
-            <div class="project-hero-overlay"></div>
+    <!-- Hero Premium -->
+    <section class="project-hero-premium">
+        <div class="hero-media">
+            <img src="/assets/images/project-3.jpg" alt="Château du Glana - Restauration patrimoniale" loading="eager">
         </div>
-        <div class="project-hero-content">
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
             <div class="container">
-                <a href="/pages/portfolio.html" class="back-button">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <a href="/pages/portfolio.html" class="back-link-premium">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                         <line x1="19" y1="12" x2="5" y2="12"></line>
                         <polyline points="12 19 5 12 12 5"></polyline>
                     </svg>
-                    <span>Retour aux réalisations</span>
+                    <span data-i18n="project_glana.hero.back_button">Retour aux réalisations</span>
                 </a>
-                <nav class="breadcrumb" aria-label="Fil d'Ariane">
-                    <ol itemscope itemtype="https://schema.org/BreadcrumbList" style="display: flex; align-items: center; gap: 0.75rem; list-style: none; margin: 0; padding: 0;">
-                        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                            <a href="/" itemprop="item"><span itemprop="name">Accueil</span></a>
-                            <meta itemprop="position" content="1">
-                        </li>
-                        <span class="breadcrumb-separator" aria-hidden="true">/</span>
-                        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                            <a href="/pages/portfolio.html" itemprop="item"><span itemprop="name">Réalisations</span></a>
-                            <meta itemprop="position" content="2">
-                        </li>
-                        <span class="breadcrumb-separator" aria-hidden="true">/</span>
-                        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                            <span itemprop="name">Château du Glana</span>
-                            <meta itemprop="position" content="3">
-                        </li>
-                    </ol>
-                </nav>
-                <div class="project-badge">Monument Historique</div>
-                <h1 class="project-hero-title">Château du Glana</h1>
-                <p class="project-hero-subtitle">Restauration du patrimoine, monuments et sites alliant isolation thermique et restauration de décors historiques</p>
+
+                <div class="category-badge-premium" data-i18n="project_glana.hero.badge">Monument Historique</div>
+
+                <h1 class="hero-title-premium">
+                    Château du Glana
+                    <span>Saint-Julien-Beychevelle</span>
+                </h1>
+
+                <p class="hero-subtitle-premium" data-i18n="project_glana.hero.subtitle">Restauration alliant performance thermique moderne et préservation du patrimoine architectural du XVIIIe siècle.</p>
             </div>
+        </div>
+
+        <div class="scroll-indicator-premium">
+            <span>Découvrir</span>
+            <div class="scroll-line"></div>
         </div>
     </section>
 
-    <!-- Project Overview -->
-    <section class="project-overview">
+    <!-- Méta-données projet -->
+    <section class="project-meta-premium">
         <div class="container">
-            <div class="overview-grid">
-                <div class="overview-item">
-                    <div class="overview-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <div class="meta-grid-premium">
+                <div class="meta-item-premium">
+                    <div class="meta-icon-premium">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                             <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
                             <polyline points="9 22 9 12 15 12 15 22"></polyline>
                         </svg>
                     </div>
-                    <div class="overview-label">Type</div>
-                    <div class="overview-value">Monument Historique</div>
+                    <div class="meta-label-premium" data-i18n="project_glana.overview.type_label">Type</div>
+                    <div class="meta-value-premium" data-i18n="project_glana.overview.type_value">Monument Historique</div>
                 </div>
-                <div class="overview-item">
-                    <div class="overview-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <div class="meta-item-premium">
+                    <div class="meta-icon-premium">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                             <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
                             <line x1="16" y1="2" x2="16" y2="6"></line>
                             <line x1="8" y1="2" x2="8" y2="6"></line>
                             <line x1="3" y1="10" x2="21" y2="10"></line>
                         </svg>
                     </div>
-                    <div class="overview-label">Année</div>
-                    <div class="overview-value">2021</div>
+                    <div class="meta-label-premium" data-i18n="project_glana.overview.year_label">Année</div>
+                    <div class="meta-value-premium">2021</div>
                 </div>
-                <div class="overview-item">
-                    <div class="overview-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <div class="meta-item-premium">
+                    <div class="meta-icon-premium">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                             <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
                             <circle cx="12" cy="10" r="3"></circle>
                         </svg>
                     </div>
-                    <div class="overview-label">Localisation</div>
-                    <div class="overview-value">Bordeaux</div>
+                    <div class="meta-label-premium" data-i18n="project_glana.overview.location_label">Localisation</div>
+                    <div class="meta-value-premium" data-i18n="project_glana.overview.location_value">Bordeaux</div>
                 </div>
-                <div class="overview-item">
-                    <div class="overview-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <div class="meta-item-premium">
+                    <div class="meta-icon-premium">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                             <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
                             <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
                         </svg>
                     </div>
-                    <div class="overview-label">Surface</div>
-                    <div class="overview-value">450 m²</div>
+                    <div class="meta-label-premium" data-i18n="project_glana.overview.surface_label">Surface</div>
+                    <div class="meta-value-premium" data-i18n="project_glana.overview.surface_value">450 m²</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Project Intro -->
-    <section class="project-intro-section">
-        <div class="container-narrow">
-            <div class="intro-content">
-                <h2>Le Projet</h2>
-                <p class="lead-text">Le Château du Glana, domaine viticole prestigieux du Médoc, a fait l'objet d'une intervention délicate alliant performance énergétique moderne et préservation du patrimoine architectural. La performance thermique de nos jours dissimulée derrière un design ancien.</p>
-                <p>L'intervention a porté sur la restauration complète des plafonds ornementaux des salons de réception, tout en intégrant une isolation thermique performante. Les moulures et rosaces d'origine ont été minutieusement reproduites en staff, dans le respect total de l'architecture d'époque.</p>
+    <!-- Introduction Premium -->
+    <section class="project-intro-premium">
+        <div class="container">
+            <div class="intro-grid-premium">
+                <div class="intro-header-premium">
+                    <div class="intro-label-premium">Le Projet</div>
+                    <h2 class="intro-title-premium">Performance Thermique & Patrimoine</h2>
+                </div>
+                <div class="intro-content-premium">
+                    <p class="intro-lead-premium" data-i18n="project_glana.intro.lead">Le Château du Glana, domaine viticole prestigieux du Médoc, a fait l'objet d'une intervention délicate alliant performance énergétique moderne et préservation du patrimoine architectural.</p>
+                    <p class="intro-text-premium" data-i18n="project_glana.intro.description">L'intervention a porté sur la restauration complète des plafonds ornementaux des salons de réception, tout en intégrant une isolation thermique performante. Les moulures et rosaces d'origine ont été minutieusement reproduites en staff, dans le respect total de l'architecture d'époque.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Challenge & Solution -->
-    <section class="challenge-solution">
+    <!-- Défi & Solution Premium -->
+    <section class="challenge-solution-premium">
         <div class="container">
-            <div class="cs-grid">
-                <div class="cs-card challenge">
-                    <div class="cs-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <div class="cs-header-premium">
+                <h2>Notre Approche</h2>
+            </div>
+            <div class="cs-grid-premium">
+                <div class="cs-card-premium challenge">
+                    <span class="cs-number-premium">01</span>
+                    <div class="cs-icon-premium">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                             <circle cx="12" cy="12" r="10"></circle>
                             <line x1="12" y1="8" x2="12" y2="12"></line>
                             <line x1="12" y1="16" x2="12.01" y2="16"></line>
                         </svg>
                     </div>
-                    <h3>Le Défi</h3>
-                    <p>Rénover un monument historique classé en respectant les normes patrimoniales strictes, tout en améliorant significativement les performances énergétiques du bâtiment. Le défi majeur était d'intégrer une isolation moderne sans altérer l'authenticité des décors du XVIIIe siècle.</p>
+                    <h3 data-i18n="project_glana.challenge.title">Le Défi</h3>
+                    <p data-i18n="project_glana.challenge.description">Rénover un monument historique classé en respectant les normes patrimoniales strictes, tout en améliorant significativement les performances énergétiques du bâtiment. Le défi majeur était d'intégrer une isolation moderne sans altérer l'authenticité des décors du XVIIIe siècle.</p>
                 </div>
-                <div class="cs-card solution">
-                    <div class="cs-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <div class="cs-card-premium solution">
+                    <span class="cs-number-premium">02</span>
+                    <div class="cs-icon-premium">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                             <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
                             <polyline points="22 4 12 14.01 9 11.01"></polyline>
                         </svg>
                     </div>
-                    <h3>La Solution</h3>
-                    <p>Une approche innovante combinant isolation par l'intérieur avec matériaux respirants et reproduction à l'identique des éléments décoratifs. Avec Siniat comme fournisseur, nous avons réalisé un squelette métallique complet sur lequel nous avons fixé du lattis « nerfgalto », permettant de créer les courbes désirées : une anse à panier pour la voûte principale et des pleins cintres pour les voûtes secondaires. Cette technique a permis d'intégrer une isolation performante tout en préservant l'esthétique historique du château.</p>
+                    <h3 data-i18n="project_glana.solution.title">La Solution</h3>
+                    <p data-i18n="project_glana.solution.description">Une approche innovante combinant isolation par l'intérieur avec matériaux respirants et reproduction à l'identique des éléments décoratifs. Avec Siniat comme fournisseur, nous avons réalisé un squelette métallique complet avec lattis « nerfgalto » permettant de créer les voûtes désirées tout en intégrant une isolation performante.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Key Features -->
-    <section class="key-features">
+    <!-- Features Premium -->
+    <section class="features-premium">
         <div class="container">
-            <div class="section-header-project">
-                <h2>Points Forts du Projet</h2>
-                <p>Quand patrimoine et modernité se conjuguent</p>
+            <div class="features-header-premium">
+                <h2 data-i18n="project_glana.features.title">Points Forts du Projet</h2>
+                <p data-i18n="project_glana.features.subtitle">Quand patrimoine et modernité se conjuguent</p>
             </div>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <div class="features-grid-premium">
+                <div class="feature-card-premium">
+                    <div class="feature-icon-premium">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                             <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
                             <polyline points="9 22 9 12 15 12 15 22"></polyline>
                         </svg>
                     </div>
-                    <h3>Isolation thermique</h3>
-                    <p>Intégration d'une isolation haute performance tout en préservant les volumes intérieurs</p>
+                    <h3 data-i18n="project_glana.features.feature1_title">Isolation thermique</h3>
+                    <p data-i18n="project_glana.features.feature1_description">Intégration d'une isolation haute performance tout en préservant les volumes intérieurs</p>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <div class="feature-card-premium">
+                    <div class="feature-icon-premium">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                             <circle cx="12" cy="12" r="3"></circle>
                             <path d="M12 1v6m0 6v6m5.2-14.2l-4.2 4.2m0 6l4.2 4.2M1 12h6m6 0h6m-14.2 5.2l4.2-4.2m0-6l-4.2-4.2"></path>
                         </svg>
                     </div>
-                    <h3>Staff ornemental</h3>
-                    <p>Reproduction fidèle des décors historiques selon les techniques traditionnelles</p>
+                    <h3 data-i18n="project_glana.features.feature2_title">Staff ornemental</h3>
+                    <p data-i18n="project_glana.features.feature2_description">Reproduction fidèle des décors historiques selon les techniques traditionnelles</p>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <div class="feature-card-premium">
+                    <div class="feature-icon-premium">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                             <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path>
                             <polyline points="17 21 17 13 7 13 7 21"></polyline>
                             <polyline points="7 3 7 8 15 8"></polyline>
                         </svg>
                     </div>
-                    <h3>Restauration du patrimoine, monuments et sites</h3>
-                    <p>Respect des contraintes ABF et valorisation du patrimoine architectural classé</p>
+                    <h3 data-i18n="project_glana.features.feature3_title">Conformité ABF</h3>
+                    <p data-i18n="project_glana.features.feature3_description">Respect des contraintes ABF et valorisation du patrimoine architectural classé</p>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <div class="feature-card-premium">
+                    <div class="feature-icon-premium">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                             <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"></path>
                             <line x1="4" y1="22" x2="4" y2="15"></line>
                         </svg>
                     </div>
-                    <h3>Moulures historiques</h3>
-                    <p>Reconstitution des rosaces, corniches et modénatures du XVIIIe siècle</p>
+                    <h3 data-i18n="project_glana.features.feature4_title">Moulures historiques</h3>
+                    <p data-i18n="project_glana.features.feature4_description">Reconstitution des rosaces, corniches et modénatures du XVIIIe siècle</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Process Timeline -->
-    <section class="process-timeline">
-        <div class="container-narrow">
-            <div class="section-header-project">
-                <h2>Processus de Réalisation</h2>
-                <p>Une démarche rigoureuse et respectueuse</p>
-            </div>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-marker">1</div>
-                    <div class="timeline-content">
-                        <h4>Diagnostic Patrimonial</h4>
-                        <p>Étude historique approfondie, relevés photogrammétriques et validation ABF des interventions</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-marker">2</div>
-                    <div class="timeline-content">
-                        <h4>Création des Moules</h4>
-                        <p>Réalisation de moules à partir des éléments d'origine conservés pour une reproduction fidèle</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-marker">3</div>
-                    <div class="timeline-content">
-                        <h4>Isolation & Structure</h4>
-                        <p>Mise en place de l'isolation thermique et préparation des supports pour les décors</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-marker">4</div>
-                    <div class="timeline-content">
-                        <h4>Pose & Restauration</h4>
-                        <p>Installation des éléments en staff et finitions selon les techniques d'époque</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Project Gallery -->
-    <section class="project-gallery-enhanced">
+    <!-- Galerie Premium -->
+    <section class="gallery-premium">
         <div class="container">
-            <div class="section-header-project">
-                <h2>Galerie du Projet</h2>
-                <p>La renaissance d'un patrimoine d'exception</p>
+            <div class="gallery-header-premium">
+                <h2 data-i18n="project_glana.gallery.title">Galerie du Projet</h2>
+                <p data-i18n="project_glana.gallery.subtitle">La renaissance d'un patrimoine d'exception</p>
             </div>
-            <div class="gallery-grid">
-                <div class="gallery-item gallery-large">
-                    <img src="/assets/images/project-3.jpg" alt="Château - Salon de réception" loading="lazy">
-                    <div class="gallery-overlay">
-                        <span class="gallery-zoom">+</span>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="/assets/images/project-3.jpg" alt="Château - Rosace centrale" loading="lazy">
-                    <div class="gallery-overlay">
-                        <span class="gallery-zoom">+</span>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="/assets/images/project-3.jpg" alt="Château - Corniches" loading="lazy">
-                    <div class="gallery-overlay">
-                        <span class="gallery-zoom">+</span>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="/assets/images/project-3.jpg" alt="Château - Détail moulures" loading="lazy">
-                    <div class="gallery-overlay">
-                        <span class="gallery-zoom">+</span>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="/assets/images/project-3.jpg" alt="Château - Vue d'ensemble" loading="lazy">
-                    <div class="gallery-overlay">
-                        <span class="gallery-zoom">+</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Results Section -->
-    <section class="project-results">
-        <div class="container">
-            <div class="results-content">
-                <div class="results-quote">
-                    <svg class="quote-icon" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/>
-                    </svg>
-                    <blockquote>
-                        <p>Une intervention exemplaire qui démontre qu'il est possible de concilier préservation du patrimoine et amélioration énergétique. Le travail de restauration des décors est d'une qualité remarquable.</p>
-                        <footer>
-                            <strong>Architecte des Bâtiments de France</strong>
-                            <span>DRAC Nouvelle-Aquitaine</span>
-                        </footer>
-                    </blockquote>
-                </div>
-                <div class="results-stats">
-                    <div class="stat-item">
-                        <div class="stat-number">450</div>
-                        <div class="stat-label">m² restaurés</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">45%</div>
-                        <div class="stat-label">gain énergétique</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">18e</div>
-                        <div class="stat-label">siècle préservé</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Project Navigation -->
-    <section class="project-navigation-enhanced">
-        <div class="container">
-            <div class="project-nav-header">
-                <h2>Découvrez nos autres réalisations</h2>
-            </div>
-            <div class="project-nav-grid">
-                <a href="/pages/projects/villa-vandoeuvres.html" class="project-nav-card">
-                    <div class="nav-card-image">
-                        <img src="/assets/images/project-2.jpg" alt="Villa Privée Vandœuvres">
-                        <div class="nav-card-overlay">
-                            <span class="nav-label">Projet Suivant</span>
-                            <span class="nav-arrow-icon">→</span>
+            <div class="gallery-grid-premium">
+                <div class="gallery-item-premium">
+                    <img src="/assets/images/project-3.jpg" alt="Château du Glana - Salon de réception" loading="lazy">
+                    <div class="gallery-overlay-premium">
+                        <span class="gallery-caption-premium">Salon de réception</span>
+                        <div class="gallery-zoom-premium">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <path d="m21 21-4.35-4.35"></path>
+                                <path d="M11 8v6"></path>
+                                <path d="M8 11h6"></path>
+                            </svg>
                         </div>
                     </div>
-                    <div class="nav-card-content">
-                        <h3>Villa Privée à Vandœuvres</h3>
-                        <p>Rénovation d'escaliers monumentaux avec création de moulures d'exception</p>
+                </div>
+                <div class="gallery-item-premium">
+                    <img src="/assets/images/project-3.jpg" alt="Château du Glana - Rosace centrale" loading="lazy">
+                    <div class="gallery-overlay-premium">
+                        <span class="gallery-caption-premium">Rosace centrale</span>
+                        <div class="gallery-zoom-premium">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <path d="m21 21-4.35-4.35"></path>
+                                <path d="M11 8v6"></path>
+                                <path d="M8 11h6"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item-premium">
+                    <img src="/assets/images/project-3.jpg" alt="Château du Glana - Corniches" loading="lazy">
+                    <div class="gallery-overlay-premium">
+                        <span class="gallery-caption-premium">Corniches</span>
+                        <div class="gallery-zoom-premium">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <path d="m21 21-4.35-4.35"></path>
+                                <path d="M11 8v6"></path>
+                                <path d="M8 11h6"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Résultats & Témoignage Premium -->
+    <section class="results-premium">
+        <div class="results-grid-premium">
+            <div class="results-quote-premium">
+                <div class="quote-content-premium">
+                    <blockquote data-i18n="project_glana.results.quote_text">
+                        Une intervention exemplaire qui démontre qu'il est possible de concilier préservation du patrimoine et amélioration énergétique. Le travail de restauration des décors est d'une qualité remarquable.
+                    </blockquote>
+                    <div class="quote-author-premium">
+                        <strong data-i18n="project_glana.results.quote_author">Architecte des Bâtiments de France</strong>
+                        <span data-i18n="project_glana.results.quote_position">DRAC Nouvelle-Aquitaine</span>
+                    </div>
+                </div>
+            </div>
+            <div class="results-stats-premium">
+                <div class="stat-item-premium">
+                    <div class="stat-number-premium">450</div>
+                    <div class="stat-label-premium" data-i18n="project_glana.results.stat1_label">m² restaurés</div>
+                </div>
+                <div class="stat-item-premium">
+                    <div class="stat-number-premium">45%</div>
+                    <div class="stat-label-premium" data-i18n="project_glana.results.stat2_label">gain énergétique</div>
+                </div>
+                <div class="stat-item-premium">
+                    <div class="stat-number-premium">18<sup>e</sup></div>
+                    <div class="stat-label-premium" data-i18n="project_glana.results.stat3_label">siècle préservé</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Navigation Projets Premium -->
+    <section class="project-nav-premium">
+        <div class="container">
+            <div class="project-nav-header-premium">
+                <h2 data-i18n="project_glana.navigation.title">Découvrez nos autres réalisations</h2>
+            </div>
+            <div class="project-nav-grid-premium">
+                <a href="/pages/projects/villa-vandoeuvres.html" class="project-nav-card-premium">
+                    <div class="nav-card-image-premium">
+                        <img src="/assets/images/project-2.jpg" alt="Villa Privée Vandœuvres">
+                        <div class="nav-card-direction-premium">
+                            <span>
+                                Projet Suivant
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="9 18 15 12 9 6"></polyline>
+                                </svg>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="nav-card-content-premium">
+                        <h3 data-i18n="project_glana.navigation.next_title">Villa Privée à Vandœuvres</h3>
+                        <p data-i18n="project_glana.navigation.next_description">Rénovation d'escaliers monumentaux avec création de moulures d'exception</p>
                     </div>
                 </a>
             </div>
-            <div class="project-nav-center">
-                <a href="/pages/portfolio.html" class="btn btn-outline-secondary">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <div class="project-nav-center-premium">
+                <a href="/pages/portfolio.html" class="btn-premium btn-premium-outline">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <rect x="3" y="3" width="7" height="7"></rect>
                         <rect x="14" y="3" width="7" height="7"></rect>
                         <rect x="14" y="14" width="7" height="7"></rect>
                         <rect x="3" y="14" width="7" height="7"></rect>
                     </svg>
-                    Voir toutes les réalisations
+                    <span data-i18n="project_glana.navigation.all_projects">Voir toutes les réalisations</span>
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- CTA Enhanced -->
-    <section class="project-cta-enhanced">
+    <!-- CTA Premium -->
+    <section class="cta-premium">
         <div class="container">
-            <div class="cta-content">
-                <div class="cta-text">
-                    <h2>Vous avez un projet similaire ?</h2>
-                    <p>Échangeons sur vos besoins et transformons votre vision en réalité. Notre expertise est à votre service pour créer des espaces uniques et remarquables.</p>
-                </div>
-                <div class="cta-actions">
-                    <a href="/pages/contact.html" class="btn btn-primary btn-lg">
-                        <span>Prendre contact</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <div class="cta-content-premium">
+                <div class="cta-label-premium">Votre Projet</div>
+                <h2 class="cta-title-premium" data-i18n="project_glana.cta.title">Vous avez un projet similaire ?</h2>
+                <p class="cta-text-premium" data-i18n="project_glana.cta.description">Échangeons sur vos besoins et transformons votre vision en réalité. Notre expertise est à votre service pour créer des espaces uniques et remarquables.</p>
+                <div class="cta-actions-premium">
+                    <a href="/pages/contact.html" class="btn-premium btn-premium-primary">
+                        <span data-i18n="project_glana.cta.btn_contact">Prendre contact</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <line x1="5" y1="12" x2="19" y2="12"></line>
                             <polyline points="12 5 19 12 12 19"></polyline>
                         </svg>
                     </a>
-                    <a href="tel:+33652738810" class="btn btn-outline btn-lg">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <a href="tel:+33652738810" class="btn-premium btn-premium-outline">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
                         </svg>
                         <span>+33 6 52 73 88 10</span>
@@ -401,36 +415,36 @@
             <div class="footer-grid">
                 <div class="footer-col">
                     <div class="footer-logo">
-                        <img src="/assets/images/logo-new.png" alt="Alexandre CHALIGNÉ - Entreprise au Service de l'Exception" class="footer-logo-image" width="240" height="152">
+                        <img src="/assets/images/logo-new.png" data-i18n-alt="common.logo_alt" alt="Alexandre CHALIGNÉ - Entreprise au Service de l'Exception" class="footer-logo-image" width="240" height="152">
                     </div>
-                    <p class="footer-description">
+                    <p class="footer-description" data-i18n="common.footer.description" data-i18n-html="true">
                         <span style="white-space: nowrap;">Entreprise au service de la restauration</span><br>
                         <span style="white-space: nowrap;">et de la création sur mesure.</span>
                     </p>
                 </div>
 
                 <div class="footer-col">
-                    <h4 class="footer-title">Navigation</h4>
+                    <h4 class="footer-title" data-i18n="common.footer.nav_title">Navigation</h4>
                     <ul class="footer-links">
-                        <li><a href="/">Accueil</a></li>
-                        <li><a href="/pages/about.html">À Propos</a></li>
-                        <li><a href="/pages/services.html">Services</a></li>
-                        <li><a href="/pages/portfolio.html">Réalisations</a></li>
-                        <li><a href="/pages/contact.html">Contact</a></li>
+                        <li><a href="/" data-i18n="common.nav.home">Accueil</a></li>
+                        <li><a href="/pages/about.html" data-i18n="common.nav.about">À Propos</a></li>
+                        <li><a href="/pages/services.html" data-i18n="common.nav.services">Services</a></li>
+                        <li><a href="/pages/portfolio.html" data-i18n="common.nav.portfolio">Réalisations</a></li>
+                        <li><a href="/pages/contact.html" data-i18n="common.nav.contact">Contact</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-col">
-                    <h4 class="footer-title">Services</h4>
+                    <h4 class="footer-title" data-i18n="common.footer.services_title">Services</h4>
                     <ul class="footer-links">
-                        <li><a href="/pages/services.html#plafonds-decoratifs">Plafonds Décoratifs</a></li>
-                        <li><a href="/pages/services.html#renovation">Restauration du Patrimoine, Monuments et Sites</a></li>
-                        <li><a href="/pages/services.html#sur-mesure">Projets Sur-Mesure</a></li>
+                        <li><a href="/pages/services.html#plafonds-decoratifs" data-i18n="common.footer.service_ceilings">Plafonds Décoratifs</a></li>
+                        <li><a href="/pages/services.html#renovation" data-i18n="common.footer.service_restoration">Restauration du Patrimoine</a></li>
+                        <li><a href="/pages/services.html#sur-mesure" data-i18n="common.footer.service_custom">Projets Sur-Mesure</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-col">
-                    <h4 class="footer-title">Contact</h4>
+                    <h4 class="footer-title" data-i18n="common.footer.contact_title">Contact</h4>
                     <ul class="footer-contact">
                         <li>
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -449,23 +463,23 @@
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
                             </svg>
-                            <a href="https://www.linkedin.com/in/alexandre-chalign%C3%A9-492a6b10b/" target="_blank" rel="noopener noreferrer">Suivez-moi sur LinkedIn</a>
+                            <a href="https://www.linkedin.com/in/alexandre-chalign%C3%A9-492a6b10b/" target="_blank" rel="noopener noreferrer" data-i18n="common.footer.follow_linkedin">Suivez-moi sur LinkedIn</a>
                         </li>
                     </ul>
                 </div>
             </div>
 
             <div class="footer-bottom">
-                <p class="footer-copyright">
-                    &copy; 2025 Alexandre CHALIGNÉ. Tous droits réservés.
+                <p class="footer-copyright" data-i18n="common.footer.copyright" data-i18n-html="true">
+                    &copy; <span id="currentYear">2026</span> Alexandre CHALIGNÉ. Tous droits réservés.
                 </p>
-                <p class="footer-signature">
-                    Fait avec passion par <a href="https://www.propulseo-site.com/" target="_blank" rel="noopener noreferrer" class="signature-link">Propul'SEO</a>
+                <p class="footer-signature" data-i18n="common.footer.signature" data-i18n-html="true">
+                    Fait avec Passion par <a href="https://www.propulseo-site.com/" target="_blank" rel="noopener noreferrer" class="signature-link">Propul'SEO</a>
                 </p>
                 <div class="footer-legal">
-                    <a href="/pages/mentions-legales.html">Mentions légales</a>
+                    <a href="/pages/mentions-legales.html" data-i18n="common.footer.legal">Mentions légales</a>
                     <span class="separator">•</span>
-                    <a href="/pages/politique-confidentialite.html">Politique de confidentialité</a>
+                    <a href="/pages/politique-confidentialite.html" data-i18n="common.footer.privacy">Politique de confidentialité</a>
                 </div>
             </div>
         </div>
@@ -486,19 +500,19 @@
                     </svg>
                 </div>
                 <div class="cookie-text">
-                    <h3 id="cookieTitle" class="cookie-title">Votre expérience, notre priorité</h3>
-                    <p id="cookieDesc" class="cookie-description">
+                    <h3 id="cookieTitle" class="cookie-title" data-i18n="common.cookies.title">Votre expérience, notre priorité</h3>
+                    <p id="cookieDesc" class="cookie-description" data-i18n="common.cookies.description" data-i18n-html="true">
                         Nous utilisons des cookies pour améliorer votre navigation et analyser notre trafic.
-                        En poursuivant, vous acceptez notre <a href="#" class="cookie-link">politique de confidentialité</a>.
+                        En poursuivant, vous acceptez notre <a href="/pages/politique-confidentialite.html" class="cookie-link">politique de confidentialité</a>.
                     </p>
                 </div>
             </div>
             <div class="cookie-actions">
-                <button class="cookie-btn cookie-btn-secondary" id="cookieDecline">
+                <button class="cookie-btn cookie-btn-secondary" id="cookieDecline" data-i18n="common.cookies.decline">
                     Refuser
                 </button>
                 <button class="cookie-btn cookie-btn-primary" id="cookieAccept">
-                    <span>Accepter</span>
+                    <span data-i18n="common.cookies.accept">Accepter</span>
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <polyline points="20 6 9 17 4 12"></polyline>
                     </svg>
@@ -508,5 +522,7 @@
     </div>
 
     <script type="module" src="/assets/js/main.js"></script>
+    <script type="module" src="/assets/js/i18n.js"></script>
+    <script src="/assets/js/projects-premium.js"></script>
 </body>
 </html>

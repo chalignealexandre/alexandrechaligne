@@ -1,0 +1,806 @@
+{
+  "_meta": {
+    "lang": "fr",
+    "name": "Français",
+    "direction": "ltr"
+  },
+
+  "common": {
+    "nav": {
+      "home": "Accueil",
+      "about": "À Propos",
+      "services": "Services",
+      "portfolio": "Réalisations",
+      "contact": "Contact"
+    },
+    "skip_to_content": "Aller au contenu principal",
+    "toggle_menu": "Ouvrir le menu",
+    "logo_alt": "Alexandre CHALIGNÉ - Entreprise au Service de l'Exception",
+    "footer": {
+      "nav_title": "Navigation",
+      "services_title": "Services",
+      "contact_title": "Contact",
+      "description": "Entreprise au service de la restauration<br>et de la création sur mesure.",
+      "copyright": "© <span id='currentYear'>2026</span> Alexandre CHALIGNÉ. Tous droits réservés.",
+      "signature": "Fait avec Passion par <a href=\"https://www.propulseo-site.com/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"signature-link\">Propul'SEO</a>",
+      "legal_mentions": "Mentions légales",
+      "legal": "Mentions légales",
+      "privacy_policy": "Politique de confidentialité",
+      "privacy": "Politique de confidentialité",
+      "linkedin": "Suivez-moi sur LinkedIn",
+      "follow_linkedin": "Suivez-moi sur LinkedIn",
+      "location": "Ville-la-Grand, France",
+      "services": {
+        "staff": "Staff & Ornements",
+        "plastering": "Plâtrerie Traditionnelle",
+        "restoration": "Restauration du Patrimoine"
+      },
+      "service_ceilings": "Plafonds Décoratifs",
+      "service_custom": "Projets Sur-Mesure",
+      "service_restoration": "Restauration du Patrimoine"
+    },
+    "cookies": {
+      "title": "Votre expérience, notre priorité",
+      "description": "Nous utilisons des cookies pour améliorer votre navigation et analyser notre trafic. En poursuivant, vous acceptez notre <a href=\"/pages/politique-confidentialite.html\" class=\"cookie-link\">politique de confidentialité</a>.",
+      "accept": "Accepter",
+      "decline": "Refuser"
+    }
+  },
+
+  "home": {
+    "meta": {
+      "title": "Alexandre CHALIGNÉ - Staffeur Ornemaniste & Plâtrier Traditionnel | Staff Décoratif d'Exception",
+      "description": "Alexandre CHALIGNÉ - Staffeur ornemaniste et plâtrier traditionnel spécialisé dans le staff décoratif. Création d'ornements, moulures et corniches d'exception."
+    },
+    "hero": {
+      "badge": "Staffeur Ornemaniste & Plâtrier Traditionnel",
+      "title_line1_word1": "Transformer",
+      "title_line1_word2": "l'Espace",
+      "title_line2_word1": "en",
+      "title_line2_word2": "Œuvre",
+      "title_line2_word3": "d'Art",
+      "tagline_line1": "Entreprise au service de la restauration et",
+      "tagline_line2": "de la création sur mesure.",
+      "cta_portfolio": "Découvrir nos réalisations",
+      "cta_contact": "Demander un devis"
+    },
+    "intro": {
+      "eyebrow": "Staffeur Ornemaniste",
+      "title_line1": "L'Excellence du Staff",
+      "title_line2": "et de la Plâtrerie Traditionnelle",
+      "description1": "<strong>Staffeur ornemaniste et plâtrier traditionnel</strong>, Alexandre Chaligné est spécialisé dans l'art du staff, cette technique ancestrale qui permet de créer des ornements, moulures et corniches d'une finesse exceptionnelle.",
+      "description2": "Depuis 2006, l'entreprise met son expertise au service de projets prestigieux : châteaux bordelais (Canon, Montrose, Pichon Longueville, Du Glana), monuments historiques (Grand Théâtre de Bordeaux, églises), et projets uniques en Suisse et à l'international.",
+      "description3": "Le staff offre des possibilités infinies pour sublimer vos espaces avec élégance et authenticité.",
+      "cta": "Découvrir notre parcours",
+      "stats": {
+        "years_number": "19+",
+        "years_label": "Ans d'expérience",
+        "projects_number": "200+",
+        "projects_label": "Projets réalisés"
+      },
+      "image_alt": "Alexandre CHALIGNÉ - Staffeur ornemaniste au travail"
+    },
+    "staff": {
+      "eyebrow": "Savoir-Faire Unique",
+      "title": "Qu'est-ce que le Staff ?",
+      "subtitle": "Découvrez cette technique ancestrale de plâtrerie décorative",
+      "definition_title": "Une Technique Millénaire",
+      "definition_p1": "Le <strong>staff</strong> est un matériau composite traditionnel associant du plâtre, des fibres végétales et une armature métallique. Cette technique permet de créer des éléments décoratifs d'une finesse et d'une légèreté incomparables.",
+      "definition_p2": "Utilisé depuis l'Antiquité et perfectionné au fil des siècles, le staff est le matériau de prédilection pour les ornements architecturaux d'exception : moulures, corniches, rosaces, colonnes, chapiteaux et bien plus encore.",
+      "quote_text": "\"Tout est possible et imaginable avec le Staff, il n'existe aucune limite...\"",
+      "quote_author": "Alexandre Chaligné",
+      "quote_title": "Staffeur Ornemaniste",
+      "advantages_title": "Les Avantages du Staff",
+      "advantages": {
+        "lightness": {
+          "title": "Légèreté",
+          "desc": "Résistant mais léger, parfait pour les plafonds et les grandes surfaces"
+        },
+        "freedom": {
+          "title": "Liberté de formes",
+          "desc": "Possibilités infinies de création : courbes, reliefs, ornements complexes"
+        },
+        "finishes": {
+          "title": "Finitions impeccables",
+          "desc": "Surface lisse et uniforme, prête à recevoir peintures et patines"
+        },
+        "durability": {
+          "title": "Durabilité",
+          "desc": "Matériau pérenne qui traverse les siècles sans se dégrader"
+        },
+        "restoration": {
+          "title": "Restauration fidèle",
+          "desc": "Idéal pour reproduire à l'identique des ornements anciens"
+        },
+        "ecological": {
+          "title": "Écologique",
+          "desc": "Matériaux naturels et traditionnels, respectueux de l'environnement"
+        }
+      },
+      "applications_title": "Applications du Staff",
+      "applications": {
+        "mouldings": {
+          "title": "Moulures & Corniches",
+          "desc": "Création de décors raffinés pour sublimer la jonction entre murs et plafonds"
+        },
+        "rosettes": {
+          "title": "Rosaces de Plafond",
+          "desc": "Ornements circulaires majestueux qui captent la lumière et structurent l'espace"
+        },
+        "columns": {
+          "title": "Colonnes & Chapiteaux",
+          "desc": "Éléments architecturaux imposants réalisés avec légèreté"
+        },
+        "ceilings": {
+          "title": "Plafonds Ornementaux",
+          "desc": "Décors complets transformant vos plafonds en véritables œuvres d'art"
+        }
+      }
+    },
+    "expertise": {
+      "eyebrow": "Excellence",
+      "title": "Domaines d'Expertise",
+      "subtitle": "Du staff décoratif à la plâtrerie traditionnelle",
+      "cta": "Voir tous les services",
+      "cards": {
+        "staff": {
+          "title": "Staff & Ornements",
+          "desc": "Création d'ornements en staff : moulures, corniches, rosaces, colonnes. Maîtrise des techniques ancestrales pour des réalisations d'exception."
+        },
+        "plastering": {
+          "title": "Plâtrerie Traditionnelle",
+          "desc": "Plafonds décoratifs, enduits traditionnels et finitions artisanales. Un savoir-faire perpétué avec rigueur et passion."
+        },
+        "restoration": {
+          "title": "Restauration du Patrimoine",
+          "desc": "Restauration d'ornements anciens sur monuments historiques et châteaux. Respect des techniques traditionnelles et du patrimoine."
+        }
+      }
+    },
+    "portfolio": {
+      "eyebrow": "Portfolio",
+      "title": "Réalisations",
+      "title_accent": "Remarquables",
+      "subtitle": "Découvrez une sélection des projets les plus emblématiques",
+      "cta": "Voir toutes les réalisations",
+      "projects": {
+        "villa": {
+          "title": "Villa Privée à Vandœuvres",
+          "category": "Rénovation escaliers"
+        },
+        "glana": {
+          "title": "Château du Glana",
+          "category": "Isolation & Design"
+        }
+      },
+      "info_card": {
+        "title": "Excellence reconnue",
+        "desc": "Interventions en France, Suisse et à l'international pour une clientèle exigeante"
+      }
+    },
+    "values": {
+      "eyebrow": "Notre Philosophie",
+      "title": "Une Approche Unique",
+      "subtitle": "L'excellence dans chaque détail, la passion dans chaque geste",
+      "cards": {
+        "detail": {
+          "title": "Exigence du Détail",
+          "desc": "Chaque projet est traité avec une attention méticuleuse aux finitions, garantissant un résultat impeccable qui dépasse les attentes."
+        },
+        "listening": {
+          "title": "Écoute du Client",
+          "desc": "Une collaboration étroite et transparente à chaque étape, pour que votre vision devienne réalité."
+        },
+        "adaptability": {
+          "title": "Adaptabilité",
+          "desc": "Capacité à s'adapter aux contraintes techniques les plus spécifiques et à proposer des solutions innovantes."
+        },
+        "excellence": {
+          "title": "Excellence Artisanale",
+          "desc": "Un savoir-faire reconnu alliant techniques traditionnelles et méthodes modernes pour des résultats remarquables."
+        }
+      }
+    },
+    "cta": {
+      "badge": "Parlons de votre projet",
+      "title": "Transformons votre vision en réalité",
+      "text": "Bénéficiez d'un accompagnement personnalisé pour votre projet de décoration intérieure. Du conseil à la réalisation, l'entreprise met son expertise à votre service.",
+      "button": "Demander un devis",
+      "or_call": "ou appelez-moi"
+    }
+  },
+
+  "about": {
+    "meta": {
+      "title": "À Propos - Alexandre CHALIGNÉ | Staffeur Ornemaniste depuis 2006",
+      "description": "Découvrez le parcours d'Alexandre CHALIGNÉ, staffeur ornemaniste et plâtrier traditionnel depuis 2006."
+    },
+    "hero": {
+      "title": "À Propos",
+      "subtitle": "Staffeur ornemaniste et plâtrier traditionnel depuis 2006"
+    },
+    "story": {
+      "title": "L'Art du Staff, Une Passion et un Métier",
+      "paragraph1": "<strong>Staffeur ornemaniste et plâtrier traditionnel</strong>, Alexandre Chaligné a débuté sa carrière en <strong>2006 dans la région Bordelaise</strong>, où il a obtenu son <strong>CAP et BP en plâtrerie</strong> et s'est spécialisé dans le <strong>Staff</strong>, technique d'exception particulièrement propice à cette région.",
+      "paragraph2": "Le <strong>staff</strong> est devenu sa passion : cette technique ancestrale permet de créer des ornements d'une finesse incomparable. Moulures, corniches, rosaces, colonnes... chaque création témoigne d'un savoir-faire transmis de génération en génération.",
+      "paragraph3": "Depuis 2006, Alexandre Chaligné a réalisé des projets prestigieux : <strong>châteaux bordelais</strong> (Canon, Montrose, Pichon Longueville, Du Glana), <strong>monuments historiques</strong> (Grand Théâtre de Bordeaux, églises classées) et <strong>projets en Suisse</strong> (villas de prestige à Genève).",
+      "paragraph4": "Chaque projet représente un défi technique et artistique, alliant respect des techniques traditionnelles pour la restauration du patrimoine et exploration de nouvelles possibilités pour les créations contemporaines.",
+      "paragraph5": "L'entreprise <strong>« A.Chaligné »</strong> a été créée pour développer le marché du staff et de la plâtrerie traditionnelle dans le Grand Est, perpétuant ces techniques exceptionnelles qui subliment les espaces avec authenticité.",
+      "quote_text": "\"Tout est possible et imaginable avec le Staff, il n'existe aucune limite...\"",
+      "quote_author": "Alexandre Chaligné, Fondateur",
+      "image_alt": "Alexandre CHALIGNÉ"
+    },
+    "timeline": {
+      "title": "Un Savoir-Faire Reconnu",
+      "subtitle": "Des années d'expérience au service de projets d'exception",
+      "items": {
+        "beginnings": {
+          "title": "2006 - Débuts dans la Région Bordelaise",
+          "desc": "Alexandre Chaligné débute sa carrière de plâtrier dans la région Bordelaise. Obtention du CAP et BP en plâtrerie. Formation aux techniques traditionnelles auprès de maîtres artisans et apprentissage des gestes ancestraux."
+        },
+        "specialization": {
+          "title": "Spécialisation dans le Staff - Mon Cœur de Métier",
+          "desc": "<strong>Staffeur ornemaniste</strong> : spécialisation dans le Staff, technique ancestrale propice à la région bordelaise. Maîtrise de la création d'ornements en staff : moulures, corniches, rosaces, colonnes et chapiteaux."
+        },
+        "prestigious": {
+          "title": "Projets Prestigieux en Bordelais",
+          "desc": "Réalisation de projets d'exception : Château Canon, Château Montrose, Château Pichon Longueville, Château Du Glana. Intervention sur des monuments historiques comme le Grand Théâtre de Bordeaux."
+        },
+        "international": {
+          "title": "Expansion Internationale - Genève",
+          "desc": "Extension de l'activité à l'international avec des projets uniques sur Genève et ses alentours. Collaborations avec architectes, designers et maîtres d'œuvre prestigieux en Suisse."
+        },
+        "company": {
+          "title": "Création de l'Entreprise A.Chaligné",
+          "desc": "Création de l'entreprise « A.Chaligné » pour développer le marché du <strong>staff et de la plâtrerie traditionnelle</strong> dans le Grand Est."
+        }
+      }
+    },
+    "values": {
+      "title": "Nos Valeurs",
+      "subtitle": "Les principes qui guident chaque intervention",
+      "cards": {
+        "detail": {
+          "title": "Exigence du Détail",
+          "desc": "Chaque intervention est traitée avec une attention méticuleuse aux finitions. Rien n'est laissé au hasard, car ce sont les détails qui font toute la différence."
+        },
+        "listening": {
+          "title": "Écoute & Collaboration",
+          "desc": "Une relation de confiance avec les clients est essentielle. L'entreprise accorde une importance particulière à l'écoute de vos besoins."
+        },
+        "mastery": {
+          "title": "Maîtrise du Staff",
+          "desc": "<strong>Staffeur ornemaniste</strong> passionné, Alexandre Chaligné maîtrise cette technique ancestrale dans ses moindres détails."
+        },
+        "innovation": {
+          "title": "Innovation & Adaptabilité",
+          "desc": "Tout en respectant les techniques traditionnelles, l'entreprise intègre les innovations et s'adapte aux contraintes spécifiques de chaque projet."
+        }
+      }
+    },
+    "cta": {
+      "badge": "Collaboration",
+      "title": "Travaillons ensemble sur votre projet",
+      "text": "Fort de nombreuses années d'expérience et d'une passion pour le métier, Alexandre Chaligné serait ravi de vous accompagner dans la réalisation de votre projet.",
+      "button_contact": "Prendre contact",
+      "button_portfolio": "Voir mes réalisations"
+    }
+  },
+
+  "services": {
+    "meta": {
+      "title": "Services - Alexandre CHALIGNÉ | Staffeur Ornemaniste & Plâtrerie Traditionnelle",
+      "description": "Services de staffeur ornemaniste : création d'ornements en staff, plâtrerie traditionnelle, restauration du patrimoine."
+    },
+    "hero": {
+      "title": "Services",
+      "subtitle": "Des prestations sur-mesure pour des réalisations d'exception"
+    },
+    "intro": "En tant qu'entreprise spécialisée dans le <strong>staff ornemaniste et la plâtrerie traditionnelle</strong>, A.Chaligné intervient sur des projets variés qui ont tous en commun l'exigence de la qualité et du détail.",
+    "staff": {
+      "title": "Staff & Ornements",
+      "description": "Le <strong>staff</strong> est notre spécialité : cette technique ancestrale permet de créer des ornements d'une finesse exceptionnelle. Moulures, corniches, rosaces, colonnes et chapiteaux prennent vie avec précision et élégance.",
+      "list": {
+        "item1": "Création d'ornements en staff sur-mesure",
+        "item2": "Moulures et corniches décoratives",
+        "item3": "Rosaces de plafond et médaillons",
+        "item4": "Colonnes, pilastres et chapiteaux",
+        "item5": "Plafonds ornementaux et voûtes en staff",
+        "item6": "Éléments architecturaux complexes",
+        "item7": "Finitions artisanales (stucs, patines, dorures)"
+      },
+      "highlight_title": "Pourquoi choisir le staff ?",
+      "highlight_text": "Le staff offre une liberté créative infinie : léger, résistant et modelable, il permet de réaliser des ornements impossibles à obtenir avec d'autres matériaux.",
+      "image_alt": "Staff et ornements décoratifs"
+    },
+    "plastering": {
+      "title": "Plâtrerie Traditionnelle",
+      "description": "Maîtrise des <strong>techniques traditionnelles de plâtrerie</strong> transmises de génération en génération. Enduits à l'ancienne, chaux, plâtre traditionnel : un savoir-faire authentique.",
+      "list": {
+        "item1": "Plafonds traditionnels et plafonds à la française",
+        "item2": "Enduits à la chaux et enduits traditionnels",
+        "item3": "Finitions artisanales (talochées, lissées, brossées)",
+        "item4": "Plâtre traditionnel et mortier de chaux",
+        "item5": "Cloisons en plâtre massif",
+        "item6": "Travaux de rénovation et de création"
+      },
+      "highlight_title": "Pourquoi choisir la plâtrerie traditionnelle ?",
+      "highlight_text": "Les techniques traditionnelles de plâtrerie offrent des qualités incomparables : respirabilité des murs, régulation hygrométrique naturelle, et rendu esthétique authentique.",
+      "image_alt": "Plâtrerie traditionnelle"
+    },
+    "restoration": {
+      "title": "Restauration du Patrimoine",
+      "description": "Restauration et conservation d'ornements anciens sur <strong>monuments historiques et châteaux prestigieux</strong>. Respect scrupuleux des techniques traditionnelles et du patrimoine architectural.",
+      "list": {
+        "item1": "Diagnostic patrimonial et analyse de l'existant",
+        "item2": "Restauration de décors en staff et ornements anciens",
+        "item3": "Reconstitution à l'identique de décors d'origine",
+        "item4": "Techniques de restauration respectant le patrimoine",
+        "item5": "Intervention sur monuments historiques classés",
+        "item6": "Collaboration avec architectes du patrimoine",
+        "item7": "Documentation et relevés des ouvrages"
+      },
+      "highlight_title": "Une expérience prestigieuse",
+      "highlight_text": "Forte d'interventions sur des sites d'exception (Châteaux Canon, Montrose, Pichon Longueville, Du Glana, Grand Théâtre de Bordeaux), l'entreprise maîtrise les exigences spécifiques de la restauration du patrimoine.",
+      "image_alt": "Restauration du patrimoine"
+    },
+    "areas": {
+      "title": "Zones d'Intervention",
+      "subtitle": "Des services disponibles en France, Suisse et à l'international",
+      "france": {
+        "title": "France",
+        "desc": "Interventions régulières dans le Grand Est, Île-de-France et sur l'ensemble du territoire français pour des projets d'envergure."
+      },
+      "switzerland": {
+        "title": "Suisse",
+        "desc": "Proximité avec la Suisse permettant des interventions fréquentes à Genève, Lausanne et dans l'ensemble de la région lémanique."
+      },
+      "international": {
+        "title": "International",
+        "desc": "Disponible pour des projets exceptionnels partout en Europe et au-delà, sur demande et selon la nature du projet."
+      }
+    },
+    "cta": {
+      "badge": "Devis personnalisé",
+      "title": "Concrétisons votre projet ensemble",
+      "text": "Chaque projet est unique. Discutons de vos besoins pour vous proposer une solution sur-mesure adaptée à vos attentes et à votre budget.",
+      "button_quote": "Obtenir un devis",
+      "button_portfolio": "Voir nos réalisations"
+    }
+  },
+
+  "portfolio": {
+    "meta": {
+      "title": "Réalisations - Alexandre CHALIGNÉ | Portfolio de Plâtrerie d'Exception",
+      "description": "Découvrez mes réalisations en plâtrerie décorative : plafonds ornementaux, rénovations patrimoniales et projets sur-mesure."
+    },
+    "hero": {
+      "title": "Réalisations",
+      "subtitle": "Réalisations et projets en cours qui illustrent mon savoir-faire"
+    },
+    "projects": {
+      "villa": {
+        "title": "Villa Privée",
+        "location": "Vandœuvres, Suisse",
+        "category": "Création Sur-Mesure • 2022",
+        "description": "Quand le staff devient la pièce maîtresse d'une villa luxueuse avec ce garde-corps unique. Création d'un escalier monumental avec garde-corps sculpté en staff."
+      },
+      "glana": {
+        "title": "Château du Glana",
+        "location": "Saint-Julien-Beychevelle, France",
+        "category": "Isolation & Design • 2015",
+        "description": "La performance thermique de nos jours dissimulée derrière un design ancien. Rénovation complète du chai avec isolation thermique haute performance intégrée dans les voûtes en staff."
+      }
+    },
+    "testimonials": {
+      "title": "Ce que disent mes clients",
+      "subtitle": "La satisfaction client au cœur de mon travail",
+      "testimonial1": {
+        "text": "\"Le garde-corps sculpté en staff de notre escalier est une véritable œuvre d'art. Alexandre a transformé un élément fonctionnel en pièce maîtresse de notre villa.\"",
+        "author": "Pierre et Catherine Laurent",
+        "position": "Propriétaires - Vandœuvres"
+      },
+      "testimonial2": {
+        "text": "\"Pour le Château du Glana, nous avions besoin d'allier performance thermique moderne et esthétique historique. Alexandre a relevé ce défi avec brio.\"",
+        "author": "François Delon",
+        "position": "Maître d'œuvre - Château du Glana"
+      }
+    },
+    "cta": {
+      "badge": "Votre prochain projet",
+      "title": "Créez votre espace d'exception",
+      "text": "Vous avez vu mes réalisations, imaginez maintenant ce que je pourrais créer pour votre espace. Chaque projet est une nouvelle opportunité d'excellence.",
+      "btn_primary": "Démarrer un projet",
+      "btn_secondary": "Découvrir mes services"
+    }
+  },
+
+  "contact": {
+    "meta": {
+      "title": "Contact - Alexandre CHALIGNÉ | Demande de Devis Plâtrerie",
+      "description": "Contactez Alexandre CHALIGNÉ pour vos projets de plâtrerie décorative. Devis gratuit pour création de plafonds ornementaux et restauration du patrimoine."
+    },
+    "hero": {
+      "title_line1": "Donnons Vie",
+      "title_line2": "à Vos Idées",
+      "description": "Chaque projet est unique. Ensemble, créons quelque chose d'exceptionnel.",
+      "scroll": "Défiler"
+    },
+    "form": {
+      "title": "Demande de Devis",
+      "subtitle": "Remplissez ce formulaire et recevez une réponse personnalisée sous 24h",
+      "name_label": "Nom complet",
+      "name_placeholder": "Jean Dupont",
+      "phone_label": "Téléphone",
+      "phone_placeholder": "+33 6 12 34 56 78",
+      "email_label": "Email",
+      "email_placeholder": "contact@exemple.fr",
+      "project_type_label": "Type de projet",
+      "project_type_select": "Sélectionnez un type",
+      "project_type_creation": "Création sur-mesure",
+      "project_type_renovation": "Rénovation / Restauration",
+      "project_type_ceiling": "Plafond décoratif",
+      "project_type_moulding": "Moulures et corniches",
+      "project_type_other": "Autre projet",
+      "message_label": "Décrivez votre projet",
+      "message_placeholder": "Parlez-nous de votre projet, de vos attentes, de votre localisation et de toute autre information pertinente...",
+      "consent_text": "J'accepte que mes données soient utilisées pour me recontacter concernant ma demande",
+      "submit_btn": "Envoyer ma demande",
+      "required_notice": "Tous les champs marqués d'un astérisque (*) sont obligatoires"
+    },
+    "sidebar": {
+      "direct_title": "Contact Direct",
+      "direct_description": "Besoin d'une réponse immédiate ? Contactez-nous directement",
+      "phone_label": "Téléphone",
+      "hours": "Lun - Ven : 8h - 18h",
+      "email_label": "Email",
+      "response_time": "Réponse sous 24h",
+      "zones_title": "Zones d'Intervention",
+      "zone1": "Grand Est & Île-de-France",
+      "zone2": "Suisse (Genève, Lausanne)",
+      "zone3": "Toute la France",
+      "zone4": "International (sur demande)",
+      "office_location": "Bureau à Ville la grand et Genève",
+      "trust_title": "Nos Engagements",
+      "trust1": "Devis gratuit et sans engagement",
+      "trust2": "Assurances professionnelles",
+      "trust3": "Garantie décennale",
+      "trust4": "+18 ans d'expérience"
+    },
+    "partnership": {
+      "badge": "Espace Professionnels",
+      "title": "Devenez Partenaire",
+      "description": "Architectes, décorateurs, entreprises du bâtiment : collaborons ensemble sur vos projets d'exception",
+      "company_label": "Nom de l'entreprise",
+      "company_placeholder": "Nom de votre société",
+      "contact_label": "Nom du contact",
+      "contact_placeholder": "Votre nom",
+      "email_label": "Email professionnel",
+      "email_placeholder": "contact@entreprise.fr",
+      "phone_label": "Téléphone",
+      "phone_placeholder": "+33 6 12 34 56 78",
+      "business_type_label": "Type d'activité",
+      "business_type_select": "Sélectionnez votre activité",
+      "business_type_architect": "Cabinet d'architecture",
+      "business_type_decorator": "Décorateur / Designer d'intérieur",
+      "business_type_construction": "Entreprise générale du bâtiment",
+      "business_type_project_manager": "Maître d'œuvre",
+      "business_type_developer": "Promoteur immobilier",
+      "business_type_heritage": "Architecte du patrimoine",
+      "business_type_other": "Autre professionnel",
+      "collab_type_label": "Type de collaboration souhaitée",
+      "collab_subcontracting": "Sous-traitance ponctuelle",
+      "collab_partnership": "Partenariat long terme",
+      "collab_prescription": "Prescription / Recommandation",
+      "message_label": "Décrivez votre besoin",
+      "message_placeholder": "Présentez votre entreprise, vos projets types et le type de collaboration que vous recherchez...",
+      "submit_btn": "Envoyer ma demande de partenariat",
+      "benefits_title": "Pourquoi collaborer avec nous ?",
+      "benefit1_title": "Expertise reconnue",
+      "benefit1_text": "+18 ans d'expérience en plâtrerie décorative et restauration du patrimoine",
+      "benefit2_title": "Tarifs préférentiels",
+      "benefit2_text": "Conditions commerciales adaptées pour les professionnels et partenaires réguliers",
+      "benefit3_title": "Réactivité garantie",
+      "benefit3_text": "Devis sous 48h et planning adapté à vos contraintes de chantier",
+      "benefit4_title": "Couverture étendue",
+      "benefit4_text": "Interventions France entière et Suisse (Genève, Lausanne)",
+      "benefit5_title": "Assurances complètes",
+      "benefit5_text": "Garantie décennale, RC Pro et toutes assurances professionnelles",
+      "prefer_call": "Vous préférez échanger directement ?"
+    },
+    "faq": {
+      "badge": "Questions Fréquentes",
+      "title": "Vous Avez des Questions ?",
+      "description": "Trouvez rapidement les réponses aux questions les plus courantes",
+      "q1_question": "Quel est le délai pour obtenir un devis ?",
+      "q1_answer": "L'entreprise s'engage à vous répondre sous 24 à 48h après réception de votre demande. Le devis détaillé vous sera transmis après une visite sur site.",
+      "q2_question": "Intervenez-vous pour des projets en Suisse ?",
+      "q2_answer": "Oui, étant basée à Ville-la-Grand près de la frontière suisse, l'entreprise intervient régulièrement en Suisse, notamment dans la région lémanique.",
+      "q3_question": "Proposez-vous des garanties sur vos travaux ?",
+      "q3_answer": "Tous nos travaux sont couverts par les garanties légales (garantie décennale, garantie de parfait achèvement). L'entreprise dispose de toutes les assurances professionnelles nécessaires.",
+      "q4_question": "Travaillez-vous sur des bâtiments classés ?",
+      "q4_answer": "Oui, Alexandre Chaligné est formé aux techniques de restauration du patrimoine et a l'habitude de travailler sur des bâtiments classés monuments historiques.",
+      "q5_question": "Quels sont vos délais d'intervention ?",
+      "q5_answer": "Les délais varient selon la nature et l'ampleur du projet. Pour une intervention standard, comptez généralement entre 2 et 6 semaines après validation du devis.",
+      "q6_question": "Faut-il prévoir un budget minimum ?",
+      "q6_answer": "Chaque projet étant unique, il n'y a pas de budget minimum fixe. Cependant, compte tenu de la nature haut de gamme de nos prestations, les projets démarrent généralement à partir de 5 000 €."
+    }
+  },
+
+  "project_villa": {
+    "meta": {
+      "title": "Villa Privée Vandœuvres - Alexandre CHALIGNÉ",
+      "description": "Rénovation d'escaliers dans une villa privée à Vandœuvres"
+    },
+    "hero": {
+      "back_button": "Retour aux réalisations",
+      "breadcrumb_current": "Villa Vandœuvres",
+      "badge": "Résidentiel de Prestige",
+      "title": "Villa Privée à Vandœuvres",
+      "subtitle": "Rénovation d'escaliers monumentaux avec création de moulures et finitions d'exception",
+      "image_alt": "Villa Privée Vandœuvres"
+    },
+    "overview": {
+      "type_label": "Type",
+      "type_value": "Résidentiel Privé",
+      "year_label": "Année",
+      "location_label": "Localisation",
+      "location_value": "Vandœuvres, Suisse",
+      "duration_label": "Durée",
+      "duration_value": "4 mois"
+    },
+    "intro": {
+      "title": "Le Projet",
+      "lead": "La rénovation de cette villa de prestige à Vandœuvres a nécessité une intervention délicate sur les escaliers monumentaux.",
+      "description": "Le défi consistait à créer un garde-corps d'exception qui deviendrait l'élément sculptural central de cette résidence."
+    },
+    "challenge": {
+      "title": "Le Défi",
+      "description": "Rénover un escalier monumental dans une villa historique tout en préservant son authenticité."
+    },
+    "solution": {
+      "title": "La Solution",
+      "description": "Un phasage minutieux des travaux permettant la continuité d'occupation. Création d'un garde-corps sculpté en staff qui devient la véritable pièce maîtresse de la villa."
+    },
+    "features": {
+      "title": "Points Forts du Projet",
+      "subtitle": "L'excellence au service du patrimoine",
+      "feature1_title": "Moulures décoratives",
+      "feature1_description": "Conception et fabrication de moulures ornementales inspirées du patrimoine classique",
+      "feature2_title": "Staff sur-mesure",
+      "feature2_description": "Éléments architecturaux personnalisés parfaitement intégrés à l'architecture existante",
+      "feature3_title": "Plafonds ornementaux",
+      "feature3_description": "Création de décors de plafonds avec rosaces et corniches dans les règles de l'art",
+      "feature4_title": "Restauration",
+      "feature4_description": "Respect des techniques traditionnelles et des matériaux d'origine"
+    },
+    "process": {
+      "title": "Processus de Réalisation",
+      "subtitle": "Une méthodologie éprouvée",
+      "step1_title": "Diagnostic & Relevés",
+      "step1_description": "Étude approfondie de l'existant, relevés précis et analyse des matériaux d'origine",
+      "step2_title": "Conception",
+      "step2_description": "Dessin des moulures et éléments décoratifs en harmonie avec le style architectural",
+      "step3_title": "Fabrication",
+      "step3_description": "Réalisation en atelier des éléments en staff avec techniques artisanales traditionnelles",
+      "step4_title": "Pose & Finitions",
+      "step4_description": "Installation minutieuse sur site et finitions peintes pour un rendu impeccable"
+    },
+    "gallery": {
+      "title": "Galerie du Projet",
+      "subtitle": "Le résultat en images"
+    },
+    "results": {
+      "quote_text": "Le résultat dépasse nos attentes. L'escalier a retrouvé toute sa splendeur d'origine tout en gagnant en élégance.",
+      "quote_author": "Famille Propriétaire",
+      "quote_position": "Villa à Vandœuvres",
+      "stat1_label": "m linéaires de moulures",
+      "stat2_label": "mois de réalisation",
+      "stat3_label": "satisfaction client"
+    },
+    "navigation": {
+      "title": "Découvrez nos autres réalisations",
+      "prev_label": "Projet Précédent",
+      "prev_title": "Château du Glana",
+      "prev_description": "Restauration du patrimoine alliant isolation thermique et restauration historique",
+      "all_projects": "Voir toutes les réalisations"
+    },
+    "cta": {
+      "title": "Vous avez un projet similaire ?",
+      "description": "Échangeons sur vos besoins et transformons votre vision en réalité.",
+      "btn_contact": "Prendre contact"
+    }
+  },
+
+  "project_glana": {
+    "meta": {
+      "title": "Château du Glana - Alexandre CHALIGNÉ",
+      "description": "Isolation et design du Château du Glana"
+    },
+    "hero": {
+      "back_button": "Retour aux réalisations",
+      "breadcrumb_current": "Château du Glana",
+      "badge": "Monument Historique",
+      "title": "Château du Glana",
+      "subtitle": "Restauration du patrimoine alliant isolation thermique et restauration de décors historiques",
+      "image_alt": "Château du Glana"
+    },
+    "overview": {
+      "type_label": "Type",
+      "type_value": "Monument Historique",
+      "year_label": "Année",
+      "location_label": "Localisation",
+      "location_value": "Bordeaux",
+      "surface_label": "Surface",
+      "surface_value": "450 m²"
+    },
+    "intro": {
+      "title": "Le Projet",
+      "lead": "Le Château du Glana, domaine viticole prestigieux du Médoc, a fait l'objet d'une intervention délicate alliant performance énergétique moderne et préservation du patrimoine architectural.",
+      "description": "L'intervention a porté sur la restauration complète des plafonds ornementaux des salons de réception, tout en intégrant une isolation thermique performante."
+    },
+    "challenge": {
+      "title": "Le Défi",
+      "description": "Rénover un monument historique classé en respectant les normes patrimoniales strictes, tout en améliorant significativement les performances énergétiques du bâtiment."
+    },
+    "solution": {
+      "title": "La Solution",
+      "description": "Une approche innovante combinant isolation par l'intérieur avec matériaux respirants et reproduction à l'identique des éléments décoratifs. Nous avons réalisé un squelette métallique complet sur lequel nous avons fixé du lattis « nerfgalto »."
+    },
+    "features": {
+      "title": "Points Forts du Projet",
+      "subtitle": "Quand patrimoine et modernité se conjuguent",
+      "feature1_title": "Isolation thermique",
+      "feature1_description": "Intégration d'une isolation haute performance tout en préservant les volumes intérieurs",
+      "feature2_title": "Staff ornemental",
+      "feature2_description": "Reproduction fidèle des décors historiques selon les techniques traditionnelles",
+      "feature3_title": "Restauration",
+      "feature3_description": "Respect des contraintes ABF et valorisation du patrimoine architectural classé",
+      "feature4_title": "Moulures historiques",
+      "feature4_description": "Reconstitution des rosaces, corniches et modénatures du XVIIIe siècle"
+    },
+    "process": {
+      "title": "Processus de Réalisation",
+      "subtitle": "Une démarche rigoureuse et respectueuse",
+      "step1_title": "Diagnostic Patrimonial",
+      "step1_description": "Étude historique approfondie, relevés photogrammétriques et validation ABF des interventions",
+      "step2_title": "Création des Moules",
+      "step2_description": "Réalisation de moules à partir des éléments d'origine conservés pour une reproduction fidèle",
+      "step3_title": "Isolation & Structure",
+      "step3_description": "Mise en place de l'isolation thermique et préparation des supports pour les décors",
+      "step4_title": "Pose & Restauration",
+      "step4_description": "Installation des éléments en staff et finitions selon les techniques d'époque"
+    },
+    "gallery": {
+      "title": "Galerie du Projet",
+      "subtitle": "La renaissance d'un patrimoine d'exception"
+    },
+    "results": {
+      "quote_text": "Une intervention exemplaire qui démontre qu'il est possible de concilier préservation du patrimoine et amélioration énergétique.",
+      "quote_author": "Architecte des Bâtiments de France",
+      "quote_position": "DRAC Nouvelle-Aquitaine",
+      "stat1_label": "m² restaurés",
+      "stat2_label": "gain énergétique",
+      "stat3_label": "siècle préservé"
+    },
+    "navigation": {
+      "title": "Découvrez nos autres réalisations",
+      "next_label": "Projet Suivant",
+      "next_title": "Villa Privée à Vandœuvres",
+      "next_description": "Rénovation d'escaliers monumentaux avec création de moulures d'exception",
+      "all_projects": "Voir toutes les réalisations"
+    },
+    "cta": {
+      "title": "Vous avez un projet similaire ?",
+      "description": "Échangeons sur vos besoins et transformons votre vision en réalité.",
+      "btn_contact": "Prendre contact"
+    }
+  },
+
+  "legal": {
+    "meta": {
+      "title": "Mentions Légales - Alexandre CHALIGNÉ | Staffeur Ornemaniste",
+      "description": "Mentions légales du site Alexandre CHALIGNÉ - Staffeur ornemaniste et plâtrier traditionnel."
+    },
+    "hero": {
+      "title": "Mentions Légales",
+      "subtitle": "Informations légales conformément à la LCEN"
+    },
+    "intro": "Conformément aux dispositions des articles 6-III et 19 de la loi pour la Confiance dans l'Économie Numérique (LCEN), il est précisé aux utilisateurs du site les informations suivantes :",
+    "editor": {
+      "title": "Éditeur du site",
+      "content": "<strong>Nom du site :</strong> Alexandre Chaligné | <strong>Activité :</strong> Travaux de plâtrerie – Artisan"
+    },
+    "owner": {
+      "title": "Propriétaire du site",
+      "content1": "<strong>CHALIGNÉ Alexandre</strong> – Entrepreneur individuel | BAT H APT 302, 14 impasse des Moulins Gaud, 74100 Ville-la-Grand – France",
+      "content2": "<strong>SIREN :</strong> 804 174 043 | <strong>SIRET :</strong> 804 174 043 00039 | <strong>TVA :</strong> FR27 804174043 | <strong>APE :</strong> 43.31Z"
+    },
+    "contact": {
+      "title": "Contact",
+      "email": "<strong>Email :</strong>",
+      "phone_france": "<strong>Téléphone France :</strong>",
+      "phone_switzerland": "<strong>Téléphone Suisse :</strong>"
+    },
+    "hosting": {
+      "title": "Hébergement",
+      "content": "<strong>Vercel Inc.</strong> – 340 S Lemon Ave #4133, Walnut, CA 91789, USA"
+    },
+    "terms": {
+      "title": "Conditions d'utilisation",
+      "content": "L'utilisation du site implique l'acceptation pleine et entière des présentes conditions. Ces conditions sont susceptibles d'être modifiées à tout moment, sans préavis."
+    },
+    "information": {
+      "title": "Informations fournies",
+      "content": "Les informations présentes sur le site sont fournies à titre indicatif. CHALIGNÉ Alexandre ne saurait être tenu responsable d'erreurs, d'omissions ou d'une indisponibilité temporaire du site."
+    },
+    "intellectual_property": {
+      "title": "Propriété intellectuelle",
+      "content": "L'ensemble des éléments du site (textes, images, logos, graphismes, etc.) est protégé par le droit de la propriété intellectuelle. Toute reproduction est interdite sans autorisation écrite préalable."
+    },
+    "links": {
+      "title": "Liens hypertextes",
+      "content": "Le site peut contenir des liens vers des sites tiers. CHALIGNÉ Alexandre n'est pas responsable du contenu de ces sites externes."
+    },
+    "personal_data": {
+      "title": "Données personnelles",
+      "content": "Les modalités de traitement des données personnelles sont détaillées dans la page"
+    }
+  },
+
+  "privacy": {
+    "meta": {
+      "title": "Politique de confidentialité - Alexandre CHALIGNÉ | Staffeur Ornemaniste",
+      "description": "Politique de confidentialité du site Alexandre CHALIGNÉ - Protection de vos données personnelles conformément au RGPD."
+    },
+    "hero": {
+      "title": "Politique de confidentialité",
+      "subtitle": "Protection de vos données personnelles"
+    },
+    "last_update": "<strong>Dernière mise à jour :</strong> 15 décembre 2025",
+    "controller": {
+      "title": "Responsable du traitement",
+      "content": "<strong>CHALIGNÉ Alexandre</strong> – Entrepreneur individuel | 14 impasse des Moulins Gaud, 74100 Ville-la-Grand – France"
+    },
+    "auto_data": {
+      "title": "Données collectées automatiquement",
+      "content": "Adresse IP, type de navigateur, pages consultées, données techniques de sécurité. Ces données sont utilisées à des fins statistiques et de sécurité uniquement."
+    },
+    "voluntary_data": {
+      "title": "Données fournies volontairement",
+      "content": "Via formulaires de contact/devis : nom, prénom, email, téléphone, contenu du message. Merci de ne pas transmettre d'informations sensibles ou médicales."
+    },
+    "purposes": {
+      "title": "Finalités du traitement",
+      "content": "Répondre aux demandes de contact/devis, assurer la relation client, garantir le bon fonctionnement du site. <strong>Bases légales :</strong> intérêt légitime, mesures précontractuelles."
+    },
+    "cookies": {
+      "title": "Cookies",
+      "content": "Cookies techniques nécessaires au fonctionnement + cookies de mesure d'audience (soumis à consentement). Configurables via les paramètres de votre navigateur."
+    },
+    "recipients": {
+      "title": "Destinataires des données",
+      "content": "Exclusivement CHALIGNÉ Alexandre + hébergeur technique (Vercel Inc.). <strong>Aucune donnée n'est vendue ou cédée à des tiers.</strong>"
+    },
+    "hosting": {
+      "title": "Hébergement & Transferts hors UE",
+      "content": "<strong>Vercel Inc.</strong> – Walnut, CA 91789, USA. Transferts hors UE encadrés par clauses contractuelles types conformément au RGPD."
+    },
+    "retention": {
+      "title": "Durée de conservation",
+      "content": "<strong>Contact/devis :</strong> durée du traitement + archivage limité | <strong>Données techniques :</strong> durée limitée liée à la sécurité et aux statistiques."
+    },
+    "security": {
+      "title": "Sécurité",
+      "content": "Mesures techniques et organisationnelles mises en œuvre pour protéger vos données contre perte, accès non autorisé, altération ou divulgation."
+    },
+    "rights": {
+      "title": "Vos droits (RGPD)",
+      "content": "<strong>Droits :</strong> accès, rectification, effacement, limitation du traitement, opposition. Contact :"
+    },
+    "external_links": {
+      "title": "Liens externes",
+      "content": "Le site peut contenir des liens vers des sites tiers. CHALIGNÉ Alexandre n'est pas responsable du contenu ni des pratiques de confidentialité de ces sites."
+    }
+  }
+}

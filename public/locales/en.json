@@ -1,0 +1,797 @@
+{
+  "_meta": {
+    "lang": "en",
+    "name": "English",
+    "direction": "ltr"
+  },
+
+  "common": {
+    "nav": {
+      "home": "Home",
+      "about": "About",
+      "services": "Services",
+      "portfolio": "Portfolio",
+      "contact": "Contact"
+    },
+    "skip_to_content": "Skip to main content",
+    "toggle_menu": "Toggle menu",
+    "logo_alt": "Alexandre CHALIGNÉ - Excellence at Your Service",
+    "footer": {
+      "nav_title": "Navigation",
+      "services_title": "Services",
+      "contact_title": "Contact",
+      "description": "A company dedicated to restoration<br>and bespoke creation.",
+      "copyright": "© <span id='currentYear'>2026</span> Alexandre CHALIGNÉ. All rights reserved.",
+      "signature": "Crafted with Passion by <a href=\"https://www.propulseo-site.com/\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"signature-link\">Propul'SEO</a>",
+      "legal_mentions": "Legal Notice",
+      "legal": "Legal Notice",
+      "privacy_policy": "Privacy Policy",
+      "privacy": "Privacy Policy",
+      "linkedin": "Follow me on LinkedIn",
+      "follow_linkedin": "Follow me on LinkedIn",
+      "location": "Ville-la-Grand, France",
+      "services": {
+        "staff": "Decorative Plasterwork",
+        "plastering": "Traditional Plastering",
+        "restoration": "Heritage Restoration"
+      },
+      "service_ceilings": "Ornamental Ceilings",
+      "service_custom": "Bespoke Projects",
+      "service_restoration": "Heritage Restoration"
+    },
+    "cookies": {
+      "title": "Your experience, our priority",
+      "description": "We use cookies to improve your browsing experience and analyse our traffic. By continuing, you accept our <a href=\"/en/pages/politique-confidentialite.html\" class=\"cookie-link\">privacy policy</a>.",
+      "accept": "Accept",
+      "decline": "Decline"
+    }
+  },
+
+  "home": {
+    "meta": {
+      "title": "Alexandre CHALIGNÉ - Ornamental Plasterer & Traditional Craftsman | Exceptional Decorative Plasterwork",
+      "description": "Alexandre CHALIGNÉ - Ornamental plasterer and traditional craftsman specialising in decorative plasterwork. Creation of exceptional ornaments, mouldings and cornices."
+    },
+    "hero": {
+      "badge": "Ornamental Plasterer & Traditional Craftsman",
+      "title_line1_word1": "Transforming",
+      "title_line1_word2": "Spaces",
+      "title_line2_word1": "into",
+      "title_line2_word2": "Works",
+      "title_line2_word3": "of Art",
+      "tagline_line1": "A company dedicated to restoration and",
+      "tagline_line2": "bespoke creation.",
+      "cta_portfolio": "Discover Our Work",
+      "cta_contact": "Request a Quote"
+    },
+    "intro": {
+      "eyebrow": "Ornamental Plasterer",
+      "title_line1": "The Excellence of Decorative",
+      "title_line2": "Plasterwork & Traditional Craftsmanship",
+      "description1": "<strong>Ornamental plasterer and traditional craftsman</strong>, Alexandre Chaligné specialises in the art of decorative plasterwork, an ancestral technique that creates ornaments, mouldings and cornices of exceptional finesse.",
+      "description2": "Since 2006, the company has brought its expertise to prestigious projects: Bordeaux châteaux (Canon, Montrose, Pichon Longueville, Du Glana), historic monuments (Grand Théâtre de Bordeaux, listed churches), and unique projects in Switzerland and internationally.",
+      "description3": "Decorative plasterwork offers infinite possibilities to enhance your spaces with elegance and authenticity.",
+      "cta": "Discover Our Journey",
+      "stats": {
+        "years_number": "19+",
+        "years_label": "Years of Experience",
+        "projects_number": "200+",
+        "projects_label": "Projects Completed"
+      },
+      "image_alt": "Alexandre CHALIGNÉ - Ornamental plasterer at work"
+    },
+    "staff": {
+      "eyebrow": "Unique Expertise",
+      "title": "What is Decorative Plasterwork?",
+      "subtitle": "Discover this ancestral technique of ornamental plastering",
+      "definition_title": "A Thousand-Year-Old Technique",
+      "definition_p1": "<strong>Decorative plasterwork</strong> (staff) is a traditional composite material combining plaster, plant fibres and a metal framework. This technique creates decorative elements of incomparable finesse and lightness.",
+      "definition_p2": "Used since Antiquity and perfected over the centuries, decorative plasterwork is the material of choice for exceptional architectural ornaments: mouldings, cornices, ceiling roses, columns, capitals and much more.",
+      "quote_text": "\"Everything is possible with decorative plasterwork, there are no limits...\"",
+      "quote_author": "Alexandre Chaligné",
+      "quote_title": "Ornamental Plasterer",
+      "advantages_title": "The Advantages of Decorative Plasterwork",
+      "advantages": {
+        "lightness": {
+          "title": "Lightweight",
+          "desc": "Strong yet light, perfect for ceilings and large surfaces"
+        },
+        "freedom": {
+          "title": "Freedom of Form",
+          "desc": "Infinite creative possibilities: curves, reliefs, complex ornaments"
+        },
+        "finishes": {
+          "title": "Impeccable Finishes",
+          "desc": "Smooth, uniform surface, ready for painting and patinas"
+        },
+        "durability": {
+          "title": "Durability",
+          "desc": "Long-lasting material that stands the test of time without degradation"
+        },
+        "restoration": {
+          "title": "Faithful Restoration",
+          "desc": "Ideal for reproducing antique ornaments identically"
+        },
+        "ecological": {
+          "title": "Eco-Friendly",
+          "desc": "Natural and traditional materials, environmentally respectful"
+        }
+      },
+      "applications_title": "Applications of Decorative Plasterwork",
+      "applications": {
+        "mouldings": {
+          "title": "Mouldings & Cornices",
+          "desc": "Creating refined decorations to enhance the junction between walls and ceilings"
+        },
+        "rosettes": {
+          "title": "Ceiling Roses",
+          "desc": "Majestic circular ornaments that capture light and structure space"
+        },
+        "columns": {
+          "title": "Columns & Capitals",
+          "desc": "Imposing architectural elements crafted with lightness"
+        },
+        "ceilings": {
+          "title": "Ornamental Ceilings",
+          "desc": "Complete decorations transforming your ceilings into true works of art"
+        }
+      }
+    },
+    "expertise": {
+      "eyebrow": "Excellence",
+      "title": "Areas of Expertise",
+      "subtitle": "From decorative plasterwork to traditional craftsmanship",
+      "cta": "View All Services",
+      "cards": {
+        "staff": {
+          "title": "Decorative Plasterwork",
+          "desc": "Creation of ornaments: mouldings, cornices, ceiling roses, columns. Mastery of ancestral techniques for exceptional creations."
+        },
+        "plastering": {
+          "title": "Traditional Plastering",
+          "desc": "Ornamental ceilings, traditional renders and artisanal finishes. Expertise passed down with rigour and passion."
+        },
+        "restoration": {
+          "title": "Heritage Restoration",
+          "desc": "Restoration of antique ornaments on historic monuments and châteaux. Respect for traditional techniques and heritage."
+        }
+      }
+    },
+    "portfolio": {
+      "eyebrow": "Portfolio",
+      "title": "Remarkable",
+      "title_accent": "Achievements",
+      "subtitle": "Discover a selection of the most emblematic projects",
+      "cta": "View All Projects",
+      "projects": {
+        "villa": {
+          "title": "Private Villa in Vandœuvres",
+          "category": "Staircase Renovation"
+        },
+        "glana": {
+          "title": "Château du Glana",
+          "category": "Insulation & Design"
+        }
+      },
+      "info_card": {
+        "title": "Recognised Excellence",
+        "desc": "Working in France, Switzerland and internationally for discerning clients"
+      }
+    },
+    "values": {
+      "eyebrow": "Our Philosophy",
+      "title": "A Unique Approach",
+      "subtitle": "Excellence in every detail, passion in every gesture",
+      "cards": {
+        "detail": {
+          "title": "Attention to Detail",
+          "desc": "Every project is treated with meticulous attention to finishes, guaranteeing an impeccable result that exceeds expectations."
+        },
+        "listening": {
+          "title": "Client Focus",
+          "desc": "Close and transparent collaboration at every stage, so that your vision becomes reality."
+        },
+        "adaptability": {
+          "title": "Adaptability",
+          "desc": "Ability to adapt to the most specific technical constraints and propose innovative solutions."
+        },
+        "excellence": {
+          "title": "Artisanal Excellence",
+          "desc": "Recognised expertise combining traditional techniques and modern methods for remarkable results."
+        }
+      }
+    },
+    "cta": {
+      "badge": "Let's discuss your project",
+      "title": "Let's turn your vision into reality",
+      "text": "Benefit from personalised support for your interior decoration project. From advice to completion, we put our expertise at your service.",
+      "button": "Request a Quote",
+      "or_call": "or call me"
+    }
+  },
+
+  "about": {
+    "meta": {
+      "title": "About - Alexandre CHALIGNÉ | Ornamental Plasterer since 2006",
+      "description": "Discover the journey of Alexandre CHALIGNÉ, ornamental plasterer and traditional craftsman since 2006."
+    },
+    "hero": {
+      "title": "About Us",
+      "subtitle": "Ornamental plasterer and traditional craftsman since 2006"
+    },
+    "story": {
+      "title": "The Art of Decorative Plasterwork, A Passion and a Craft",
+      "paragraph1": "<strong>Ornamental plasterer and traditional craftsman</strong>, Alexandre Chaligné began his career in <strong>2006 in the Bordeaux region</strong>, where he obtained his <strong>CAP and BP in plastering</strong> and specialised in <strong>decorative plasterwork</strong>, an exceptional technique particularly suited to this region.",
+      "paragraph2": "<strong>Decorative plasterwork</strong> became his passion: this ancestral technique creates ornaments of incomparable finesse. Mouldings, cornices, ceiling roses, columns... each creation testifies to expertise passed down through generations.",
+      "paragraph3": "Since 2006, Alexandre Chaligné has completed prestigious projects: <strong>Bordeaux châteaux</strong> (Canon, Montrose, Pichon Longueville, Du Glana), <strong>historic monuments</strong> (Grand Théâtre de Bordeaux, listed churches) and <strong>projects in Switzerland</strong> (prestigious villas in Geneva).",
+      "paragraph4": "Each project represents a technical and artistic challenge, combining respect for traditional techniques in heritage restoration and exploration of new possibilities for contemporary creations.",
+      "paragraph5": "The company <strong>\"A.Chaligné\"</strong> was created to develop the market for decorative plasterwork and traditional plastering in Eastern France, perpetuating these exceptional techniques that enhance spaces with authenticity.",
+      "quote_text": "\"Everything is possible with decorative plasterwork, there are no limits...\"",
+      "quote_author": "Alexandre Chaligné, Founder",
+      "image_alt": "Alexandre CHALIGNÉ"
+    },
+    "timeline": {
+      "title": "Recognised Expertise",
+      "subtitle": "Years of experience serving exceptional projects",
+      "items": {
+        "beginnings": {
+          "title": "2006 - Beginnings in the Bordeaux Region",
+          "desc": "Alexandre Chaligné began his plastering career in the Bordeaux region. Obtained CAP and BP in plastering. Training in traditional techniques with master craftsmen and learning ancestral skills."
+        },
+        "specialization": {
+          "title": "Specialisation in Decorative Plasterwork - My Core Expertise",
+          "desc": "<strong>Ornamental plasterer</strong>: specialisation in decorative plasterwork, an ancestral technique suited to the Bordeaux region. Mastery of creating ornaments: mouldings, cornices, ceiling roses, columns and capitals."
+        },
+        "prestigious": {
+          "title": "Prestigious Projects in Bordeaux",
+          "desc": "Exceptional project completions: Château Canon, Château Montrose, Château Pichon Longueville, Château Du Glana. Work on historic monuments including the Grand Théâtre de Bordeaux."
+        },
+        "international": {
+          "title": "International Expansion - Geneva",
+          "desc": "Extension of activity internationally with unique projects in Geneva and surrounding areas. Collaborations with prestigious architects, designers and project managers in Switzerland."
+        },
+        "company": {
+          "title": "Creation of A.Chaligné Company",
+          "desc": "Creation of the \"A.Chaligné\" company to develop the market for <strong>decorative plasterwork and traditional plastering</strong> in Eastern France."
+        }
+      }
+    },
+    "values": {
+      "title": "Our Values",
+      "subtitle": "The principles guiding every intervention",
+      "cards": {
+        "detail": {
+          "title": "Attention to Detail",
+          "desc": "Every intervention is treated with meticulous attention to finishes. Nothing is left to chance, because details make all the difference."
+        },
+        "listening": {
+          "title": "Listening & Collaboration",
+          "desc": "A trusting relationship with clients is essential. We place particular importance on listening to your needs."
+        },
+        "mastery": {
+          "title": "Mastery of Decorative Plasterwork",
+          "desc": "Passionate <strong>ornamental plasterer</strong>, Alexandre Chaligné masters this ancestral technique in every detail."
+        },
+        "innovation": {
+          "title": "Innovation & Adaptability",
+          "desc": "While respecting traditional techniques, we integrate innovations and adapt to the specific constraints of each project."
+        }
+      }
+    },
+    "cta": {
+      "badge": "Collaboration",
+      "title": "Let's work together on your project",
+      "text": "With many years of experience and a passion for the craft, Alexandre Chaligné would be delighted to support you in achieving your project.",
+      "button_contact": "Get in Touch",
+      "button_portfolio": "View My Work"
+    }
+  },
+
+  "services": {
+    "meta": {
+      "title": "Services - Alexandre CHALIGNÉ | Ornamental Plasterer & Traditional Craftsmanship",
+      "description": "Ornamental plasterer services: creation of decorative plasterwork, traditional plastering, heritage restoration."
+    },
+    "hero": {
+      "title": "Services",
+      "subtitle": "Bespoke services for exceptional achievements"
+    },
+    "intro": "As a company specialising in <strong>ornamental plastering and traditional craftsmanship</strong>, A.Chaligné works on varied projects that all share a demand for quality and attention to detail.",
+    "staff": {
+      "title": "Decorative Plasterwork & Ornaments",
+      "description": "<strong>Decorative plasterwork</strong> is our speciality: this ancestral technique creates ornaments of exceptional finesse. Mouldings, cornices, ceiling roses, columns and capitals come to life with precision and elegance.",
+      "list": {
+        "item1": "Creation of bespoke decorative plasterwork",
+        "item2": "Decorative mouldings and cornices",
+        "item3": "Ceiling roses and medallions",
+        "item4": "Columns, pilasters and capitals",
+        "item5": "Ornamental ceilings and vaulted ceilings",
+        "item6": "Complex architectural elements",
+        "item7": "Artisanal finishes (stucco, patinas, gilding)"
+      },
+      "highlight_title": "Why choose decorative plasterwork?",
+      "highlight_text": "Decorative plasterwork offers infinite creative freedom: lightweight, strong and mouldable, it creates ornaments impossible to achieve with other materials.",
+      "image_alt": "Decorative plasterwork and ornaments"
+    },
+    "plastering": {
+      "title": "Traditional Plastering",
+      "description": "Mastery of <strong>traditional plastering techniques</strong> passed down through generations. Traditional renders, lime, traditional plaster: authentic expertise.",
+      "list": {
+        "item1": "Traditional ceilings and French-style ceilings",
+        "item2": "Lime renders and traditional finishes",
+        "item3": "Artisanal finishes (floated, smoothed, brushed)",
+        "item4": "Traditional plaster and lime mortar",
+        "item5": "Solid plaster partitions",
+        "item6": "Renovation and creation work"
+      },
+      "highlight_title": "Why choose traditional plastering?",
+      "highlight_text": "Traditional plastering techniques offer incomparable qualities: wall breathability, natural humidity regulation, and authentic aesthetic appearance.",
+      "image_alt": "Traditional plastering"
+    },
+    "restoration": {
+      "title": "Heritage Restoration",
+      "description": "Restoration and conservation of antique ornaments on <strong>historic monuments and prestigious châteaux</strong>. Scrupulous respect for traditional techniques and architectural heritage.",
+      "list": {
+        "item1": "Heritage assessment and existing condition analysis",
+        "item2": "Restoration of decorative plasterwork and antique ornaments",
+        "item3": "Identical reconstruction of original decorations",
+        "item4": "Heritage-respectful restoration techniques",
+        "item5": "Work on listed historic monuments",
+        "item6": "Collaboration with heritage architects",
+        "item7": "Documentation and survey of works"
+      },
+      "highlight_title": "Prestigious Experience",
+      "highlight_text": "With work on exceptional sites (Châteaux Canon, Montrose, Pichon Longueville, Du Glana, Grand Théâtre de Bordeaux), we master the specific requirements of heritage restoration.",
+      "image_alt": "Heritage restoration"
+    },
+    "areas": {
+      "title": "Service Areas",
+      "subtitle": "Services available in France, Switzerland and internationally",
+      "france": {
+        "title": "France",
+        "desc": "Regular work in Eastern France, Île-de-France and throughout the country for major projects."
+      },
+      "switzerland": {
+        "title": "Switzerland",
+        "desc": "Proximity to Switzerland enabling frequent work in Geneva, Lausanne and throughout the Lake Geneva region."
+      },
+      "international": {
+        "title": "International",
+        "desc": "Available for exceptional projects throughout Europe and beyond, on request and depending on project nature."
+      }
+    },
+    "cta": {
+      "badge": "Personalised Quote",
+      "title": "Let's bring your project to life together",
+      "text": "Every project is unique. Let's discuss your needs to offer you a bespoke solution adapted to your expectations and budget.",
+      "button_quote": "Get a Quote",
+      "button_portfolio": "View Our Work"
+    }
+  },
+
+  "portfolio": {
+    "meta": {
+      "title": "Portfolio - Alexandre CHALIGNÉ | Exceptional Plastering Projects",
+      "description": "Discover my work in decorative plastering: ornamental ceilings, heritage renovations and bespoke projects."
+    },
+    "hero": {
+      "title": "Portfolio",
+      "subtitle": "Completed projects and ongoing work showcasing my expertise"
+    },
+    "projects": {
+      "villa": {
+        "title": "Private Villa",
+        "location": "Vandœuvres, Switzerland",
+        "category": "Bespoke Creation • 2022",
+        "description": "When decorative plasterwork becomes the centrepiece of a luxurious villa with this unique balustrade. Creation of a monumental staircase with sculpted plaster balustrade."
+      },
+      "glana": {
+        "title": "Château du Glana",
+        "location": "Saint-Julien-Beychevelle, France",
+        "category": "Insulation & Design • 2015",
+        "description": "Modern thermal performance concealed behind historic design. Complete renovation of the chai with high-performance thermal insulation integrated into plaster vaults."
+      }
+    },
+    "testimonials": {
+      "title": "What My Clients Say",
+      "subtitle": "Client satisfaction at the heart of my work",
+      "testimonial1": {
+        "text": "\"The sculpted plaster balustrade of our staircase is a true work of art. Alexandre transformed a functional element into the centrepiece of our villa.\"",
+        "author": "Pierre and Catherine Laurent",
+        "position": "Owners - Vandœuvres"
+      },
+      "testimonial2": {
+        "text": "\"For Château du Glana, we needed to combine modern thermal performance with historic aesthetics. Alexandre rose to this challenge brilliantly.\"",
+        "author": "François Delon",
+        "position": "Project Manager - Château du Glana"
+      }
+    },
+    "cta": {
+      "badge": "Your Next Project",
+      "title": "Create Your Exceptional Space",
+      "text": "You've seen my work, now imagine what I could create for your space. Every project is a new opportunity for excellence.",
+      "btn_primary": "Start a Project",
+      "btn_secondary": "Discover My Services"
+    }
+  },
+
+  "contact": {
+    "meta": {
+      "title": "Contact - Alexandre CHALIGNÉ | Request a Plastering Quote",
+      "description": "Contact Alexandre CHALIGNÉ for your decorative plastering projects. Free quote for ornamental ceiling creation and heritage restoration."
+    },
+    "hero": {
+      "title_line1": "Let's Bring",
+      "title_line2": "Your Ideas to Life",
+      "description": "Every project is unique. Together, let's create something exceptional.",
+      "scroll": "Scroll"
+    },
+    "form": {
+      "title": "Request a Quote",
+      "subtitle": "Fill in this form and receive a personalised response within 24 hours",
+      "name_label": "Full Name",
+      "phone_label": "Phone",
+      "email_label": "Email",
+      "project_type_label": "Project Type",
+      "project_type_select": "Select a type",
+      "project_type_creation": "Bespoke Creation",
+      "project_type_renovation": "Renovation / Restoration",
+      "project_type_ceiling": "Decorative Ceiling",
+      "project_type_moulding": "Mouldings and Cornices",
+      "project_type_other": "Other Project",
+      "message_label": "Describe Your Project",
+      "consent_text": "I agree to my data being used to contact me regarding my request",
+      "submit_btn": "Send My Request",
+      "required_notice": "All fields marked with an asterisk (*) are required"
+    },
+    "sidebar": {
+      "direct_title": "Direct Contact",
+      "direct_description": "Need an immediate response? Contact us directly",
+      "phone_label": "Phone",
+      "hours": "Mon - Fri: 8am - 6pm",
+      "email_label": "Email",
+      "response_time": "Response within 24h",
+      "zones_title": "Service Areas",
+      "zone1": "Eastern France & Île-de-France",
+      "zone2": "Switzerland (Geneva, Lausanne)",
+      "zone3": "All of France",
+      "zone4": "International (on request)",
+      "office_location": "Offices in Ville-la-Grand and Geneva",
+      "trust_title": "Our Commitments",
+      "trust1": "Free quote with no obligation",
+      "trust2": "Professional insurance",
+      "trust3": "10-year guarantee",
+      "trust4": "18+ years of experience"
+    },
+    "partnership": {
+      "badge": "Professional Partners",
+      "title": "Become a Partner",
+      "description": "Architects, interior designers, construction companies: let's collaborate on your exceptional projects",
+      "company_label": "Company Name",
+      "contact_label": "Contact Name",
+      "email_label": "Professional Email",
+      "phone_label": "Phone",
+      "business_type_label": "Business Type",
+      "business_type_select": "Select your business type",
+      "business_type_architect": "Architectural Firm",
+      "business_type_decorator": "Interior Designer / Decorator",
+      "business_type_construction": "General Construction Company",
+      "business_type_project_manager": "Project Manager",
+      "business_type_developer": "Property Developer",
+      "business_type_heritage": "Heritage Architect",
+      "business_type_other": "Other Professional",
+      "collab_type_label": "Desired Collaboration Type",
+      "collab_subcontracting": "One-off Subcontracting",
+      "collab_partnership": "Long-term Partnership",
+      "collab_prescription": "Referral / Recommendation",
+      "message_label": "Describe Your Needs",
+      "submit_btn": "Send Partnership Request",
+      "benefits_title": "Why Partner With Us?",
+      "benefit1_title": "Recognised Expertise",
+      "benefit1_text": "18+ years of experience in decorative plastering and heritage restoration",
+      "benefit2_title": "Preferential Rates",
+      "benefit2_text": "Adapted commercial terms for professionals and regular partners",
+      "benefit3_title": "Guaranteed Responsiveness",
+      "benefit3_text": "Quote within 48h and scheduling adapted to your site constraints",
+      "benefit4_title": "Extended Coverage",
+      "benefit4_text": "Work throughout France and Switzerland (Geneva, Lausanne)",
+      "benefit5_title": "Full Insurance",
+      "benefit5_text": "10-year guarantee, professional liability and all professional insurances",
+      "prefer_call": "Prefer to speak directly?"
+    },
+    "faq": {
+      "badge": "Frequently Asked Questions",
+      "title": "Have Questions?",
+      "description": "Find quick answers to the most common questions",
+      "q1_question": "How long does it take to receive a quote?",
+      "q1_answer": "We commit to responding within 24 to 48 hours of receiving your request. The detailed quote will be sent after a site visit.",
+      "q2_question": "Do you work on projects in Switzerland?",
+      "q2_answer": "Yes, being based in Ville-la-Grand near the Swiss border, we regularly work in Switzerland, particularly in the Lake Geneva region.",
+      "q3_question": "Do you offer guarantees on your work?",
+      "q3_answer": "All our work is covered by legal guarantees (10-year guarantee, completion guarantee). We have all the professional insurance necessary.",
+      "q4_question": "Do you work on listed buildings?",
+      "q4_answer": "Yes, Alexandre Chaligné is trained in heritage restoration techniques and is accustomed to working on listed historic buildings.",
+      "q5_question": "What are your lead times?",
+      "q5_answer": "Lead times vary depending on the nature and scale of the project. For standard work, allow generally 2 to 6 weeks after quote approval.",
+      "q6_question": "Is there a minimum budget required?",
+      "q6_answer": "As each project is unique, there is no fixed minimum budget. However, given the high-end nature of our services, projects generally start from €5,000."
+    }
+  },
+
+  "project_villa": {
+    "meta": {
+      "title": "Private Villa Vandœuvres - Alexandre CHALIGNÉ",
+      "description": "Staircase renovation in a private villa in Vandœuvres"
+    },
+    "hero": {
+      "back_button": "Back to Portfolio",
+      "breadcrumb_current": "Villa Vandœuvres",
+      "badge": "Prestigious Residential",
+      "title": "Private Villa in Vandœuvres",
+      "subtitle": "Monumental staircase renovation with creation of mouldings and exceptional finishes",
+      "image_alt": "Private Villa Vandœuvres"
+    },
+    "overview": {
+      "type_label": "Type",
+      "type_value": "Private Residential",
+      "year_label": "Year",
+      "location_label": "Location",
+      "location_value": "Vandœuvres, Switzerland",
+      "duration_label": "Duration",
+      "duration_value": "4 months"
+    },
+    "intro": {
+      "title": "The Project",
+      "lead": "The renovation of this prestigious villa in Vandœuvres required delicate work on the monumental staircases.",
+      "description": "The challenge was to create an exceptional balustrade that would become the sculptural centrepiece of this residence."
+    },
+    "challenge": {
+      "title": "The Challenge",
+      "description": "Renovating a monumental staircase in a historic villa while preserving its authenticity."
+    },
+    "solution": {
+      "title": "The Solution",
+      "description": "Meticulous phasing of works allowing continued occupancy. Creation of a sculpted plaster balustrade that becomes the true centrepiece of the villa."
+    },
+    "features": {
+      "title": "Project Highlights",
+      "subtitle": "Excellence serving heritage",
+      "feature1_title": "Decorative Mouldings",
+      "feature1_description": "Design and fabrication of ornamental mouldings inspired by classical heritage",
+      "feature2_title": "Bespoke Plasterwork",
+      "feature2_description": "Personalised architectural elements perfectly integrated with existing architecture",
+      "feature3_title": "Ornamental Ceilings",
+      "feature3_description": "Creation of ceiling decorations with ceiling roses and cornices in the traditional manner",
+      "feature4_title": "Heritage Restoration",
+      "feature4_description": "Respect for traditional techniques and original materials"
+    },
+    "process": {
+      "title": "Execution Process",
+      "subtitle": "A proven methodology",
+      "step1_title": "Assessment & Surveys",
+      "step1_description": "In-depth study of existing conditions, precise surveys and analysis of original materials",
+      "step2_title": "Design",
+      "step2_description": "Drawing of mouldings and decorative elements in harmony with the architectural style",
+      "step3_title": "Fabrication",
+      "step3_description": "Workshop production of plaster elements using traditional artisanal techniques",
+      "step4_title": "Installation & Finishes",
+      "step4_description": "Meticulous on-site installation and painted finishes for an impeccable result"
+    },
+    "gallery": {
+      "title": "Project Gallery",
+      "subtitle": "The result in images"
+    },
+    "results": {
+      "quote_text": "The result exceeds our expectations. The staircase has regained all its original splendour while gaining in elegance.",
+      "quote_author": "Owner Family",
+      "quote_position": "Villa in Vandœuvres",
+      "stat1_label": "linear metres of mouldings",
+      "stat2_label": "months of work",
+      "stat3_label": "client satisfaction"
+    },
+    "navigation": {
+      "title": "Discover Our Other Projects",
+      "prev_label": "Previous Project",
+      "prev_title": "Château du Glana",
+      "prev_description": "Heritage restoration combining thermal insulation and historic restoration",
+      "all_projects": "View All Projects"
+    },
+    "cta": {
+      "title": "Have a similar project?",
+      "description": "Let's discuss your needs and turn your vision into reality.",
+      "btn_contact": "Get in Touch"
+    }
+  },
+
+  "project_glana": {
+    "meta": {
+      "title": "Château du Glana - Alexandre CHALIGNÉ",
+      "description": "Insulation and design of Château du Glana"
+    },
+    "hero": {
+      "back_button": "Back to Portfolio",
+      "breadcrumb_current": "Château du Glana",
+      "badge": "Historic Monument",
+      "title": "Château du Glana",
+      "subtitle": "Heritage restoration combining thermal insulation and restoration of historic decorations",
+      "image_alt": "Château du Glana"
+    },
+    "overview": {
+      "type_label": "Type",
+      "type_value": "Historic Monument",
+      "year_label": "Year",
+      "location_label": "Location",
+      "location_value": "Bordeaux",
+      "surface_label": "Surface Area",
+      "surface_value": "450 m²"
+    },
+    "intro": {
+      "title": "The Project",
+      "lead": "Château du Glana, a prestigious Médoc wine estate, underwent delicate work combining modern energy performance with preservation of architectural heritage.",
+      "description": "The work focused on complete restoration of the ornamental ceilings in the reception rooms, while integrating high-performance thermal insulation."
+    },
+    "challenge": {
+      "title": "The Challenge",
+      "description": "Renovating a listed historic monument while respecting strict heritage standards, whilst significantly improving the building's energy performance."
+    },
+    "solution": {
+      "title": "The Solution",
+      "description": "An innovative approach combining interior insulation with breathable materials and identical reproduction of decorative elements. We created a complete metal framework on which we fixed 'nerfgalto' lathing."
+    },
+    "features": {
+      "title": "Project Highlights",
+      "subtitle": "When heritage and modernity combine",
+      "feature1_title": "Thermal Insulation",
+      "feature1_description": "Integration of high-performance insulation while preserving interior volumes",
+      "feature2_title": "Ornamental Plasterwork",
+      "feature2_description": "Faithful reproduction of historic decorations using traditional techniques",
+      "feature3_title": "Heritage Restoration",
+      "feature3_description": "Respect for heritage authority constraints and enhancement of listed architectural heritage",
+      "feature4_title": "Historic Mouldings",
+      "feature4_description": "Reconstruction of ceiling roses, cornices and 18th-century ornamental details"
+    },
+    "process": {
+      "title": "Execution Process",
+      "subtitle": "A rigorous and respectful approach",
+      "step1_title": "Heritage Assessment",
+      "step1_description": "In-depth historical study, photogrammetric surveys and heritage authority approval of interventions",
+      "step2_title": "Mould Creation",
+      "step2_description": "Production of moulds from preserved original elements for faithful reproduction",
+      "step3_title": "Insulation & Structure",
+      "step3_description": "Installation of thermal insulation and preparation of supports for decorations",
+      "step4_title": "Installation & Restoration",
+      "step4_description": "Installation of plasterwork elements and finishes according to period techniques"
+    },
+    "gallery": {
+      "title": "Project Gallery",
+      "subtitle": "The rebirth of exceptional heritage"
+    },
+    "results": {
+      "quote_text": "An exemplary intervention demonstrating that heritage preservation and energy improvement can be reconciled.",
+      "quote_author": "Heritage Architect",
+      "quote_position": "DRAC Nouvelle-Aquitaine",
+      "stat1_label": "m² restored",
+      "stat2_label": "energy savings",
+      "stat3_label": "century preserved"
+    },
+    "navigation": {
+      "title": "Discover Our Other Projects",
+      "next_label": "Next Project",
+      "next_title": "Private Villa in Vandœuvres",
+      "next_description": "Monumental staircase renovation with exceptional moulding creation",
+      "all_projects": "View All Projects"
+    },
+    "cta": {
+      "title": "Have a similar project?",
+      "description": "Let's discuss your needs and turn your vision into reality.",
+      "btn_contact": "Get in Touch"
+    }
+  },
+
+  "legal": {
+    "meta": {
+      "title": "Legal Notice - Alexandre CHALIGNÉ | Ornamental Plasterer",
+      "description": "Legal notice for the Alexandre CHALIGNÉ website - Ornamental plasterer and traditional craftsman."
+    },
+    "hero": {
+      "title": "Legal Notice",
+      "subtitle": "Legal information in accordance with French law"
+    },
+    "intro": "In accordance with the provisions of Articles 6-III and 19 of the French Law for Confidence in the Digital Economy (LCEN), the following information is provided to users of this website:",
+    "editor": {
+      "title": "Website Publisher",
+      "content": "<strong>Website Name:</strong> Alexandre Chaligné | <strong>Activity:</strong> Plastering Works – Artisan"
+    },
+    "owner": {
+      "title": "Website Owner",
+      "content1": "<strong>CHALIGNÉ Alexandre</strong> – Sole Proprietor | BAT H APT 302, 14 impasse des Moulins Gaud, 74100 Ville-la-Grand – France",
+      "content2": "<strong>SIREN:</strong> 804 174 043 | <strong>SIRET:</strong> 804 174 043 00039 | <strong>VAT:</strong> FR27 804174043 | <strong>APE:</strong> 43.31Z"
+    },
+    "contact": {
+      "title": "Contact",
+      "email": "<strong>Email:</strong>",
+      "phone_france": "<strong>Phone (France):</strong>",
+      "phone_switzerland": "<strong>Phone (Switzerland):</strong>"
+    },
+    "hosting": {
+      "title": "Hosting",
+      "content": "<strong>Vercel Inc.</strong> – 340 S Lemon Ave #4133, Walnut, CA 91789, USA"
+    },
+    "terms": {
+      "title": "Terms of Use",
+      "content": "Use of this website implies full acceptance of these terms. These terms may be modified at any time without notice."
+    },
+    "information": {
+      "title": "Information Provided",
+      "content": "The information on this website is provided for informational purposes only. CHALIGNÉ Alexandre cannot be held responsible for errors, omissions or temporary unavailability of the website."
+    },
+    "intellectual_property": {
+      "title": "Intellectual Property",
+      "content": "All elements of this website (text, images, logos, graphics, etc.) are protected by intellectual property law. Any reproduction is prohibited without prior written authorisation."
+    },
+    "links": {
+      "title": "Hyperlinks",
+      "content": "This website may contain links to third-party websites. CHALIGNÉ Alexandre is not responsible for the content of these external websites."
+    },
+    "personal_data": {
+      "title": "Personal Data",
+      "content": "Personal data processing procedures are detailed on the"
+    }
+  },
+
+  "privacy": {
+    "meta": {
+      "title": "Privacy Policy - Alexandre CHALIGNÉ | Ornamental Plasterer",
+      "description": "Privacy policy for the Alexandre CHALIGNÉ website - Protection of your personal data in accordance with GDPR."
+    },
+    "hero": {
+      "title": "Privacy Policy",
+      "subtitle": "Protection of your personal data"
+    },
+    "last_update": "<strong>Last updated:</strong> 15 December 2025",
+    "controller": {
+      "title": "Data Controller",
+      "content": "<strong>CHALIGNÉ Alexandre</strong> – Sole Proprietor | 14 impasse des Moulins Gaud, 74100 Ville-la-Grand – France"
+    },
+    "auto_data": {
+      "title": "Automatically Collected Data",
+      "content": "IP address, browser type, pages visited, technical security data. This data is used for statistical and security purposes only."
+    },
+    "voluntary_data": {
+      "title": "Voluntarily Provided Data",
+      "content": "Via contact/quote forms: name, surname, email, telephone, message content. Please do not transmit sensitive or medical information."
+    },
+    "purposes": {
+      "title": "Processing Purposes",
+      "content": "Responding to contact/quote requests, managing client relationships, ensuring the proper functioning of the website. <strong>Legal bases:</strong> legitimate interest, pre-contractual measures."
+    },
+    "cookies": {
+      "title": "Cookies",
+      "content": "Technical cookies necessary for operation + audience measurement cookies (subject to consent). Configurable via your browser settings."
+    },
+    "recipients": {
+      "title": "Data Recipients",
+      "content": "Exclusively CHALIGNÉ Alexandre + technical host (Vercel Inc.). <strong>No data is sold or transferred to third parties.</strong>"
+    },
+    "hosting": {
+      "title": "Hosting & Transfers Outside EU",
+      "content": "<strong>Vercel Inc.</strong> – Walnut, CA 91789, USA. Transfers outside the EU governed by standard contractual clauses in accordance with GDPR."
+    },
+    "retention": {
+      "title": "Retention Period",
+      "content": "<strong>Contact/quote:</strong> duration of processing + limited archiving | <strong>Technical data:</strong> limited duration related to security and statistics."
+    },
+    "security": {
+      "title": "Security",
+      "content": "Technical and organisational measures implemented to protect your data against loss, unauthorised access, alteration or disclosure."
+    },
+    "rights": {
+      "title": "Your Rights (GDPR)",
+      "content": "<strong>Rights:</strong> access, rectification, erasure, restriction of processing, objection. Contact:"
+    },
+    "external_links": {
+      "title": "External Links",
+      "content": "This website may contain links to third-party websites. CHALIGNÉ Alexandre is not responsible for the content or privacy practices of these websites."
+    }
+  }
+}

@@ -7,31 +7,63 @@
     <title>Politique de confidentialité - Alexandre CHALIGNÉ | Staffeur Ornemaniste</title>
     <link rel="stylesheet" href="/assets/css/main.css">
     <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
+
+    <!-- Hreflang tags for SEO -->
+    <link rel="alternate" hreflang="fr" href="https://www.alexandrechaligne.com/pages/politique-confidentialite.html">
+    <link rel="alternate" hreflang="en" href="https://www.alexandrechaligne.com/en/pages/politique-confidentialite.html">
+    <link rel="alternate" hreflang="x-default" href="https://www.alexandrechaligne.com/pages/politique-confidentialite.html">
+
+    <!-- Anti-FOUC: Hide content until i18n is ready -->
+    <style>
+        html:not(.i18n-ready) [data-i18n],
+        html:not(.i18n-ready) [data-i18n-placeholder],
+        html:not(.i18n-ready) [data-i18n-alt] {
+            opacity: 0;
+        }
+        html.i18n-ready [data-i18n],
+        html.i18n-ready [data-i18n-placeholder],
+        html.i18n-ready [data-i18n-alt] {
+            opacity: 1;
+            transition: opacity 0.15s ease-in-out;
+        }
+    </style>
+
+    <!-- Early language detection (before DOM ready) -->
+    <script>
+        (function() {
+            var lang = window.location.pathname.startsWith('/en') ? 'en' : 'fr';
+            document.documentElement.lang = lang;
+            document.documentElement.dataset.lang = lang;
+        })();
+    </script>
+
+    <!-- Preload critical resources -->
+    <link rel="preload" href="/locales/fr.json" as="fetch" crossorigin>
 </head>
 <body>
     <!-- Skip to main content link for keyboard navigation -->
-    <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+    <a href="#main-content" class="skip-link" data-i18n="common.skip_to_content">Aller au contenu principal</a>
 
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="container">
             <div class="nav-wrapper">
                 <a href="/" class="logo">
-                    <img src="/assets/images/logo-new.png" alt="Alexandre CHALIGNÉ - Entreprise au Service de l'Exception" class="logo-image" width="280" height="178" fetchpriority="high">
+                    <img src="/assets/images/logo-new.png" data-i18n-alt="common.logo_alt" alt="Alexandre CHALIGNÉ - Entreprise au Service de l'Exception" class="logo-image" width="280" height="178" fetchpriority="high">
                 </a>
 
-                <button class="mobile-menu-toggle" aria-label="Toggle menu" id="mobileMenuToggle">
+                <button class="mobile-menu-toggle" data-i18n-aria-label="common.toggle_menu" aria-label="Toggle menu" id="mobileMenuToggle">
                     <span></span>
                     <span></span>
                     <span></span>
                 </button>
 
                 <ul class="nav-menu" id="navMenu">
-                    <li><a href="/" class="nav-link">Accueil</a></li>
-                    <li><a href="/pages/about.html" class="nav-link">À Propos</a></li>
-                    <li><a href="/pages/services.html" class="nav-link">Services</a></li>
-                    <li><a href="/pages/portfolio.html" class="nav-link">Réalisations</a></li>
-                    <li><a href="/pages/contact.html" class="nav-link">Contact</a></li>
+                    <li><a href="/" class="nav-link" data-i18n="common.nav.home">Accueil</a></li>
+                    <li><a href="/pages/about.html" class="nav-link" data-i18n="common.nav.about">À Propos</a></li>
+                    <li><a href="/pages/services.html" class="nav-link" data-i18n="common.nav.services">Services</a></li>
+                    <li><a href="/pages/portfolio.html" class="nav-link" data-i18n="common.nav.portfolio">Réalisations</a></li>
+                    <li><a href="/pages/contact.html" class="nav-link" data-i18n="common.nav.contact">Contact</a></li>
                     <li class="language-switcher">
                         <button class="lang-btn active" data-lang="fr">FR</button>
                         <span class="lang-separator">/</span>
@@ -47,8 +79,8 @@
     <section class="legal-hero">
         <div class="container">
             <div class="legal-hero-content">
-                <h1 class="legal-hero-title">Politique de confidentialité</h1>
-                <p class="legal-hero-subtitle">Protection de vos données personnelles</p>
+                <h1 class="legal-hero-title" data-i18n="privacy.hero.title">Politique de confidentialité</h1>
+                <p class="legal-hero-subtitle" data-i18n="privacy.hero.subtitle">Protection de vos données personnelles</p>
             </div>
         </div>
     </section>
@@ -57,83 +89,83 @@
     <section class="legal-content-section">
         <div class="container-narrow">
             <div class="legal-intro">
-                <p><strong>Dernière mise à jour :</strong> 15 décembre 2025</p>
+                <p data-i18n="privacy.last_update" data-i18n-html="true"><strong>Dernière mise à jour :</strong> 15 décembre 2025</p>
             </div>
 
             <article class="legal-block">
-                <h2>Responsable du traitement</h2>
+                <h2 data-i18n="privacy.controller.title">Responsable du traitement</h2>
                 <div class="legal-card">
-                    <p><strong>CHALIGNÉ Alexandre</strong> – Entrepreneur individuel | 14 impasse des Moulins Gaud, 74100 Ville-la-Grand – France | <a href="mailto:alexandre.chaligne@gmail.com">alexandre.chaligne@gmail.com</a></p>
+                    <p data-i18n="privacy.controller.content" data-i18n-html="true"><strong>CHALIGNÉ Alexandre</strong> – Entrepreneur individuel | 14 impasse des Moulins Gaud, 74100 Ville-la-Grand – France | <a href="mailto:alexandre.chaligne@gmail.com">alexandre.chaligne@gmail.com</a></p>
                 </div>
             </article>
 
             <article class="legal-block">
-                <h2>Données collectées automatiquement</h2>
+                <h2 data-i18n="privacy.auto_data.title">Données collectées automatiquement</h2>
                 <div class="legal-card">
-                    <p>Adresse IP, type de navigateur, pages consultées, données techniques de sécurité. Ces données sont utilisées à des fins statistiques et de sécurité uniquement.</p>
+                    <p data-i18n="privacy.auto_data.content">Adresse IP, type de navigateur, pages consultées, données techniques de sécurité. Ces données sont utilisées à des fins statistiques et de sécurité uniquement.</p>
                 </div>
             </article>
 
             <article class="legal-block">
-                <h2>Données fournies volontairement</h2>
+                <h2 data-i18n="privacy.voluntary_data.title">Données fournies volontairement</h2>
                 <div class="legal-card">
-                    <p>Via formulaires de contact/devis : nom, prénom, email, téléphone, contenu du message. Merci de ne pas transmettre d'informations sensibles ou médicales.</p>
+                    <p data-i18n="privacy.voluntary_data.content">Via formulaires de contact/devis : nom, prénom, email, téléphone, contenu du message. Merci de ne pas transmettre d'informations sensibles ou médicales.</p>
                 </div>
             </article>
 
             <article class="legal-block">
-                <h2>Finalités du traitement</h2>
+                <h2 data-i18n="privacy.purposes.title">Finalités du traitement</h2>
                 <div class="legal-card">
-                    <p>Répondre aux demandes de contact/devis, assurer la relation client, garantir le bon fonctionnement du site. <strong>Bases légales :</strong> intérêt légitime, mesures précontractuelles.</p>
+                    <p data-i18n="privacy.purposes.content" data-i18n-html="true">Répondre aux demandes de contact/devis, assurer la relation client, garantir le bon fonctionnement du site. <strong>Bases légales :</strong> intérêt légitime, mesures précontractuelles.</p>
                 </div>
             </article>
 
             <article class="legal-block">
-                <h2>Cookies</h2>
+                <h2 data-i18n="privacy.cookies.title">Cookies</h2>
                 <div class="legal-card">
-                    <p>Cookies techniques nécessaires au fonctionnement + cookies de mesure d'audience (soumis à consentement). Configurables via les paramètres de votre navigateur.</p>
+                    <p data-i18n="privacy.cookies.content">Cookies techniques nécessaires au fonctionnement + cookies de mesure d'audience (soumis à consentement). Configurables via les paramètres de votre navigateur.</p>
                 </div>
             </article>
 
             <article class="legal-block">
-                <h2>Destinataires des données</h2>
+                <h2 data-i18n="privacy.recipients.title">Destinataires des données</h2>
                 <div class="legal-card">
-                    <p>Exclusivement CHALIGNÉ Alexandre + hébergeur technique (Vercel Inc.). <strong>Aucune donnée n'est vendue ou cédée à des tiers.</strong></p>
+                    <p data-i18n="privacy.recipients.content" data-i18n-html="true">Exclusivement CHALIGNÉ Alexandre + hébergeur technique (Vercel Inc.). <strong>Aucune donnée n'est vendue ou cédée à des tiers.</strong></p>
                 </div>
             </article>
 
             <article class="legal-block">
-                <h2>Hébergement & Transferts hors UE</h2>
+                <h2 data-i18n="privacy.hosting.title">Hébergement & Transferts hors UE</h2>
                 <div class="legal-card">
-                    <p><strong>Vercel Inc.</strong> – Walnut, CA 91789, USA. Transferts hors UE encadrés par clauses contractuelles types conformément au RGPD.</p>
+                    <p data-i18n="privacy.hosting.content" data-i18n-html="true"><strong>Vercel Inc.</strong> – Walnut, CA 91789, USA. Transferts hors UE encadrés par clauses contractuelles types conformément au RGPD.</p>
                 </div>
             </article>
 
             <article class="legal-block">
-                <h2>Durée de conservation</h2>
+                <h2 data-i18n="privacy.retention.title">Durée de conservation</h2>
                 <div class="legal-card">
-                    <p><strong>Contact/devis :</strong> durée du traitement + archivage limité | <strong>Données techniques :</strong> durée limitée liée à la sécurité et aux statistiques.</p>
+                    <p data-i18n="privacy.retention.content" data-i18n-html="true"><strong>Contact/devis :</strong> durée du traitement + archivage limité | <strong>Données techniques :</strong> durée limitée liée à la sécurité et aux statistiques.</p>
                 </div>
             </article>
 
             <article class="legal-block">
-                <h2>Sécurité</h2>
+                <h2 data-i18n="privacy.security.title">Sécurité</h2>
                 <div class="legal-card">
-                    <p>Mesures techniques et organisationnelles mises en œuvre pour protéger vos données contre perte, accès non autorisé, altération ou divulgation.</p>
+                    <p data-i18n="privacy.security.content">Mesures techniques et organisationnelles mises en œuvre pour protéger vos données contre perte, accès non autorisé, altération ou divulgation.</p>
                 </div>
             </article>
 
             <article class="legal-block">
-                <h2>Vos droits (RGPD)</h2>
+                <h2 data-i18n="privacy.rights.title">Vos droits (RGPD)</h2>
                 <div class="legal-card">
-                    <p><strong>Droits :</strong> accès, rectification, effacement, limitation du traitement, opposition. Contact : <a href="mailto:alexandre.chaligne@gmail.com">alexandre.chaligne@gmail.com</a> | Réclamation : <a href="https://www.cnil.fr" target="_blank" rel="noopener noreferrer">CNIL</a></p>
+                    <p data-i18n="privacy.rights.content" data-i18n-html="true"><strong>Droits :</strong> accès, rectification, effacement, limitation du traitement, opposition. Contact : <a href="mailto:alexandre.chaligne@gmail.com">alexandre.chaligne@gmail.com</a> | Réclamation : <a href="https://www.cnil.fr" target="_blank" rel="noopener noreferrer">CNIL</a></p>
                 </div>
             </article>
 
             <article class="legal-block">
-                <h2>Liens externes</h2>
+                <h2 data-i18n="privacy.external_links.title">Liens externes</h2>
                 <div class="legal-card">
-                    <p>Le site peut contenir des liens vers des sites tiers. CHALIGNÉ Alexandre n'est pas responsable du contenu ni des pratiques de confidentialité de ces sites.</p>
+                    <p data-i18n="privacy.external_links.content">Le site peut contenir des liens vers des sites tiers. CHALIGNÉ Alexandre n'est pas responsable du contenu ni des pratiques de confidentialité de ces sites.</p>
                 </div>
             </article>
         </div>
@@ -146,36 +178,36 @@
             <div class="footer-grid">
                 <div class="footer-col">
                     <div class="footer-logo">
-                        <img src="/assets/images/logo-new.png" alt="Alexandre CHALIGNÉ - Entreprise au Service de l'Exception" class="footer-logo-image" width="240" height="152">
+                        <img src="/assets/images/logo-new.png" data-i18n-alt="common.logo_alt" alt="Alexandre CHALIGNÉ - Entreprise au Service de l'Exception" class="footer-logo-image" width="240" height="152">
                     </div>
-                    <p class="footer-description">
+                    <p class="footer-description" data-i18n="common.footer.description" data-i18n-html="true">
                         <span style="white-space: nowrap;">Entreprise au service de la restauration</span><br>
                         <span style="white-space: nowrap;">et de la création sur mesure.</span>
                     </p>
                 </div>
 
                 <div class="footer-col">
-                    <h4 class="footer-title">Navigation</h4>
+                    <h4 class="footer-title" data-i18n="common.footer.nav_title">Navigation</h4>
                     <ul class="footer-links">
-                        <li><a href="/">Accueil</a></li>
-                        <li><a href="/pages/about.html">À Propos</a></li>
-                        <li><a href="/pages/services.html">Services</a></li>
-                        <li><a href="/pages/portfolio.html">Réalisations</a></li>
-                        <li><a href="/pages/contact.html">Contact</a></li>
+                        <li><a href="/" data-i18n="common.nav.home">Accueil</a></li>
+                        <li><a href="/pages/about.html" data-i18n="common.nav.about">À Propos</a></li>
+                        <li><a href="/pages/services.html" data-i18n="common.nav.services">Services</a></li>
+                        <li><a href="/pages/portfolio.html" data-i18n="common.nav.portfolio">Réalisations</a></li>
+                        <li><a href="/pages/contact.html" data-i18n="common.nav.contact">Contact</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-col">
-                    <h4 class="footer-title">Services</h4>
+                    <h4 class="footer-title" data-i18n="common.footer.services_title">Services</h4>
                     <ul class="footer-links">
-                        <li><a href="/pages/services.html#staff-ornements">Staff & Ornements</a></li>
-                        <li><a href="/pages/services.html#platrerie-traditionnelle">Plâtrerie Traditionnelle</a></li>
-                        <li><a href="/pages/services.html#renovation">Restauration du Patrimoine</a></li>
+                        <li><a href="/pages/services.html#plafonds-decoratifs" data-i18n="common.footer.service_ceilings">Plafonds Décoratifs</a></li>
+                        <li><a href="/pages/services.html#renovation" data-i18n="common.footer.service_restoration">Restauration du Patrimoine, Monuments et Sites</a></li>
+                        <li><a href="/pages/services.html#sur-mesure" data-i18n="common.footer.service_custom">Projets Sur-Mesure</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-col">
-                    <h4 class="footer-title">Contact</h4>
+                    <h4 class="footer-title" data-i18n="common.footer.contact_title">Contact</h4>
                     <ul class="footer-contact">
                         <li>
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -194,23 +226,23 @@
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
                             </svg>
-                            <a href="https://www.linkedin.com/in/alexandre-chalign%C3%A9-492a6b10b/" target="_blank" rel="noopener noreferrer">Suivez-moi sur LinkedIn</a>
+                            <a href="https://www.linkedin.com/in/alexandre-chalign%C3%A9-492a6b10b/" target="_blank" rel="noopener noreferrer" data-i18n="common.footer.follow_linkedin">Suivez-moi sur LinkedIn</a>
                         </li>
                     </ul>
                 </div>
             </div>
 
             <div class="footer-bottom">
-                <p class="footer-copyright">
-                    &copy; 2025 Alexandre CHALIGNÉ. Tous droits réservés.
+                <p class="footer-copyright" data-i18n="common.footer.copyright" data-i18n-html="true">
+                    &copy; <span id="currentYear">2026</span> Alexandre CHALIGNÉ. Tous droits réservés.
                 </p>
-                <p class="footer-signature">
-                    Fait avec passion par <a href="https://www.propulseo-site.com/" target="_blank" rel="noopener noreferrer" class="signature-link">Propul'SEO</a>
+                <p class="footer-signature" data-i18n="common.footer.signature" data-i18n-html="true">
+                    Fait avec Passion par <a href="https://www.propulseo-site.com/" target="_blank" rel="noopener noreferrer" class="signature-link">Propul'SEO</a>
                 </p>
                 <div class="footer-legal">
-                    <a href="/pages/mentions-legales.html">Mentions légales</a>
+                    <a href="/pages/mentions-legales.html" data-i18n="common.footer.legal">Mentions légales</a>
                     <span class="separator">•</span>
-                    <a href="/pages/politique-confidentialite.html">Politique de confidentialité</a>
+                    <a href="/pages/politique-confidentialite.html" data-i18n="common.footer.privacy">Politique de confidentialité</a>
                 </div>
             </div>
         </div>
@@ -231,19 +263,19 @@
                     </svg>
                 </div>
                 <div class="cookie-text">
-                    <h3 id="cookieTitle" class="cookie-title">Votre expérience, notre priorité</h3>
-                    <p id="cookieDesc" class="cookie-description">
+                    <h3 id="cookieTitle" class="cookie-title" data-i18n="common.cookies.title">Votre expérience, notre priorité</h3>
+                    <p id="cookieDesc" class="cookie-description" data-i18n="common.cookies.description" data-i18n-html="true">
                         Nous utilisons des cookies pour améliorer votre navigation et analyser notre trafic.
                         En poursuivant, vous acceptez notre <a href="/pages/politique-confidentialite.html" class="cookie-link">politique de confidentialité</a>.
                     </p>
                 </div>
             </div>
             <div class="cookie-actions">
-                <button class="cookie-btn cookie-btn-secondary" id="cookieDecline">
+                <button class="cookie-btn cookie-btn-secondary" id="cookieDecline" data-i18n="common.cookies.decline">
                     Refuser
                 </button>
                 <button class="cookie-btn cookie-btn-primary" id="cookieAccept">
-                    <span>Accepter</span>
+                    <span data-i18n="common.cookies.accept">Accepter</span>
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <polyline points="20 6 9 17 4 12"></polyline>
                     </svg>
@@ -253,5 +285,6 @@
     </div>
 
     <script type="module" src="/assets/js/main.js"></script>
+    <script type="module" src="/assets/js/i18n.js"></script>
 </body>
 </html>

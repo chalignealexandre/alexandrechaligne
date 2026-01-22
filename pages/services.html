@@ -5,33 +5,66 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Services de staffeur ornemaniste : création d'ornements en staff, plâtrerie traditionnelle, restauration du patrimoine, monuments et sites. Techniques ancestrales et savoir-faire d'exception.">
     <title>Services - Alexandre CHALIGNÉ | Staffeur Ornemaniste & Plâtrerie Traditionnelle</title>
+
+    <!-- Hreflang tags for SEO -->
+    <link rel="alternate" hreflang="fr" href="https://www.alexandrechaligne.com/pages/services.html">
+    <link rel="alternate" hreflang="en" href="https://www.alexandrechaligne.com/en/pages/services.html">
+    <link rel="alternate" hreflang="x-default" href="https://www.alexandrechaligne.com/pages/services.html">
+
+    <!-- Anti-FOUC: Hide content until i18n is ready -->
+    <style>
+        html:not(.i18n-ready) [data-i18n],
+        html:not(.i18n-ready) [data-i18n-placeholder],
+        html:not(.i18n-ready) [data-i18n-alt] {
+            opacity: 0;
+        }
+        html.i18n-ready [data-i18n],
+        html.i18n-ready [data-i18n-placeholder],
+        html.i18n-ready [data-i18n-alt] {
+            opacity: 1;
+            transition: opacity 0.15s ease-in-out;
+        }
+    </style>
+
+    <!-- Early language detection (before DOM ready) -->
+    <script>
+        (function() {
+            var lang = window.location.pathname.startsWith('/en') ? 'en' : 'fr';
+            document.documentElement.lang = lang;
+            document.documentElement.dataset.lang = lang;
+        })();
+    </script>
+
+    <!-- Preload critical resources -->
+    <link rel="preload" href="/locales/fr.json" as="fetch" crossorigin>
+
     <link rel="stylesheet" href="/assets/css/main.css">
     <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
 </head>
 <body>
     <!-- Skip to main content link for keyboard navigation -->
-    <a href="#main-content" class="skip-link">Aller au contenu principal</a>
-    
+    <a href="#main-content" class="skip-link" data-i18n="common.skip_to_content">Aller au contenu principal</a>
+
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="container">
             <div class="nav-wrapper">
                 <a href="/" class="logo">
-                    <img src="/assets/images/logo-new.png" alt="Alexandre CHALIGNÉ - Entreprise au Service de l'Exception" class="logo-image" width="280" height="178">
+                    <img src="/assets/images/logo-new.png" alt="Alexandre CHALIGNÉ - Entreprise au Service de l'Exception" class="logo-image" width="280" height="178" data-i18n-alt="common.logo_alt">
                 </a>
 
-                <button class="mobile-menu-toggle" aria-label="Toggle menu" id="mobileMenuToggle">
+                <button class="mobile-menu-toggle" id="mobileMenuToggle" data-i18n-aria-label="common.toggle_menu">
                     <span></span>
                     <span></span>
                     <span></span>
                 </button>
 
                 <ul class="nav-menu" id="navMenu">
-                    <li><a href="/" class="nav-link">Accueil</a></li>
-                    <li><a href="/pages/about.html" class="nav-link">À Propos</a></li>
-                    <li><a href="/pages/services.html" class="nav-link active">Services</a></li>
-                    <li><a href="/pages/portfolio.html" class="nav-link">Réalisations</a></li>
-                    <li><a href="/pages/contact.html" class="nav-link">Contact</a></li>
+                    <li><a href="/" class="nav-link" data-i18n="common.nav.home">Accueil</a></li>
+                    <li><a href="/pages/about.html" class="nav-link" data-i18n="common.nav.about">À Propos</a></li>
+                    <li><a href="/pages/services.html" class="nav-link active" data-i18n="common.nav.services">Services</a></li>
+                    <li><a href="/pages/portfolio.html" class="nav-link" data-i18n="common.nav.portfolio">Réalisations</a></li>
+                    <li><a href="/pages/contact.html" class="nav-link" data-i18n="common.nav.contact">Contact</a></li>
                     <li class="language-switcher">
                         <button class="lang-btn active" data-lang="fr">FR</button>
                         <span class="lang-separator">/</span>
@@ -48,9 +81,9 @@
         <div class="container">
             <div class="page-hero-content">
                 <h1 class="page-title">
-                    <span class="title-line title-accent">Services</span>
+                    <span class="title-line title-accent" data-i18n="services.hero.title">Services</span>
                 </h1>
-                <p class="page-subtitle">Des prestations sur-mesure pour des réalisations d'exception</p>
+                <p class="page-subtitle" data-i18n="services.hero.subtitle">Des prestations sur-mesure pour des réalisations d'exception</p>
             </div>
         </div>
     </section>
@@ -59,7 +92,7 @@
     <section class="services-intro">
         <div class="container">
             <div class="intro-content">
-                <p class="intro-lead">
+                <p class="intro-lead" data-i18n="services.intro" data-i18n-html="true">
                     En tant qu'entreprise spécialisée dans le <strong>staff ornemaniste et la plâtrerie traditionnelle</strong>, A.Chaligné intervient sur
                     des projets variés qui ont tous en commun l'exigence de la qualité et du détail.
                     Du staff décoratif à la restauration du patrimoine, monuments et sites, chaque prestation est guidée par la maîtrise
@@ -81,26 +114,26 @@
                             <path d="M2 12l10 5 10-5"></path>
                         </svg>
                     </div>
-                    <h2 class="service-title">Staff & Ornements</h2>
-                    <p class="service-description">
+                    <h2 class="service-title" data-i18n="services.staff.title">Staff & Ornements</h2>
+                    <p class="service-description" data-i18n="services.staff.description" data-i18n-html="true">
                         Le <strong>staff</strong> est notre spécialité : cette technique ancestrale permet de créer
                         des ornements d'une finesse exceptionnelle. Moulures, corniches, rosaces, colonnes et
                         chapiteaux prennent vie avec précision et élégance.
                     </p>
 
                     <ul class="service-list">
-                        <li>Création d'ornements en staff sur-mesure</li>
-                        <li>Moulures et corniches décoratives</li>
-                        <li>Rosaces de plafond et médaillons</li>
-                        <li>Colonnes, pilastres et chapiteaux</li>
-                        <li>Plafonds ornementaux et voûtes en staff</li>
-                        <li>Éléments architecturaux complexes</li>
-                        <li>Finitions artisanales (stucs, patines, dorures)</li>
+                        <li data-i18n="services.staff.list.item1">Création d'ornements en staff sur-mesure</li>
+                        <li data-i18n="services.staff.list.item2">Moulures et corniches décoratives</li>
+                        <li data-i18n="services.staff.list.item3">Rosaces de plafond et médaillons</li>
+                        <li data-i18n="services.staff.list.item4">Colonnes, pilastres et chapiteaux</li>
+                        <li data-i18n="services.staff.list.item5">Plafonds ornementaux et voûtes en staff</li>
+                        <li data-i18n="services.staff.list.item6">Éléments architecturaux complexes</li>
+                        <li data-i18n="services.staff.list.item7">Finitions artisanales (stucs, patines, dorures)</li>
                     </ul>
 
                     <div class="service-highlight">
-                        <h4>Pourquoi choisir le staff ?</h4>
-                        <p>
+                        <h4 data-i18n="services.staff.highlight_title">Pourquoi choisir le staff ?</h4>
+                        <p data-i18n="services.staff.highlight_text" data-i18n-html="true">
                             Le staff offre une liberté créative infinie : léger, résistant et modelable, il permet
                             de réaliser des ornements impossibles à obtenir avec d'autres matériaux. Alliant
                             techniques ancestrales et créativité, le staff transforme vos espaces en véritables
@@ -111,7 +144,7 @@
 
                 <div class="service-image">
                     <div class="image-wrapper">
-                        <img src="/assets/images/service-decorative.jpg" alt="Staff et ornements décoratifs" loading="lazy">
+                        <img src="/assets/images/service-decorative.jpg" alt="Staff et ornements décoratifs" loading="lazy" data-i18n-alt="services.staff.image_alt">
                     </div>
                 </div>
             </div>
@@ -124,7 +157,7 @@
             <div class="service-grid">
                 <div class="service-image">
                     <div class="image-wrapper">
-                        <img src="/assets/images/service-custom.jpg" alt="Plâtrerie traditionnelle" loading="lazy">
+                        <img src="/assets/images/service-custom.jpg" alt="Plâtrerie traditionnelle" loading="lazy" data-i18n-alt="services.plastering.image_alt">
                     </div>
                 </div>
 
@@ -136,25 +169,25 @@
                             <line x1="9" y1="15" x2="15" y2="15"></line>
                         </svg>
                     </div>
-                    <h2 class="service-title">Plâtrerie Traditionnelle</h2>
-                    <p class="service-description">
+                    <h2 class="service-title" data-i18n="services.plastering.title">Plâtrerie Traditionnelle</h2>
+                    <p class="service-description" data-i18n="services.plastering.description" data-i18n-html="true">
                         Maîtrise des <strong>techniques traditionnelles de plâtrerie</strong> transmises de génération en génération.
                         Enduits à l'ancienne, chaux, plâtre traditionnel : un savoir-faire authentique pour des finitions
                         artisanales d'exception.
                     </p>
 
                     <ul class="service-list">
-                        <li>Plafonds traditionnels et plafonds à la française</li>
-                        <li>Enduits à la chaux et enduits traditionnels</li>
-                        <li>Finitions artisanales (talochées, lissées, brossées)</li>
-                        <li>Plâtre traditionnel et mortier de chaux</li>
-                        <li>Cloisons en plâtre massif</li>
-                        <li>Travaux de rénovation et de création</li>
+                        <li data-i18n="services.plastering.list.item1">Plafonds traditionnels et plafonds à la française</li>
+                        <li data-i18n="services.plastering.list.item2">Enduits à la chaux et enduits traditionnels</li>
+                        <li data-i18n="services.plastering.list.item3">Finitions artisanales (talochées, lissées, brossées)</li>
+                        <li data-i18n="services.plastering.list.item4">Plâtre traditionnel et mortier de chaux</li>
+                        <li data-i18n="services.plastering.list.item5">Cloisons en plâtre massif</li>
+                        <li data-i18n="services.plastering.list.item6">Travaux de rénovation et de création</li>
                     </ul>
 
                     <div class="service-highlight">
-                        <h4>Pourquoi choisir la plâtrerie traditionnelle ?</h4>
-                        <p>
+                        <h4 data-i18n="services.plastering.highlight_title">Pourquoi choisir la plâtrerie traditionnelle ?</h4>
+                        <p data-i18n="services.plastering.highlight_text">
                             Les techniques traditionnelles de plâtrerie offrent des qualités incomparables :
                             respirabilité des murs, régulation hygrométrique naturelle, et rendu esthétique authentique.
                             Ce savoir-faire ancestral garantit des réalisations pérennes et respectueuses du bâti ancien.
@@ -176,26 +209,26 @@
                             <polyline points="9 22 9 12 15 12 15 22"></polyline>
                         </svg>
                     </div>
-                    <h2 class="service-title">Restauration du Patrimoine, Monuments et Sites</h2>
-                    <p class="service-description">
+                    <h2 class="service-title" data-i18n="services.restoration.title">Restauration du Patrimoine, Monuments et Sites</h2>
+                    <p class="service-description" data-i18n="services.restoration.description" data-i18n-html="true">
                         Restauration et conservation d'ornements anciens sur <strong>monuments historiques et châteaux prestigieux</strong>.
                         Respect scrupuleux des techniques traditionnelles et du patrimoine architectural.
                         Expérience reconnue sur les châteaux bordelais et le Grand Théâtre de Bordeaux.
                     </p>
 
                     <ul class="service-list">
-                        <li>Diagnostic patrimonial et analyse de l'existant</li>
-                        <li>Restauration de décors en staff et ornements anciens</li>
-                        <li>Reconstitution à l'identique de décors d'origine</li>
-                        <li>Techniques de restauration respectant le patrimoine</li>
-                        <li>Intervention sur monuments historiques classés</li>
-                        <li>Collaboration avec architectes du patrimoine</li>
-                        <li>Documentation et relevés des ouvrages</li>
+                        <li data-i18n="services.restoration.list.item1">Diagnostic patrimonial et analyse de l'existant</li>
+                        <li data-i18n="services.restoration.list.item2">Restauration de décors en staff et ornements anciens</li>
+                        <li data-i18n="services.restoration.list.item3">Reconstitution à l'identique de décors d'origine</li>
+                        <li data-i18n="services.restoration.list.item4">Techniques de restauration respectant le patrimoine</li>
+                        <li data-i18n="services.restoration.list.item5">Intervention sur monuments historiques classés</li>
+                        <li data-i18n="services.restoration.list.item6">Collaboration avec architectes du patrimoine</li>
+                        <li data-i18n="services.restoration.list.item7">Documentation et relevés des ouvrages</li>
                     </ul>
 
                     <div class="service-highlight">
-                        <h4>Une expérience prestigieuse</h4>
-                        <p>
+                        <h4 data-i18n="services.restoration.highlight_title">Une expérience prestigieuse</h4>
+                        <p data-i18n="services.restoration.highlight_text">
                             Forte d'interventions sur des sites d'exception (Châteaux Canon, Montrose, Pichon Longueville,
                             Du Glana, Grand Théâtre de Bordeaux, églises classées), l'entreprise maîtrise les exigences spécifiques
                             de la restauration du patrimoine, monuments et sites. Chaque intervention préserve l'authenticité et l'âme du bâtiment
@@ -206,7 +239,7 @@
 
                 <div class="service-image">
                     <div class="image-wrapper">
-                        <img src="/assets/images/service-renovation.jpg" alt="Restauration du patrimoine, monuments et sites" loading="lazy">
+                        <img src="/assets/images/service-renovation.jpg" alt="Restauration du patrimoine, monuments et sites" loading="lazy" data-i18n-alt="services.restoration.image_alt">
                     </div>
                 </div>
             </div>
@@ -217,8 +250,8 @@
     <section class="service-areas">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Zones d'Intervention</h2>
-                <p class="section-subtitle">Des services disponibles en France, Suisse et à l'international</p>
+                <h2 class="section-title" data-i18n="services.areas.title">Zones d'Intervention</h2>
+                <p class="section-subtitle" data-i18n="services.areas.subtitle">Des services disponibles en France, Suisse et à l'international</p>
             </div>
 
             <div class="areas-grid">
@@ -229,8 +262,8 @@
                             <circle cx="12" cy="10" r="3"></circle>
                         </svg>
                     </div>
-                    <h3 class="area-title">France</h3>
-                    <p class="area-description">
+                    <h3 class="area-title" data-i18n="services.areas.france.title">France</h3>
+                    <p class="area-description" data-i18n="services.areas.france.desc">
                         Interventions régulières dans le Grand Est, Île-de-France et sur l'ensemble
                         du territoire français pour des projets d'envergure.
                     </p>
@@ -243,8 +276,8 @@
                             <circle cx="12" cy="10" r="3"></circle>
                         </svg>
                     </div>
-                    <h3 class="area-title">Suisse</h3>
-                    <p class="area-description">
+                    <h3 class="area-title" data-i18n="services.areas.switzerland.title">Suisse</h3>
+                    <p class="area-description" data-i18n="services.areas.switzerland.desc">
                         Proximité avec la Suisse permettant des interventions fréquentes à Genève,
                         Lausanne et dans l'ensemble de la région lémanique.
                     </p>
@@ -258,8 +291,8 @@
                             <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
                         </svg>
                     </div>
-                    <h3 class="area-title">International</h3>
-                    <p class="area-description">
+                    <h3 class="area-title" data-i18n="services.areas.international.title">International</h3>
+                    <p class="area-description" data-i18n="services.areas.international.desc">
                         Disponible pour des projets exceptionnels partout en Europe et au-delà,
                         sur demande et selon la nature du projet.
                     </p>
@@ -273,16 +306,16 @@
         <div class="container">
             <div class="cta-clean-wrapper">
                 <div class="cta-clean-content">
-                    <div class="cta-clean-badge">Devis personnalisé</div>
-                    <h2 class="cta-clean-title">Concrétisons votre projet ensemble</h2>
-                    <p class="cta-clean-text">
+                    <div class="cta-clean-badge" data-i18n="services.cta.badge">Devis personnalisé</div>
+                    <h2 class="cta-clean-title" data-i18n="services.cta.title">Concrétisons votre projet ensemble</h2>
+                    <p class="cta-clean-text" data-i18n="services.cta.text">
                         Chaque projet est unique. Discutons de vos besoins pour vous proposer une solution
                         sur-mesure adaptée à vos attentes et à votre budget.
                     </p>
                 </div>
                 <div class="cta-clean-actions">
                     <a href="/pages/contact.html" class="cta-clean-btn cta-clean-btn-primary">
-                        <span>Obtenir un devis</span>
+                        <span data-i18n="services.cta.button_quote">Obtenir un devis</span>
                         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
                             <polyline points="14 2 14 8 20 8"></polyline>
@@ -292,7 +325,7 @@
                         </svg>
                     </a>
                     <a href="/pages/portfolio.html" class="cta-clean-btn cta-clean-btn-secondary">
-                        <span>Voir nos réalisations</span>
+                        <span data-i18n="services.cta.button_portfolio">Voir nos réalisations</span>
                         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <rect x="3" y="3" width="7" height="7"></rect>
                             <rect x="14" y="3" width="7" height="7"></rect>
@@ -312,36 +345,36 @@
             <div class="footer-grid">
                 <div class="footer-col">
                     <div class="footer-logo">
-                        <img src="/assets/images/logo-new.png" alt="Alexandre CHALIGNÉ - Entreprise au Service de l'Exception" class="footer-logo-image" width="240" height="152">
+                        <img src="/assets/images/logo-new.png" alt="Alexandre CHALIGNÉ - Entreprise au Service de l'Exception" class="footer-logo-image" width="240" height="152" data-i18n-alt="common.logo_alt">
                     </div>
-                    <p class="footer-description">
+                    <p class="footer-description" data-i18n="common.footer.description" data-i18n-html="true">
                         <span style="white-space: nowrap;">Entreprise au service de la restauration</span><br>
                         <span style="white-space: nowrap;">et de la création sur mesure.</span>
                     </p>
                 </div>
 
                 <div class="footer-col">
-                    <h4 class="footer-title">Navigation</h4>
+                    <h4 class="footer-title" data-i18n="common.footer.nav_title">Navigation</h4>
                     <ul class="footer-links">
-                        <li><a href="/">Accueil</a></li>
-                        <li><a href="/pages/about.html">À Propos</a></li>
-                        <li><a href="/pages/services.html">Services</a></li>
-                        <li><a href="/pages/portfolio.html">Réalisations</a></li>
-                        <li><a href="/pages/contact.html">Contact</a></li>
+                        <li><a href="/" data-i18n="common.nav.home">Accueil</a></li>
+                        <li><a href="/pages/about.html" data-i18n="common.nav.about">À Propos</a></li>
+                        <li><a href="/pages/services.html" data-i18n="common.nav.services">Services</a></li>
+                        <li><a href="/pages/portfolio.html" data-i18n="common.nav.portfolio">Réalisations</a></li>
+                        <li><a href="/pages/contact.html" data-i18n="common.nav.contact">Contact</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-col">
-                    <h4 class="footer-title">Services</h4>
+                    <h4 class="footer-title" data-i18n="common.footer.services_title">Services</h4>
                     <ul class="footer-links">
-                        <li><a href="/pages/services.html#staff-ornements">Staff & Ornements</a></li>
-                        <li><a href="/pages/services.html#platrerie-traditionnelle">Plâtrerie Traditionnelle</a></li>
-                        <li><a href="/pages/services.html#renovation">Restauration du Patrimoine, Monuments et Sites</a></li>
+                        <li><a href="/pages/services.html#staff-ornements" data-i18n="common.footer.services.staff">Staff & Ornements</a></li>
+                        <li><a href="/pages/services.html#platrerie-traditionnelle" data-i18n="common.footer.services.plastering">Plâtrerie Traditionnelle</a></li>
+                        <li><a href="/pages/services.html#renovation" data-i18n="common.footer.services.restoration">Restauration du Patrimoine, Monuments et Sites</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-col">
-                    <h4 class="footer-title">Contact</h4>
+                    <h4 class="footer-title" data-i18n="common.footer.contact_title">Contact</h4>
                     <ul class="footer-contact">
                         <li>
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -360,23 +393,23 @@
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
                             </svg>
-                            <a href="https://www.linkedin.com/in/alexandre-chalign%C3%A9-492a6b10b/" target="_blank" rel="noopener noreferrer">Suivez-moi sur LinkedIn</a>
+                            <a href="https://www.linkedin.com/in/alexandre-chalign%C3%A9-492a6b10b/" target="_blank" rel="noopener noreferrer" data-i18n="common.footer.linkedin">Suivez-moi sur LinkedIn</a>
                         </li>
                     </ul>
                 </div>
             </div>
 
             <div class="footer-bottom">
-                <p class="footer-copyright">
-                    &copy; 2025 Alexandre CHALIGNÉ. Tous droits réservés.
+                <p class="footer-copyright" data-i18n="common.footer.copyright" data-i18n-html="true">
+                    &copy; <span id="currentYear">2026</span> Alexandre CHALIGNÉ. Tous droits réservés.
                 </p>
-                <p class="footer-signature">
-                    Fait avec passion par <a href="https://www.propulseo-site.com/" target="_blank" rel="noopener noreferrer" class="signature-link">Propul'SEO</a>
+                <p class="footer-signature" data-i18n="common.footer.signature" data-i18n-html="true">
+                    Fait avec Passion par <a href="https://www.propulseo-site.com/" target="_blank" rel="noopener noreferrer" class="signature-link">Propul'SEO</a>
                 </p>
                 <div class="footer-legal">
-                    <a href="/pages/mentions-legales.html">Mentions légales</a>
+                    <a href="/pages/mentions-legales.html" data-i18n="common.footer.legal_mentions">Mentions légales</a>
                     <span class="separator">•</span>
-                    <a href="/pages/politique-confidentialite.html">Politique de confidentialité</a>
+                    <a href="/pages/politique-confidentialite.html" data-i18n="common.footer.privacy_policy">Politique de confidentialité</a>
                 </div>
             </div>
         </div>
@@ -397,19 +430,19 @@
                     </svg>
                 </div>
                 <div class="cookie-text">
-                    <h3 id="cookieTitle" class="cookie-title">Votre expérience, notre priorité</h3>
-                    <p id="cookieDesc" class="cookie-description">
+                    <h3 id="cookieTitle" class="cookie-title" data-i18n="common.cookies.title">Votre expérience, notre priorité</h3>
+                    <p id="cookieDesc" class="cookie-description" data-i18n="common.cookies.description" data-i18n-html="true">
                         Nous utilisons des cookies pour améliorer votre navigation et analyser notre trafic.
                         En poursuivant, vous acceptez notre <a href="/pages/politique-confidentialite.html" class="cookie-link">politique de confidentialité</a>.
                     </p>
                 </div>
             </div>
             <div class="cookie-actions">
-                <button class="cookie-btn cookie-btn-secondary" id="cookieDecline">
+                <button class="cookie-btn cookie-btn-secondary" id="cookieDecline" data-i18n="common.cookies.decline">
                     Refuser
                 </button>
                 <button class="cookie-btn cookie-btn-primary" id="cookieAccept">
-                    <span>Accepter</span>
+                    <span data-i18n="common.cookies.accept">Accepter</span>
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <polyline points="20 6 9 17 4 12"></polyline>
                     </svg>
@@ -418,6 +451,7 @@
         </div>
     </div>
 
+    <script type="module" src="/assets/js/i18n.js"></script>
     <script type="module" src="/assets/js/main.js"></script>
 </body>
 </html>

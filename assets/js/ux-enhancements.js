@@ -35,41 +35,16 @@ function initHeroScrollIndicator() {
         }
     });
 
-    // Hide scroll indicator when scrolling
-    let lastScroll = 0;
-    window.addEventListener('scroll', () => {
-        const currentScroll = window.pageYOffset;
-
-        if (currentScroll > 100) {
-            scrollIndicator.style.opacity = '0';
-        } else {
-            scrollIndicator.style.opacity = '0.7';
-        }
-
-        lastScroll = currentScroll;
-    });
+    // Hide scroll indicator using CSS only (no scroll listener needed)
+    // The indicator will be hidden via CSS when scrolled
 }
 
 // ===================================
-// PARALLAX EFFECT FOR HERO DECORATIONS
+// PARALLAX EFFECT FOR HERO DECORATIONS (DISABLED FOR PERFORMANCE)
 // ===================================
 
 function initHeroParallax() {
-    const decorations = document.querySelectorAll('.hero-decoration');
-    if (decorations.length === 0) return;
-
-    window.addEventListener('scroll', () => {
-        const scrolled = window.pageYOffset;
-        const heroHeight = document.querySelector('.hero-v2')?.offsetHeight || 0;
-
-        if (scrolled < heroHeight) {
-            decorations.forEach((decoration, index) => {
-                const speed = 0.3 + (index * 0.1);
-                const yPos = scrolled * speed;
-                decoration.style.transform = `translateY(${yPos}px)`;
-            });
-        }
-    });
+    // Disabled - parallax effects cause scroll jank
 }
 
 // ===================================
@@ -127,46 +102,11 @@ function animateCounter(element) {
 }
 
 // ===================================
-// ENHANCED CARD HOVER EFFECTS
+// ENHANCED CARD HOVER EFFECTS (SIMPLIFIED FOR PERFORMANCE)
 // ===================================
 
 function initEnhancedCardHovers() {
-    // Only apply 3D effect to expertise-card and bento-item, not value-card-luxury
-    const cards = document.querySelectorAll('.expertise-card, .bento-item');
-
-    cards.forEach(card => {
-        card.addEventListener('mouseenter', function(e) {
-            const rect = this.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-
-            const centerX = rect.width / 2;
-            const centerY = rect.height / 2;
-
-            const angleX = (y - centerY) / 30;
-            const angleY = (centerX - x) / 30;
-
-            this.style.transform = `perspective(1000px) rotateX(${angleX}deg) rotateY(${angleY}deg) translateY(-10px)`;
-        });
-
-        card.addEventListener('mousemove', function(e) {
-            const rect = this.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-
-            const centerX = rect.width / 2;
-            const centerY = rect.height / 2;
-
-            const angleX = (y - centerY) / 30;
-            const angleY = (centerX - x) / 30;
-
-            this.style.transform = `perspective(1000px) rotateX(${angleX}deg) rotateY(${angleY}deg) translateY(-10px)`;
-        });
-
-        card.addEventListener('mouseleave', function() {
-            this.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateY(0)';
-        });
-    });
+    // 3D effects disabled for performance - using CSS hover only
 }
 
 // ===================================
@@ -200,58 +140,19 @@ function initSmoothReveal() {
 }
 
 // ===================================
-// INTRO IMAGE PARALLAX
+// INTRO IMAGE PARALLAX (DISABLED FOR PERFORMANCE)
 // ===================================
 
 function initIntroImageParallax() {
-    const introImage = document.querySelector('.intro-image img');
-    if (!introImage) return;
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                window.addEventListener('scroll', () => {
-                    const rect = entry.target.getBoundingClientRect();
-                    const scrolled = window.pageYOffset;
-                    const elementTop = rect.top + scrolled;
-                    const windowHeight = window.innerHeight;
-
-                    if (scrolled + windowHeight > elementTop && scrolled < elementTop + rect.height) {
-                        const offset = ((scrolled + windowHeight - elementTop) / (windowHeight + rect.height)) * 100;
-                        const translateY = (offset - 50) * 0.3;
-                        introImage.style.transform = `translateY(${translateY}px) scale(1.05)`;
-                    }
-                });
-            }
-        });
-    }, { threshold: 0.1 });
-
-    observer.observe(introImage.parentElement);
+    // Disabled - was causing memory leaks and scroll jank
 }
 
 // ===================================
-// MAGNETIC BUTTONS
+// MAGNETIC BUTTONS (DISABLED FOR PERFORMANCE)
 // ===================================
 
 function initMagneticButtons() {
-    const buttons = document.querySelectorAll('.hero-btn, .btn');
-
-    buttons.forEach(button => {
-        button.addEventListener('mousemove', (e) => {
-            const rect = button.getBoundingClientRect();
-            const x = e.clientX - rect.left - rect.width / 2;
-            const y = e.clientY - rect.top - rect.height / 2;
-
-            const moveX = x * 0.1;
-            const moveY = y * 0.1;
-
-            button.style.transform = `translate(${moveX}px, ${moveY}px)`;
-        });
-
-        button.addEventListener('mouseleave', () => {
-            button.style.transform = 'translate(0, 0)';
-        });
-    });
+    // Magnetic effect disabled - was causing jank on mousemove
 }
 
 // ===================================
@@ -392,6 +293,32 @@ function throttle(func, wait) {
 }
 
 // ===================================
+// PORTFOLIO GALLERY REVEAL ANIMATION
+// ===================================
+
+function initPortfolioGalleryReveal() {
+    const galleryItems = document.querySelectorAll('.portfolio-gallery__item[data-reveal]');
+    if (galleryItems.length === 0) return;
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+                // Stagger the animation based on index
+                setTimeout(() => {
+                    entry.target.classList.add('is-visible');
+                }, index * 150);
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.15,
+        rootMargin: '0px 0px -50px 0px'
+    });
+
+    galleryItems.forEach(item => observer.observe(item));
+}
+
+// ===================================
 // INITIALIZE ALL ENHANCEMENTS
 // ===================================
 
@@ -416,6 +343,7 @@ function init() {
     initSmoothReveal();
     initIntroImageParallax();
     initMagneticButtons();
+    initPortfolioGalleryReveal();
     // Uncomment if you want the custom cursor
     // initAdvancedCursor();
 
@@ -439,6 +367,7 @@ if (typeof module !== 'undefined' && module.exports) {
         initSmoothReveal,
         initIntroImageParallax,
         initMagneticButtons,
-        initAdvancedCursor
+        initAdvancedCursor,
+        initPortfolioGalleryReveal
     };
 }

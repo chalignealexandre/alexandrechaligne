@@ -21,40 +21,211 @@
     <meta property="twitter:description" content="Spécialiste du staff décoratif et de la plâtrerie traditionnelle. Tout est possible et imaginable avec le Staff, il n'existe aucune limite...">
     <meta property="twitter:image" content="/assets/images/og-image.jpg">
 
+    <!-- Hreflang tags for SEO -->
+    <link rel="alternate" hreflang="fr" href="https://www.alexandrechaligne.com/">
+    <link rel="alternate" hreflang="en" href="https://www.alexandrechaligne.com/en/">
+    <link rel="alternate" hreflang="x-default" href="https://www.alexandrechaligne.com/">
+
     <title>Alexandre CHALIGNÉ - Staffeur Ornemaniste & Plâtrier Traditionnel | Staff Décoratif d'Exception</title>
+
+    <!-- Anti-FOUC: Hide content until i18n is ready -->
+    <style>
+        html:not(.i18n-ready) [data-i18n],
+        html:not(.i18n-ready) [data-i18n-placeholder],
+        html:not(.i18n-ready) [data-i18n-alt] {
+            opacity: 0;
+        }
+        html.i18n-ready [data-i18n],
+        html.i18n-ready [data-i18n-placeholder],
+        html.i18n-ready [data-i18n-alt] {
+            opacity: 1;
+            transition: opacity 0.15s ease-in-out;
+        }
+
+        /* Loader Styles - Premium */
+        .page-loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(145deg, #0f0f0f 0%, #1a1a1a 50%, #0d0d0d 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 99999;
+            overflow: hidden;
+        }
+        .page-loader::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(ellipse at center, rgba(166, 149, 107, 0.08) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .page-loader.fade-out {
+            animation: loaderFadeOut 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+        @keyframes loaderFadeOut {
+            0% { opacity: 1; }
+            100% { opacity: 0; visibility: hidden; }
+        }
+        .page-loader__content {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+        .page-loader__logo-wrapper {
+            position: relative;
+            display: inline-block;
+            animation: logoReveal 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+        @keyframes logoReveal {
+            0% { opacity: 0; transform: scale(0.9) translateY(20px); }
+            100% { opacity: 1; transform: scale(1) translateY(0); }
+        }
+        .page-loader__logo {
+            width: 320px;
+            height: auto;
+            filter: drop-shadow(0 4px 30px rgba(166, 149, 107, 0.3));
+            animation: logoGlow 2.5s ease-in-out infinite;
+        }
+        @keyframes logoGlow {
+            0%, 100% { filter: drop-shadow(0 4px 30px rgba(166, 149, 107, 0.3)); }
+            50% { filter: drop-shadow(0 4px 50px rgba(166, 149, 107, 0.5)); }
+        }
+        .page-loader__progress {
+            margin-top: 50px;
+            width: 200px;
+            height: 2px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 2px;
+            overflow: hidden;
+            position: relative;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0;
+            animation: progressReveal 0.5s ease 0.5s forwards;
+        }
+        @keyframes progressReveal {
+            to { opacity: 1; }
+        }
+        .page-loader__progress-bar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, #a6956b, #c9b299);
+            border-radius: 2px;
+            animation: progressFill 2.5s cubic-bezier(0.4, 0, 0.2, 1) 0.5s forwards;
+            box-shadow: 0 0 15px rgba(166, 149, 107, 0.6);
+        }
+        @keyframes progressFill {
+            0% { width: 0%; }
+            100% { width: 100%; }
+        }
+        .page-loader__text {
+            margin-top: 25px;
+            font-family: 'Georgia', serif;
+            font-size: 12px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: rgba(166, 149, 107, 0.7);
+            opacity: 0;
+            animation: textReveal 0.5s ease 0.8s forwards;
+        }
+        @keyframes textReveal {
+            to { opacity: 1; }
+        }
+        /* Particules décoratives */
+        .page-loader__particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: rgba(166, 149, 107, 0.4);
+            border-radius: 50%;
+            animation: particleFloat 4s ease-in-out infinite;
+        }
+        .page-loader__particle:nth-child(1) { top: 20%; left: 15%; animation-delay: 0s; }
+        .page-loader__particle:nth-child(2) { top: 60%; left: 10%; animation-delay: 1s; }
+        .page-loader__particle:nth-child(3) { top: 30%; right: 20%; animation-delay: 0.5s; }
+        .page-loader__particle:nth-child(4) { top: 70%; right: 15%; animation-delay: 1.5s; }
+        .page-loader__particle:nth-child(5) { bottom: 25%; left: 25%; animation-delay: 2s; }
+        @keyframes particleFloat {
+            0%, 100% { transform: translateY(0) scale(1); opacity: 0.4; }
+            50% { transform: translateY(-20px) scale(1.2); opacity: 0.8; }
+        }
+    </style>
+
+    <!-- Early language detection (before DOM ready) -->
+    <script>
+        (function() {
+            var lang = window.location.pathname.startsWith('/en') ? 'en' : 'fr';
+            document.documentElement.lang = lang;
+            document.documentElement.dataset.lang = lang;
+        })();
+    </script>
+
+    <!-- Google Fonts - Playfair Display -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
 
     <!-- Preload critical resources -->
     <link rel="preload" href="/assets/css/main.css" as="style">
     <link rel="preload" href="/assets/css/ux-improvements.css" as="style">
+    <link rel="preload" href="/locales/fr.json" as="fetch" crossorigin>
 
     <link rel="stylesheet" href="/assets/css/main.css">
     <link rel="stylesheet" href="/assets/css/ux-improvements.css">
     <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
 </head>
 <body>
+    <!-- Page Loader -->
+    <div class="page-loader" id="pageLoader">
+        <div class="page-loader__particle"></div>
+        <div class="page-loader__particle"></div>
+        <div class="page-loader__particle"></div>
+        <div class="page-loader__particle"></div>
+        <div class="page-loader__particle"></div>
+        <div class="page-loader__content">
+            <div class="page-loader__logo-wrapper">
+                <img src="/assets/images/logo-new.png" alt="Alexandre CHALIGNÉ" class="page-loader__logo" width="320" height="203">
+            </div>
+            <div class="page-loader__progress">
+                <div class="page-loader__progress-bar"></div>
+            </div>
+            <p class="page-loader__text">Chargement</p>
+        </div>
+    </div>
+
     <!-- Skip to main content link for keyboard navigation -->
-    <a href="#main-content" class="skip-link">Aller au contenu principal</a>
-    
+    <a href="#main-content" class="skip-link" data-i18n="common.skip_to_content">Aller au contenu principal</a>
+
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="container">
             <div class="nav-wrapper">
                 <a href="/" class="logo">
-                    <img src="/assets/images/logo-new.png" alt="Alexandre CHALIGNÉ - Entreprise au Service de l'Exception" class="logo-image" width="280" height="178" fetchpriority="high">
+                    <img src="/assets/images/logo-new.png" alt="Alexandre CHALIGNÉ - Entreprise au Service de l'Exception" class="logo-image" width="280" height="178" fetchpriority="high" data-i18n-alt="common.logo_alt">
                 </a>
 
-                <button class="mobile-menu-toggle" aria-label="Toggle menu" id="mobileMenuToggle">
+                <button class="mobile-menu-toggle" id="mobileMenuToggle" data-i18n-aria-label="common.toggle_menu">
                     <span></span>
                     <span></span>
                     <span></span>
                 </button>
 
                 <ul class="nav-menu" id="navMenu">
-                    <li><a href="/" class="nav-link active">Accueil</a></li>
-                    <li><a href="/pages/about.html" class="nav-link">À Propos</a></li>
-                    <li><a href="/pages/services.html" class="nav-link">Services</a></li>
-                    <li><a href="/pages/portfolio.html" class="nav-link">Réalisations</a></li>
-                    <li><a href="/pages/contact.html" class="nav-link">Contact</a></li>
+                    <li><a href="/" class="nav-link active" data-i18n="common.nav.home">Accueil</a></li>
+                    <li><a href="/pages/about.html" class="nav-link" data-i18n="common.nav.about">À Propos</a></li>
+                    <li><a href="/pages/services.html" class="nav-link" data-i18n="common.nav.services">Services</a></li>
+                    <li><a href="/pages/portfolio.html" class="nav-link" data-i18n="common.nav.portfolio">Réalisations</a></li>
+                    <li><a href="/pages/contact.html" class="nav-link" data-i18n="common.nav.contact">Contact</a></li>
                     <li class="language-switcher">
                         <button class="lang-btn active" data-lang="fr">FR</button>
                         <span class="lang-separator">/</span>
@@ -79,40 +250,31 @@
                 <div class="hero-badge-wrapper">
                     <span class="hero-label">
                         <span class="hero-label-icon">✦</span>
-                        Staffeur Ornemaniste & Plâtrier Traditionnel
+                        <span data-i18n="home.hero.badge">Staffeur Ornemaniste & Plâtrier Traditionnel</span>
                         <span class="hero-label-icon">✦</span>
                     </span>
                 </div>
 
                 <h1 class="hero-heading">
                     <span class="hero-heading-line">
-                        <span class="hero-word" data-word="Transformer">Transformer</span>
-                        <span class="hero-word" data-word="l'Espace">l'Espace</span>
+                        <span class="hero-word" data-word="Transformer" data-i18n="home.hero.title_line1_word1">Transformer</span>
+                        <span class="hero-word" data-word="l'Espace" data-i18n="home.hero.title_line1_word2">l'Espace</span>
                     </span>
                     <span class="hero-heading-line">
-                        <span class="hero-word" data-word="en">en</span>
-                        <span class="hero-word hero-word-accent" data-word="Œuvre">Œuvre</span>
-                        <span class="hero-word hero-word-accent" data-word="d'Art">d'Art</span>
+                        <span class="hero-word" data-word="en" data-i18n="home.hero.title_line2_word1">en</span>
+                        <span class="hero-word hero-word-accent" data-word="Œuvre" data-i18n="home.hero.title_line2_word2">Œuvre</span>
+                        <span class="hero-word hero-word-accent" data-word="d'Art" data-i18n="home.hero.title_line2_word3">d'Art</span>
                     </span>
                     </h1>
 
                 <p class="hero-tagline">
-                    <span class="hero-tagline-line">Création d'ornements d'exception depuis 2006.</span>
-                    <span class="hero-tagline-line">Châteaux, monuments historiques et projets prestigieux.</span>
+                    <span class="hero-tagline-line" data-i18n="home.hero.tagline_line1">Entreprise au service de la restauration et</span>
+                    <span class="hero-tagline-line" data-i18n="home.hero.tagline_line2">de la création sur mesure.</span>
                 </p>
 
                 <div class="hero-actions">
-                    <a href="/pages/portfolio.html" class="hero-btn hero-btn-primary">
-                        <span class="hero-btn-text">Découvrir nos réalisations</span>
-                        <span class="hero-btn-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <line x1="5" y1="12" x2="19" y2="12"></line>
-                                <polyline points="12 5 19 12 12 19"></polyline>
-                            </svg>
-                        </span>
-                    </a>
                     <a href="/pages/contact.html" class="hero-btn hero-btn-secondary">
-                        <span class="hero-btn-text">Demander un devis</span>
+                        <span class="hero-btn-text" data-i18n="home.hero.cta_contact">Demander un devis</span>
                         </a>
                 </div>
             </div>
@@ -133,29 +295,29 @@
             <div class="intro-grid">
                 <div class="intro-text">
                     <div class="intro-badge">
-                        <span class="section-eyebrow">Staffeur Ornemaniste</span>
+                        <span class="section-eyebrow" data-i18n="home.intro.eyebrow">Staffeur Ornemaniste</span>
                     </div>
                     <h2 class="section-title intro-title">
-                        <span class="title-line">L'Excellence du Staff</span>
-                        <span class="title-line title-line-accent">et de la Plâtrerie Traditionnelle</span>
+                        <span class="title-line" data-i18n="home.intro.title_line1">L'Excellence du Staff</span>
+                        <span class="title-line title-line-accent" data-i18n="home.intro.title_line2">et de la Plâtrerie Traditionnelle</span>
                     </h2>
                     <div class="intro-description-wrapper">
-                        <p class="intro-description intro-description-highlight">
+                        <p class="intro-description intro-description-highlight" data-i18n="home.intro.description1" data-i18n-html="true">
                             <strong>Staffeur ornemaniste et plâtrier traditionnel</strong>, Alexandre Chaligné est spécialisé dans l'art du staff,
                             cette technique ancestrale qui permet de créer des ornements, moulures et corniches d'une finesse exceptionnelle.
                     </p>
-                    <p class="intro-description">
+                    <p class="intro-description" data-i18n="home.intro.description2">
                             Depuis 2006, l'entreprise met son expertise au service de projets prestigieux : châteaux bordelais
                             (Canon, Montrose, Pichon Longueville, Du Glana), monuments historiques (Grand Théâtre de Bordeaux, églises),
                             et projets uniques en Suisse et à l'international.
                         </p>
-                        <p class="intro-description intro-quote">
+                        <p class="intro-description intro-quote" data-i18n="home.intro.description3">
                             Le staff offre des possibilités infinies pour sublimer vos espaces avec élégance et authenticité.
                         </p>
                     </div>
                     <div class="intro-cta-wrapper">
                     <a href="/pages/about.html" class="btn btn-outline btn-animated">
-                            <span class="btn-text">Découvrir notre parcours</span>
+                            <span class="btn-text" data-i18n="home.intro.cta">Découvrir notre parcours</span>
                             <span class="btn-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -165,12 +327,12 @@
                         </a>
                         <div class="intro-stats">
                             <div class="intro-stat">
-                                <span class="intro-stat-number">19+</span>
-                                <span class="intro-stat-label">Ans d'expérience</span>
+                                <span class="intro-stat-number" data-i18n="home.intro.stats.years_number">19+</span>
+                                <span class="intro-stat-label" data-i18n="home.intro.stats.years_label">Ans d'expérience</span>
                             </div>
                             <div class="intro-stat">
-                                <span class="intro-stat-number">200+</span>
-                                <span class="intro-stat-label">Projets réalisés</span>
+                                <span class="intro-stat-number" data-i18n="home.intro.stats.projects_number">200+</span>
+                                <span class="intro-stat-label" data-i18n="home.intro.stats.projects_label">Projets réalisés</span>
                             </div>
                         </div>
                     </div>
@@ -178,7 +340,7 @@
                 <div class="intro-image">
                     <div class="image-wrapper">
                         <div class="image-frame"></div>
-                        <img src="/assets/images/intro-placeholder.jpg" alt="Alexandre CHALIGNÉ - Staffeur ornemaniste au travail" loading="lazy" width="800" height="600" fetchpriority="high">
+                        <img src="/assets/images/intro-placeholder.jpg" alt="Alexandre CHALIGNÉ - Staffeur ornemaniste au travail" loading="lazy" width="800" height="600" fetchpriority="high" data-i18n-alt="home.intro.image_alt">
                         <div class="image-overlay"></div>
                     </div>
                 </div>
@@ -190,9 +352,9 @@
     <section class="staff-explanation-section">
         <div class="container">
             <div class="section-header">
-                <span class="section-eyebrow">Savoir-Faire Unique</span>
-                <h2 class="section-title">Qu'est-ce que le Staff ?</h2>
-                <p class="section-subtitle">Découvrez cette technique ancestrale de plâtrerie décorative</p>
+                <span class="section-eyebrow" data-i18n="home.staff.eyebrow">Savoir-Faire Unique</span>
+                <h2 class="section-title" data-i18n="home.staff.title">Qu'est-ce que le Staff ?</h2>
+                <p class="section-subtitle" data-i18n="home.staff.subtitle">Découvrez cette technique ancestrale de plâtrerie décorative</p>
             </div>
 
             <div class="staff-content-grid">
@@ -204,13 +366,13 @@
                             <path d="M2 12l10 5 10-5"></path>
                         </svg>
                     </div>
-                    <h3>Une Technique Millénaire</h3>
-                    <p>
+                    <h3 data-i18n="home.staff.definition_title">Une Technique Millénaire</h3>
+                    <p data-i18n="home.staff.definition_p1" data-i18n-html="true">
                         Le <strong>staff</strong> est un matériau composite traditionnel associant du plâtre,
                         des fibres végétales et une armature métallique. Cette technique permet de créer
                         des éléments décoratifs d'une finesse et d'une légèreté incomparables.
                     </p>
-                    <p>
+                    <p data-i18n="home.staff.definition_p2" data-i18n-html="true">
                         Utilisé depuis l'Antiquité et perfectionné au fil des siècles, le staff est le matériau
                         de prédilection pour les ornements architecturaux d'exception : moulures, corniches,
                         rosaces, colonnes, chapiteaux et bien plus encore.
@@ -219,16 +381,16 @@
                         <svg class="quote-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
                             <path d="M6 17h3l2-4V7H5v6h3zm8 0h3l2-4V7h-6v6h3z"/>
                         </svg>
-                        <p class="quote-text">"Tout est possible et imaginable avec le Staff, il n'existe aucune limite..."</p>
+                        <p class="quote-text" data-i18n="home.staff.quote_text">"Tout est possible et imaginable avec le Staff, il n'existe aucune limite..."</p>
                         <cite class="quote-author">
-                            <span class="author-name">Alexandre Chaligné</span>
-                            <span class="author-title">Staffeur Ornemaniste</span>
+                            <span class="author-name" data-i18n="home.staff.quote_author">Alexandre Chaligné</span>
+                            <span class="author-title" data-i18n="home.staff.quote_title">Staffeur Ornemaniste</span>
                         </cite>
                     </blockquote>
                 </div>
 
                 <div class="staff-features">
-                    <h3>Les Avantages du Staff</h3>
+                    <h3 data-i18n="home.staff.advantages_title">Les Avantages du Staff</h3>
                     <div class="features-list">
                         <div class="feature-item">
                             <div class="feature-icon">
@@ -238,8 +400,8 @@
                                 </svg>
                             </div>
                             <div class="feature-content">
-                                <h4>Légèreté</h4>
-                                <p>Résistant mais léger, parfait pour les plafonds et les grandes surfaces</p>
+                                <h4 data-i18n="home.staff.advantages.lightness.title">Légèreté</h4>
+                                <p data-i18n="home.staff.advantages.lightness.desc">Résistant mais léger, parfait pour les plafonds et les grandes surfaces</p>
                             </div>
                         </div>
 
@@ -251,8 +413,8 @@
                                 </svg>
                             </div>
                             <div class="feature-content">
-                                <h4>Liberté de formes</h4>
-                                <p>Possibilités infinies de création : courbes, reliefs, ornements complexes</p>
+                                <h4 data-i18n="home.staff.advantages.freedom.title">Liberté de formes</h4>
+                                <p data-i18n="home.staff.advantages.freedom.desc">Possibilités infinies de création : courbes, reliefs, ornements complexes</p>
                             </div>
                         </div>
 
@@ -264,8 +426,8 @@
                                 </svg>
                             </div>
                             <div class="feature-content">
-                                <h4>Finitions impeccables</h4>
-                                <p>Surface lisse et uniforme, prête à recevoir peintures et patines</p>
+                                <h4 data-i18n="home.staff.advantages.finishes.title">Finitions impeccables</h4>
+                                <p data-i18n="home.staff.advantages.finishes.desc">Surface lisse et uniforme, prête à recevoir peintures et patines</p>
                             </div>
                         </div>
 
@@ -277,8 +439,8 @@
                                 </svg>
                             </div>
                             <div class="feature-content">
-                                <h4>Durabilité</h4>
-                                <p>Matériau pérenne qui traverse les siècles sans se dégrader</p>
+                                <h4 data-i18n="home.staff.advantages.durability.title">Durabilité</h4>
+                                <p data-i18n="home.staff.advantages.durability.desc">Matériau pérenne qui traverse les siècles sans se dégrader</p>
                             </div>
                         </div>
 
@@ -290,8 +452,8 @@
                                 </svg>
                             </div>
                             <div class="feature-content">
-                                <h4>Restauration fidèle</h4>
-                                <p>Idéal pour reproduire à l'identique des ornements anciens</p>
+                                <h4 data-i18n="home.staff.advantages.restoration.title">Restauration fidèle</h4>
+                                <p data-i18n="home.staff.advantages.restoration.desc">Idéal pour reproduire à l'identique des ornements anciens</p>
                             </div>
                         </div>
 
@@ -303,8 +465,8 @@
                                 </svg>
                             </div>
                             <div class="feature-content">
-                                <h4>Écologique</h4>
-                                <p>Matériaux naturels et traditionnels, respectueux de l'environnement</p>
+                                <h4 data-i18n="home.staff.advantages.ecological.title">Écologique</h4>
+                                <p data-i18n="home.staff.advantages.ecological.desc">Matériaux naturels et traditionnels, respectueux de l'environnement</p>
                             </div>
                         </div>
                     </div>
@@ -312,7 +474,7 @@
             </div>
 
             <div class="staff-applications">
-                <h3>Applications du Staff</h3>
+                <h3 data-i18n="home.staff.applications_title">Applications du Staff</h3>
                 <div class="applications-grid">
                     <div class="application-card">
                         <div class="application-image-placeholder">
@@ -322,8 +484,8 @@
                                 <line x1="9" y1="15" x2="15" y2="15"></line>
                             </svg>
                         </div>
-                        <h4>Moulures & Corniches</h4>
-                        <p>Création de décors raffinés pour sublimer la jonction entre murs et plafonds</p>
+                        <h4 data-i18n="home.staff.applications.mouldings.title">Moulures & Corniches</h4>
+                        <p data-i18n="home.staff.applications.mouldings.desc">Création de décors raffinés pour sublimer la jonction entre murs et plafonds</p>
                     </div>
 
                     <div class="application-card">
@@ -334,8 +496,8 @@
                                 <circle cx="12" cy="12" r="2"></circle>
                             </svg>
                         </div>
-                        <h4>Rosaces de Plafond</h4>
-                        <p>Ornements circulaires majestueux qui captent la lumière et structurent l'espace</p>
+                        <h4 data-i18n="home.staff.applications.rosettes.title">Rosaces de Plafond</h4>
+                        <p data-i18n="home.staff.applications.rosettes.desc">Ornements circulaires majestueux qui captent la lumière et structurent l'espace</p>
                     </div>
 
                     <div class="application-card">
@@ -344,8 +506,8 @@
                                 <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
                             </svg>
                         </div>
-                        <h4>Colonnes & Chapiteaux</h4>
-                        <p>Éléments architecturaux imposants réalisés avec légèreté</p>
+                        <h4 data-i18n="home.staff.applications.columns.title">Colonnes & Chapiteaux</h4>
+                        <p data-i18n="home.staff.applications.columns.desc">Éléments architecturaux imposants réalisés avec légèreté</p>
                     </div>
 
                     <div class="application-card">
@@ -355,8 +517,8 @@
                                 <polyline points="2 17 12 22 22 17"></polyline>
                             </svg>
                         </div>
-                        <h4>Plafonds Ornementaux</h4>
-                        <p>Décors complets transformant vos plafonds en véritables œuvres d'art</p>
+                        <h4 data-i18n="home.staff.applications.ceilings.title">Plafonds Ornementaux</h4>
+                        <p data-i18n="home.staff.applications.ceilings.desc">Décors complets transformant vos plafonds en véritables œuvres d'art</p>
                     </div>
                 </div>
             </div>
@@ -367,9 +529,9 @@
     <section class="expertise-section expertise-modern">
         <div class="container">
             <div class="section-header">
-                <span class="section-eyebrow">Excellence</span>
-                <h2 class="section-title">Domaines d'Expertise</h2>
-                <p class="section-subtitle">Du staff décoratif à la plâtrerie traditionnelle</p>
+                <span class="section-eyebrow" data-i18n="home.expertise.eyebrow">Excellence</span>
+                <h2 class="section-title" data-i18n="home.expertise.title">Domaines d'Expertise</h2>
+                <p class="section-subtitle" data-i18n="home.expertise.subtitle">Du staff décoratif à la plâtrerie traditionnelle</p>
             </div>
 
             <div class="expertise-cards-grid">
@@ -383,8 +545,8 @@
                         </svg>
                     </div>
                     <div class="expertise-card-content">
-                        <h3 class="expertise-card-title">Staff & Ornements</h3>
-                        <p class="expertise-card-description">
+                        <h3 class="expertise-card-title" data-i18n="home.expertise.cards.staff.title">Staff & Ornements</h3>
+                        <p class="expertise-card-description" data-i18n="home.expertise.cards.staff.desc">
                             Création d'ornements en staff : moulures, corniches, rosaces, colonnes.
                             Maîtrise des techniques ancestrales pour des réalisations d'exception.
                         </p>
@@ -401,8 +563,8 @@
                                 </svg>
                             </div>
                     <div class="expertise-card-content">
-                        <h3 class="expertise-card-title">Plâtrerie Traditionnelle</h3>
-                        <p class="expertise-card-description">
+                        <h3 class="expertise-card-title" data-i18n="home.expertise.cards.plastering.title">Plâtrerie Traditionnelle</h3>
+                        <p class="expertise-card-description" data-i18n="home.expertise.cards.plastering.desc">
                             Plafonds décoratifs, enduits traditionnels et finitions artisanales.
                             Un savoir-faire perpétué avec rigueur et passion.
                         </p>
@@ -418,8 +580,8 @@
                                 </svg>
                             </div>
                     <div class="expertise-card-content">
-                        <h3 class="expertise-card-title">Restauration du Patrimoine, Monuments et Sites</h3>
-                        <p class="expertise-card-description">
+                        <h3 class="expertise-card-title" data-i18n="home.expertise.cards.restoration.title">Restauration du Patrimoine, Monuments et Sites</h3>
+                        <p class="expertise-card-description" data-i18n="home.expertise.cards.restoration.desc">
                             Restauration d'ornements anciens sur monuments historiques et châteaux.
                             Respect des techniques traditionnelles et du patrimoine.
                         </p>
@@ -429,7 +591,7 @@
 
             <div class="expertise-cta">
                 <a href="/pages/services.html" class="btn btn-outline btn-animated">
-                    <span>Voir tous les services</span>
+                    <span data-i18n="home.expertise.cta">Voir tous les services</span>
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <line x1="5" y1="12" x2="19" y2="12"></line>
                         <polyline points="12 5 19 12 12 19"></polyline>
@@ -439,69 +601,142 @@
         </div>
     </section>
 
-    <!-- Portfolio Preview Section -->
-    <section class="portfolio-preview portfolio-bento">
+    <!-- Portfolio Preview Section - Galerie d'Art -->
+    <section class="portfolio-gallery">
+        <div class="portfolio-gallery__background">
+            <div class="portfolio-gallery__pattern"></div>
+        </div>
+
         <div class="container">
-            <div class="section-header">
-                <span class="section-eyebrow">Portfolio</span>
-                <h2 class="section-title">Réalisations Remarquables</h2>
-                <p class="section-subtitle">Découvrez une sélection des projets les plus emblématiques</p>
-            </div>
-
-            <div class="bento-grid">
-                <a href="/pages/projects/villa-vandoeuvres.html" class="bento-item bento-tall">
-                    <div class="bento-inner">
-                        <div class="portfolio-image">
-                            <img src="/assets/images/project-2.jpg" alt="Villa Privée à Vandœuvres" loading="lazy" width="800" height="600">
+            <!-- Header éditorial asymétrique -->
+            <header class="portfolio-gallery__header">
+                <div class="portfolio-gallery__header-left">
+                    <span class="portfolio-gallery__eyebrow">
+                        <span class="portfolio-gallery__eyebrow-line"></span>
+                        <span data-i18n="home.portfolio.eyebrow">Portfolio</span>
+                    </span>
+                    <h2 class="portfolio-gallery__title">
+                        <span class="portfolio-gallery__title-main" data-i18n="home.portfolio.title">Réalisations</span>
+                        <span class="portfolio-gallery__title-accent" data-i18n="home.portfolio.title_accent">Remarquables</span>
+                    </h2>
+                </div>
+                <div class="portfolio-gallery__header-right">
+                    <p class="portfolio-gallery__intro" data-i18n="home.portfolio.subtitle">
+                        Découvrez une sélection des projets les plus emblématiques, témoins d'un savoir-faire d'exception
+                    </p>
+                    <div class="portfolio-gallery__stats">
+                        <div class="portfolio-gallery__stat">
+                            <span class="portfolio-gallery__stat-number">200+</span>
+                            <span class="portfolio-gallery__stat-label">Projets</span>
                         </div>
-                        <div class="portfolio-overlay">
-                            <div class="portfolio-content">
-                                <h3 class="portfolio-title">Villa Privée à Vandœuvres</h3>
-                                <p class="portfolio-category">Rénovation escaliers</p>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-
-                <a href="/pages/projects/chateau-glana.html" class="bento-item bento-medium">
-                    <div class="bento-inner">
-                        <div class="portfolio-image">
-                            <img src="/assets/images/project-3.jpg" alt="Château du glana" loading="lazy" width="800" height="600">
-                        </div>
-                        <div class="portfolio-overlay">
-                            <div class="portfolio-content">
-                                <h3 class="portfolio-title">Château du glana</h3>
-                                <p class="portfolio-category">Isolation & Design</p>
-                            </div>
+                        <div class="portfolio-gallery__stat">
+                            <span class="portfolio-gallery__stat-number">3</span>
+                            <span class="portfolio-gallery__stat-label">Pays</span>
                         </div>
                     </div>
-                </a>
+                </div>
+            </header>
 
-                <article class="bento-item bento-wide">
-                    <div class="bento-inner bento-info-card">
-                        <div class="info-card-content">
-                            <div class="info-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                                    <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
-                                    <path d="M2 17l10 5 10-5"></path>
-                                    <path d="M2 12l10 5 10-5"></path>
+            <!-- Grille galerie d'art -->
+            <div class="portfolio-gallery__grid">
+                <!-- Projet Hero - Villa Vandœuvres -->
+                <a href="/pages/projects/villa-vandoeuvres.html" class="portfolio-gallery__item portfolio-gallery__item--hero" data-reveal="left">
+                    <div class="portfolio-gallery__frame">
+                        <div class="portfolio-gallery__frame-corner portfolio-gallery__frame-corner--tl"></div>
+                        <div class="portfolio-gallery__frame-corner portfolio-gallery__frame-corner--tr"></div>
+                        <div class="portfolio-gallery__frame-corner portfolio-gallery__frame-corner--bl"></div>
+                        <div class="portfolio-gallery__frame-corner portfolio-gallery__frame-corner--br"></div>
+                        <div class="portfolio-gallery__image-wrapper">
+                            <img src="/assets/images/project-2.jpg" alt="Villa Privée à Vandœuvres - Rénovation d'escaliers en staff" loading="lazy" width="800" height="600" class="portfolio-gallery__image" data-i18n-alt="home.portfolio.projects.villa.image_alt">
+                            <div class="portfolio-gallery__image-overlay"></div>
+                        </div>
+                        <div class="portfolio-gallery__content">
+                            <span class="portfolio-gallery__location">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                    <circle cx="12" cy="10" r="3"></circle>
                                 </svg>
-                            </div>
-                            <h4>Excellence reconnue</h4>
-                            <p>Interventions en France, Suisse et à l'international pour une clientèle exigeante</p>
+                                Suisse
+                            </span>
+                            <h3 class="portfolio-gallery__item-title" data-i18n="home.portfolio.projects.villa.title">Villa Privée à Vandœuvres</h3>
+                            <p class="portfolio-gallery__item-category" data-i18n="home.portfolio.projects.villa.category">Rénovation escaliers</p>
+                            <span class="portfolio-gallery__view-btn">
+                                <span>Découvrir</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    <polyline points="12 5 19 12 12 19"></polyline>
+                                </svg>
+                            </span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Projet secondaire - Château du Glana -->
+                <a href="/pages/projects/chateau-glana.html" class="portfolio-gallery__item portfolio-gallery__item--secondary" data-reveal="right">
+                    <div class="portfolio-gallery__frame">
+                        <div class="portfolio-gallery__frame-corner portfolio-gallery__frame-corner--tl"></div>
+                        <div class="portfolio-gallery__frame-corner portfolio-gallery__frame-corner--tr"></div>
+                        <div class="portfolio-gallery__frame-corner portfolio-gallery__frame-corner--bl"></div>
+                        <div class="portfolio-gallery__frame-corner portfolio-gallery__frame-corner--br"></div>
+                        <div class="portfolio-gallery__image-wrapper">
+                            <img src="/assets/images/project-3.jpg" alt="Château du Glana - Staff décoratif et isolation" loading="lazy" width="800" height="600" class="portfolio-gallery__image" data-i18n-alt="home.portfolio.projects.glana.image_alt">
+                            <div class="portfolio-gallery__image-overlay"></div>
+                        </div>
+                        <div class="portfolio-gallery__content">
+                            <span class="portfolio-gallery__location">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                    <circle cx="12" cy="10" r="3"></circle>
+                                </svg>
+                                France
+                            </span>
+                            <h3 class="portfolio-gallery__item-title" data-i18n="home.portfolio.projects.glana.title">Château du Glana</h3>
+                            <p class="portfolio-gallery__item-category" data-i18n="home.portfolio.projects.glana.category">Staff décoratif</p>
+                            <span class="portfolio-gallery__view-btn">
+                                <span>Découvrir</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    <polyline points="12 5 19 12 12 19"></polyline>
+                                </svg>
+                            </span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Carte Excellence -->
+                <article class="portfolio-gallery__item portfolio-gallery__item--info" data-reveal="up">
+                    <div class="portfolio-gallery__info-card">
+                        <div class="portfolio-gallery__info-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+                                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                            </svg>
+                        </div>
+                        <div class="portfolio-gallery__info-content">
+                            <h4 class="portfolio-gallery__info-title" data-i18n="home.portfolio.info_card.title">Excellence reconnue</h4>
+                            <p class="portfolio-gallery__info-text" data-i18n="home.portfolio.info_card.desc">
+                                Interventions en France, Suisse et à l'international pour une clientèle exigeante
+                            </p>
+                        </div>
+                        <div class="portfolio-gallery__info-decoration">
+                            <span></span><span></span><span></span>
                         </div>
                     </div>
                 </article>
             </div>
 
-            <div class="portfolio-cta">
-                <a href="/pages/portfolio.html" class="btn btn-primary btn-animated">
-                    <span>Voir toutes les réalisations</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <line x1="5" y1="12" x2="19" y2="12"></line>
-                        <polyline points="12 5 19 12 12 19"></polyline>
-                    </svg>
+            <!-- CTA élégant -->
+            <div class="portfolio-gallery__cta">
+                <div class="portfolio-gallery__cta-line"></div>
+                <a href="/pages/portfolio.html" class="portfolio-gallery__cta-btn">
+                    <span class="portfolio-gallery__cta-text" data-i18n="home.portfolio.cta">Voir toutes les réalisations</span>
+                    <span class="portfolio-gallery__cta-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </span>
                 </a>
+                <div class="portfolio-gallery__cta-line"></div>
             </div>
         </div>
     </section>
@@ -510,9 +745,9 @@
     <section class="values-section-luxury">
         <div class="container">
             <div class="section-header-luxury">
-                <span class="section-eyebrow">Notre Philosophie</span>
-                <h2 class="section-title-luxury">Une Approche Unique</h2>
-                <p class="section-description-luxury">
+                <span class="section-eyebrow" data-i18n="home.values.eyebrow">Notre Philosophie</span>
+                <h2 class="section-title-luxury" data-i18n="home.values.title">Une Approche Unique</h2>
+                <p class="section-description-luxury" data-i18n="home.values.subtitle">
                     L'excellence dans chaque détail, la passion dans chaque geste
                 </p>
             </div>
@@ -528,8 +763,8 @@
                             </svg>
                         </div>
                         <div class="value-number-luxury">01</div>
-                        <h3 class="value-title-luxury">Exigence du Détail</h3>
-                        <p class="value-description-luxury">
+                        <h3 class="value-title-luxury" data-i18n="home.values.cards.detail.title">Exigence du Détail</h3>
+                        <p class="value-description-luxury" data-i18n="home.values.cards.detail.desc">
                             Chaque projet est traité avec une attention méticuleuse aux finitions,
                             garantissant un résultat impeccable qui dépasse les attentes.
                         </p>
@@ -547,8 +782,8 @@
                             </svg>
                         </div>
                         <div class="value-number-luxury">02</div>
-                        <h3 class="value-title-luxury">Écoute du Client</h3>
-                        <p class="value-description-luxury">
+                        <h3 class="value-title-luxury" data-i18n="home.values.cards.listening.title">Écoute du Client</h3>
+                        <p class="value-description-luxury" data-i18n="home.values.cards.listening.desc">
                             Une collaboration étroite et transparente à chaque étape,
                             pour que votre vision devienne réalité.
                         </p>
@@ -563,8 +798,8 @@
                             </svg>
                         </div>
                         <div class="value-number-luxury">03</div>
-                        <h3 class="value-title-luxury">Adaptabilité</h3>
-                        <p class="value-description-luxury">
+                        <h3 class="value-title-luxury" data-i18n="home.values.cards.adaptability.title">Adaptabilité</h3>
+                        <p class="value-description-luxury" data-i18n="home.values.cards.adaptability.desc">
                             Capacité à s'adapter aux contraintes techniques les plus spécifiques
                             et à proposer des solutions innovantes.
                         </p>
@@ -579,8 +814,8 @@
                             </svg>
                         </div>
                         <div class="value-number-luxury">04</div>
-                        <h3 class="value-title-luxury">Excellence Artisanale</h3>
-                        <p class="value-description-luxury">
+                        <h3 class="value-title-luxury" data-i18n="home.values.cards.excellence.title">Excellence Artisanale</h3>
+                        <p class="value-description-luxury" data-i18n="home.values.cards.excellence.desc">
                             Un savoir-faire reconnu alliant techniques traditionnelles
                             et méthodes modernes pour des résultats remarquables.
                         </p>
@@ -595,23 +830,23 @@
         <div class="container">
             <div class="cta-clean-wrapper">
                 <div class="cta-clean-content">
-                    <div class="cta-clean-badge">Parlons de votre projet</div>
-                    <h2 class="cta-clean-title">Transformons votre vision en réalité</h2>
-                    <p class="cta-clean-text">
+                    <div class="cta-clean-badge" data-i18n="home.cta.badge">Parlons de votre projet</div>
+                    <h2 class="cta-clean-title" data-i18n="home.cta.title">Transformons votre vision en réalité</h2>
+                    <p class="cta-clean-text" data-i18n="home.cta.text">
                         Bénéficiez d'un accompagnement personnalisé pour votre projet de décoration intérieure.
                         Du conseil à la réalisation, l'entreprise met son expertise à votre service.
                     </p>
                 </div>
                 <div class="cta-clean-actions">
                     <a href="/pages/contact.html" class="cta-clean-btn cta-clean-btn-primary">
-                        <span>Demander un devis</span>
+                        <span data-i18n="home.cta.button">Demander un devis</span>
                         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <line x1="5" y1="12" x2="19" y2="12"></line>
                             <polyline points="12 5 19 12 12 19"></polyline>
                         </svg>
                     </a>
                     <div class="cta-clean-contact">
-                        <span class="cta-clean-contact-label">ou appelez-moi</span>
+                        <span class="cta-clean-contact-label" data-i18n="home.cta.or_call">ou appelez-moi</span>
                         <a href="tel:+33652738810" class="cta-clean-phone">+33 6 52 73 88 10</a>
                     </div>
                 </div>
@@ -626,43 +861,43 @@
             <div class="footer-grid">
                 <div class="footer-col">
                     <div class="footer-logo">
-                        <img src="/assets/images/logo-new.png" alt="Alexandre CHALIGNÉ - Entreprise au Service de l'Exception" class="footer-logo-image" width="240" height="152">
+                        <img src="/assets/images/logo-new.png" alt="Alexandre CHALIGNÉ - Entreprise au Service de l'Exception" class="footer-logo-image" width="240" height="152" data-i18n-alt="common.logo_alt">
                     </div>
-                    <p class="footer-description">
+                    <p class="footer-description" data-i18n="common.footer.description" data-i18n-html="true">
                         <span style="white-space: nowrap;">Entreprise au service de la restauration</span><br>
                         <span style="white-space: nowrap;">et de la création sur mesure.</span>
                     </p>
                 </div>
 
                 <div class="footer-col">
-                    <h4 class="footer-title">Navigation</h4>
+                    <h4 class="footer-title" data-i18n="common.footer.nav_title">Navigation</h4>
                     <ul class="footer-links">
-                        <li><a href="/">Accueil</a></li>
-                        <li><a href="/pages/about.html">À Propos</a></li>
-                        <li><a href="/pages/services.html">Services</a></li>
-                        <li><a href="/pages/portfolio.html">Réalisations</a></li>
-                        <li><a href="/pages/contact.html">Contact</a></li>
+                        <li><a href="/" data-i18n="common.nav.home">Accueil</a></li>
+                        <li><a href="/pages/about.html" data-i18n="common.nav.about">À Propos</a></li>
+                        <li><a href="/pages/services.html" data-i18n="common.nav.services">Services</a></li>
+                        <li><a href="/pages/portfolio.html" data-i18n="common.nav.portfolio">Réalisations</a></li>
+                        <li><a href="/pages/contact.html" data-i18n="common.nav.contact">Contact</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-col">
-                    <h4 class="footer-title">Services</h4>
+                    <h4 class="footer-title" data-i18n="common.footer.services_title">Services</h4>
                     <ul class="footer-links">
-                        <li><a href="/pages/services.html#staff-ornements">Staff & Ornements</a></li>
-                        <li><a href="/pages/services.html#platrerie-traditionnelle">Plâtrerie Traditionnelle</a></li>
-                        <li><a href="/pages/services.html#renovation">Restauration du Patrimoine, Monuments et Sites</a></li>
+                        <li><a href="/pages/services.html#staff-ornements" data-i18n="common.footer.services.staff">Staff & Ornements</a></li>
+                        <li><a href="/pages/services.html#platrerie-traditionnelle" data-i18n="common.footer.services.plastering">Plâtrerie Traditionnelle</a></li>
+                        <li><a href="/pages/services.html#renovation" data-i18n="common.footer.services.restoration">Restauration du Patrimoine, Monuments et Sites</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-col">
-                    <h4 class="footer-title">Contact</h4>
+                    <h4 class="footer-title" data-i18n="common.footer.contact_title">Contact</h4>
                     <ul class="footer-contact">
                         <li>
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
                                 <circle cx="12" cy="10" r="3"></circle>
                             </svg>
-                            Ville-la-Grand, France
+                            <span data-i18n="common.footer.location">Ville-la-Grand, France</span>
                         </li>
                         <li>
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -681,23 +916,23 @@
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
                             </svg>
-                            <a href="https://www.linkedin.com/in/alexandre-chalign%C3%A9-492a6b10b/" target="_blank" rel="noopener noreferrer">Suivez-moi sur LinkedIn</a>
+                            <a href="https://www.linkedin.com/in/alexandre-chalign%C3%A9-492a6b10b/" target="_blank" rel="noopener noreferrer" data-i18n="common.footer.linkedin">Suivez-moi sur LinkedIn</a>
                         </li>
                     </ul>
                 </div>
             </div>
 
             <div class="footer-bottom">
-                <p class="footer-copyright">
-                    &copy; 2025 Alexandre CHALIGNÉ. Tous droits réservés.
+                <p class="footer-copyright" data-i18n="common.footer.copyright" data-i18n-html="true">
+                    &copy; <span id="currentYear">2026</span> Alexandre CHALIGNÉ. Tous droits réservés.
                 </p>
-                <p class="footer-signature">
-                    Fait avec passion par <a href="https://www.propulseo-site.com/" target="_blank" rel="noopener noreferrer" class="signature-link">Propul'SEO</a>
+                <p class="footer-signature" data-i18n="common.footer.signature" data-i18n-html="true">
+                    Fait avec Passion par <a href="https://www.propulseo-site.com/" target="_blank" rel="noopener noreferrer" class="signature-link">Propul'SEO</a>
                 </p>
                 <div class="footer-legal">
-                    <a href="/pages/mentions-legales.html">Mentions légales</a>
+                    <a href="/pages/mentions-legales.html" data-i18n="common.footer.legal_mentions">Mentions légales</a>
                     <span class="separator">•</span>
-                    <a href="/pages/politique-confidentialite.html">Politique de confidentialité</a>
+                    <a href="/pages/politique-confidentialite.html" data-i18n="common.footer.privacy_policy">Politique de confidentialité</a>
                 </div>
             </div>
         </div>
@@ -718,19 +953,19 @@
                     </svg>
                 </div>
                 <div class="cookie-text">
-                    <h3 id="cookieTitle" class="cookie-title">Votre expérience, notre priorité</h3>
-                    <p id="cookieDesc" class="cookie-description">
+                    <h3 id="cookieTitle" class="cookie-title" data-i18n="common.cookies.title">Votre expérience, notre priorité</h3>
+                    <p id="cookieDesc" class="cookie-description" data-i18n="common.cookies.description" data-i18n-html="true">
                         Nous utilisons des cookies pour améliorer votre navigation et analyser notre trafic.
                         En poursuivant, vous acceptez notre <a href="/pages/politique-confidentialite.html" class="cookie-link">politique de confidentialité</a>.
                     </p>
                 </div>
             </div>
             <div class="cookie-actions">
-                <button class="cookie-btn cookie-btn-secondary" id="cookieDecline">
+                <button class="cookie-btn cookie-btn-secondary" id="cookieDecline" data-i18n="common.cookies.decline">
                     Refuser
                 </button>
                 <button class="cookie-btn cookie-btn-primary" id="cookieAccept">
-                    <span>Accepter</span>
+                    <span data-i18n="common.cookies.accept">Accepter</span>
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <polyline points="20 6 9 17 4 12"></polyline>
                     </svg>
@@ -739,6 +974,22 @@
         </div>
     </div>
 
+    <!-- Page Loader Script -->
+    <script>
+        (function() {
+            var loader = document.getElementById('pageLoader');
+            if (loader) {
+                setTimeout(function() {
+                    loader.classList.add('fade-out');
+                    setTimeout(function() {
+                        loader.style.display = 'none';
+                    }, 1000);
+                }, 3000);
+            }
+        })();
+    </script>
+
+    <script type="module" src="/assets/js/i18n.js"></script>
     <script type="module" src="/assets/js/ux-enhancements.js"></script>
     <script type="module" src="/assets/js/creative-animations.js"></script>
     <script type="module" src="/assets/js/main.js"></script>

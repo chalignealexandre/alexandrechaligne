@@ -23,7 +23,19 @@ if (hasHero && window.pageYOffset === 0) {
     navbar.classList.add('navbar-transparent');
 }
 
-window.addEventListener('scroll', () => {
+// Throttle function for scroll performance
+function throttle(func, limit) {
+    let inThrottle;
+    return function(...args) {
+        if (!inThrottle) {
+            func.apply(this, args);
+            inThrottle = true;
+            setTimeout(() => inThrottle = false, limit);
+        }
+    }
+}
+
+const handleNavbarScroll = throttle(() => {
     const currentScroll = window.pageYOffset;
 
     // Handle transparent navbar for home page hero
@@ -31,16 +43,13 @@ window.addEventListener('scroll', () => {
         const heroHeight = homeHero.offsetHeight;
 
         if (currentScroll < heroHeight - 100) {
-            // We're still in the hero section
             navbar.classList.add('navbar-transparent');
             navbar.classList.remove('scrolled');
         } else {
-            // We've scrolled past the hero section
             navbar.classList.remove('navbar-transparent');
             navbar.classList.add('scrolled');
         }
     } else if (isPageWithImageHero) {
-        // For pages with image hero (about, contact, etc.)
         if (currentScroll > 50) {
             navbar.classList.remove('navbar-transparent');
             navbar.classList.add('scrolled');
@@ -49,7 +58,6 @@ window.addEventListener('scroll', () => {
             navbar.classList.remove('scrolled');
         }
     } else {
-        // For pages without hero, always keep navbar white
         navbar.classList.remove('navbar-transparent');
         if (currentScroll > 50) {
             navbar.classList.add('scrolled');
@@ -59,7 +67,9 @@ window.addEventListener('scroll', () => {
     }
 
     lastScroll = currentScroll;
-});
+}, 16);
+
+window.addEventListener('scroll', handleNavbarScroll, { passive: true });
 
 // Logo image hover effect (if needed, can be customized)
 const logoImage = document.querySelector('.logo-image');
@@ -165,29 +175,20 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-// Animate elements on scroll with stagger effect
+// Animate elements on scroll - simplified for performance
 const animateOnScroll = document.querySelectorAll(
-    '.expertise-card, .expertise-hex, .portfolio-item, .bento-item, .value-card-luxury, .value-item, .section-header, .feature-item, .application-card, .staff-content-grid > *'
+    '.expertise-card, .portfolio-item, .bento-item, .value-card-luxury, .section-header'
 );
 
-animateOnScroll.forEach((el, index) => {
+animateOnScroll.forEach((el) => {
     el.style.opacity = '0';
-    el.style.transform = 'translateY(30px)';
-    el.style.transition = `opacity 0.4s ease ${index * 0.05}s, transform 0.4s ease ${index * 0.05}s`;
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
     observer.observe(el);
 });
 
-// Parallax effect for specific elements
-window.addEventListener('scroll', () => {
-    const scrolled = window.pageYOffset;
-    const parallaxElements = document.querySelectorAll('[data-parallax]');
-
-    parallaxElements.forEach(el => {
-        const speed = el.getAttribute('data-parallax') || 0.5;
-        const yPos = -(scrolled * speed);
-        el.style.transform = `translateY(${yPos}px)`;
-    });
-});
+// Parallax effect disabled for performance
+// Elements with [data-parallax] will not animate
 
 // ===================================
 // PORTFOLIO HOVER EFFECT
@@ -303,10 +304,10 @@ const fixedContactBtn = createFixedContactButton();
 
 // FIXED CONTACT BUTTON VISIBILITY
 if (fixedContactBtn) {
-    window.addEventListener('scroll', () => {
-        // Hide button when at the bottom of the page (near footer)
-        const footer = document.querySelector('.footer');
-        if (footer) {
+    const footer = document.querySelector('.footer');
+
+    if (footer) {
+        const handleContactBtnVisibility = throttle(() => {
             const footerTop = footer.offsetTop;
             const windowBottom = window.pageYOffset + window.innerHeight;
 
@@ -317,33 +318,16 @@ if (fixedContactBtn) {
                 fixedContactBtn.style.opacity = '1';
                 fixedContactBtn.style.pointerEvents = 'auto';
             }
-        }
-    });
+        }, 100);
+
+        window.addEventListener('scroll', handleContactBtnVisibility, { passive: true });
+    }
 }
 
 // ===================================
 // PERFORMANCE OPTIMIZATIONS
 // ===================================
-
-// Debounce function for performance
-function debounce(func, wait) {
-    let timeout;
-    return function executedFunction(...args) {
-        const later = () => {
-            clearTimeout(timeout);
-            func(...args);
-        };
-        clearTimeout(timeout);
-        timeout = setTimeout(later, wait);
-    };
-}
-
-// Optimized scroll handler
-const optimizedScroll = debounce(() => {
-    // Any additional scroll-based functionality can go here
-}, 100);
-
-window.addEventListener('scroll', optimizedScroll);
+// Scroll handlers are now throttled above
 
 // ===================================
 // PRELOAD CRITICAL IMAGES
@@ -400,57 +384,14 @@ if (mobileMenuToggle) {
 }
 
 // ===================================
-// ENHANCED SCROLL ANIMATIONS
+// ENHANCED SCROLL ANIMATIONS (SIMPLIFIED)
 // ===================================
-
-const observerOptionsEnhanced = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-};
-
-const enhancedObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('animated');
-
-            // Add specific animation classes based on element type
-            if (entry.target.classList.contains('service-card')) {
-                entry.target.classList.add('fade-in-up');
-            } else if (entry.target.classList.contains('portfolio-card')) {
-                entry.target.classList.add('scale-in');
-            } else if (entry.target.classList.contains('testimonial-card')) {
-                entry.target.classList.add('fade-in-up');
-            }
-        }
-    });
-}, observerOptionsEnhanced);
-
-// Observe all animated elements
-const animatedElements = document.querySelectorAll(
-    '.service-card, .portfolio-card, .testimonial-card, ' +
-    '.faq-item, .process-step, .area-card, .value-card, ' +
-    '.stat-item, .timeline-item, .expertise-card'
-);
-
-animatedElements.forEach((el, index) => {
-    el.classList.add('animate-on-scroll');
-    el.style.animationDelay = `${index * 0.05}s`;
-    enhancedObserver.observe(el);
-});
+// Reduced for better performance - using CSS animations instead
 
 // ===================================
-// PARALLAX EFFECT
+// PARALLAX EFFECT (DISABLED FOR PERFORMANCE)
 // ===================================
-
-const parallaxSections = document.querySelectorAll('.parallax-section');
-
-window.addEventListener('scroll', () => {
-    parallaxSections.forEach(section => {
-        const scrolled = window.pageYOffset;
-        const rate = scrolled * 0.5;
-        section.style.transform = `translateY(${rate}px)`;
-    });
-});
+// Parallax sections disabled to improve scroll performance
 
 // ===================================
 // IMAGE REVEAL ON SCROLL
@@ -542,60 +483,14 @@ counters.forEach(counter => {
 });
 
 // ===================================
-// ENHANCED CARD HOVER EFFECTS
+// ENHANCED CARD HOVER EFFECTS (DISABLED FOR PERFORMANCE)
 // ===================================
-
-const cards3D = document.querySelectorAll('.card-3d');
-
-cards3D.forEach(card => {
-    card.addEventListener('mousemove', (e) => {
-        const rect = card.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-
-        const centerX = rect.width / 2;
-        const centerY = rect.height / 2;
-
-        const rotateX = (y - centerY) / 10;
-        const rotateY = (centerX - x) / 10;
-
-        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-10px)`;
-    });
-
-    card.addEventListener('mouseleave', () => {
-        card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateY(0)';
-    });
-});
+// 3D card effects disabled to improve scroll performance
 
 // ===================================
-// SMOOTH PAGE TRANSITIONS
+// SMOOTH PAGE TRANSITIONS (SIMPLIFIED)
 // ===================================
-
-document.querySelectorAll('a:not([target="_blank"])').forEach(link => {
-    link.addEventListener('click', function(e) {
-        if (this.hostname === window.location.hostname && !this.getAttribute('href').startsWith('#')) {
-            e.preventDefault();
-            const href = this.getAttribute('href');
-
-            document.body.style.opacity = '0';
-            document.body.style.transition = 'opacity 0.3s ease';
-
-            setTimeout(() => {
-                window.location.href = href;
-            }, 300);
-        }
-    });
-});
-
-// Fade in on page load
-window.addEventListener('load', () => {
-    document.body.style.opacity = '0';
-    document.body.style.transition = 'opacity 0.5s ease';
-
-    setTimeout(() => {
-        document.body.style.opacity = '1';
-    }, 100);
-});
+// Page transition animations removed for faster navigation
 
 // ===================================
 // BEFORE/AFTER SLIDER
@@ -807,129 +702,32 @@ if (contactForm) {
 }
 
 // ===================================
-// STAGGER ANIMATION FOR LISTS
+// STAGGER ANIMATION (DISABLED FOR PERFORMANCE)
 // ===================================
+// Stagger animations removed for smoother scrolling
 
-function staggerAnimation(selector, animationClass = 'fade-in-up') {
-    const elements = document.querySelectorAll(selector);
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const items = entry.target.querySelectorAll('li, .item');
-                items.forEach((item, index) => {
-                    setTimeout(() => {
-                        item.classList.add(animationClass);
-                    }, index * 100);
-                });
-                observer.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.2 });
+// ===================================
+// MOUSE FOLLOW EFFECT (DISABLED FOR PERFORMANCE)
+// ===================================
+// Mouse follow disabled to improve performance
 
-    elements.forEach(el => observer.observe(el));
+// ===================================
+// IMAGE LAZY LOADING
+// ===================================
+// Using native browser lazy loading only (loading="lazy" attribute)
+
+// ===================================
+// FOOTER ANIMATIONS (SIMPLIFIED)
+// ===================================
+// Footer animations simplified for better performance
+
+// ===================================
+// DYNAMIC YEAR IN COPYRIGHT
+// ===================================
+const yearSpan = document.getElementById('currentYear');
+if (yearSpan) {
+    yearSpan.textContent = new Date().getFullYear();
 }
-
-// Apply to service lists, value items, etc.
-staggerAnimation('.service-list');
-staggerAnimation('.values-grid');
-staggerAnimation('.process-timeline');
-
-// ===================================
-// MOUSE FOLLOW EFFECT (OPTIONAL)
-// ===================================
-
-const mouseFollow = document.createElement('div');
-mouseFollow.className = 'mouse-follow';
-document.body.appendChild(mouseFollow);
-
-document.addEventListener('mousemove', (e) => {
-    mouseFollow.style.left = e.clientX + 'px';
-    mouseFollow.style.top = e.clientY + 'px';
-});
-
-// Activate on interactive elements
-const interactiveElements = document.querySelectorAll('a, button, .portfolio-card, .expertise-card');
-interactiveElements.forEach(el => {
-    el.addEventListener('mouseenter', () => {
-        mouseFollow.classList.add('active');
-    });
-
-    el.addEventListener('mouseleave', () => {
-        mouseFollow.classList.remove('active');
-    });
-});
-
-// ===================================
-// IMAGE LAZY LOADING WITH FADE IN
-// ===================================
-
-const lazyImages = document.querySelectorAll('img[loading="lazy"]');
-const imageObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            const img = entry.target;
-            img.style.opacity = '0';
-            img.style.transition = 'opacity 0.6s ease';
-
-            img.addEventListener('load', () => {
-                img.style.opacity = '1';
-            });
-
-            imageObserver.unobserve(img);
-        }
-    });
-});
-
-lazyImages.forEach(img => imageObserver.observe(img));
-
-// ===================================
-// FOOTER LUXURY ANIMATIONS
-// ===================================
-
-// Footer logo animation (simplified for image logo)
-const footerLogo = document.querySelector('.footer-logo-image');
-if (footerLogo) {
-    const footerObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '0';
-                entry.target.style.transition = 'opacity 0.6s ease';
-                setTimeout(() => {
-                    entry.target.style.opacity = '1';
-                }, 100);
-                footerObserver.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.5 });
-
-    footerObserver.observe(footerLogo);
-}
-
-// Stagger animation for footer links
-const footerLinks = document.querySelectorAll('.footer-links li');
-footerLinks.forEach((link, index) => {
-    link.style.opacity = '0';
-    link.style.transform = 'translateY(10px)';
-    link.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-    link.style.transitionDelay = `${index * 0.1}s`;
-});
-
-const footerLinksObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            const links = entry.target.querySelectorAll('li');
-            links.forEach(link => {
-                link.style.opacity = '1';
-                link.style.transform = 'translateY(0)';
-            });
-            footerLinksObserver.unobserve(entry.target);
-        }
-    });
-}, { threshold: 0.2 });
-
-document.querySelectorAll('.footer-links').forEach(list => {
-    footerLinksObserver.observe(list);
-});
 
 // ===================================
 // FAQ ACCORDION
