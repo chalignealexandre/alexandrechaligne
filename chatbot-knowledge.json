@@ -1,0 +1,365 @@
+{
+  "metadata": {
+    "version": "1.0.0",
+    "created": "2026-01-27",
+    "client": "Alexandre Chaligné",
+    "website": "https://www.alexandrechaligne.com"
+  },
+
+  "design_tokens": {
+    "colors": {
+      "brand_primary": "#8b7355",
+      "brand_gold": "#a6956b",
+      "brand_light": "#c9b299",
+      "text_primary": "#3d3529",
+      "text_secondary": "#5c5347",
+      "text_muted": "#8a8078",
+      "bg_primary": "#f9f6f2",
+      "bg_secondary": "#f3efe9",
+      "bg_card": "#ffffff",
+      "bg_dark": "#2c2c2c",
+      "border_default": "#d4c9b8",
+      "border_light": "#e8e0d4"
+    },
+    "gradients": {
+      "primary": "linear-gradient(135deg, #8b7355 0%, #a6956b 100%)",
+      "dark": "linear-gradient(135deg, #2c2c2c 0%, #1a1a1a 100%)"
+    }
+  },
+
+  "identity": {
+    "name": "Alexandre Chaligné",
+    "company": "A.Chaligné",
+    "status": "Entrepreneur individuel",
+    "profession": "Staffeur ornemaniste & Plâtrier traditionnel",
+    "since": 2006,
+    "experience_years": "19+",
+    "projects_count": "200+",
+    "certifications": ["CAP Plâtrerie", "BP Plâtrerie"],
+    "formation_region": "Région Bordelaise",
+    "tagline": "Entreprise au service de la restauration et de la création sur mesure",
+    "signature_quote": "Tout est possible et imaginable avec le Staff, il n'existe aucune limite..."
+  },
+
+  "contact": {
+    "address": {
+      "full": "BAT H APT 302, 14 impasse des Moulins Gaud, 74100 Ville-la-Grand, France",
+      "city": "Ville-la-Grand",
+      "postal_code": "74100",
+      "country": "France"
+    },
+    "phone": {
+      "france": "+33 6 52 73 88 10",
+      "switzerland": "+41 79 891 88 10"
+    },
+    "email": "alexandre.chaligne@gmail.com",
+    "hours": "Lun - Ven : 8h - 18h",
+    "response_time": "Réponse sous 24h",
+    "linkedin": "https://www.linkedin.com/in/alexandre-chalign%C3%A9-492a6b10b/"
+  },
+
+  "legal": {
+    "siren": "804 174 043",
+    "siret": "804 174 043 00039",
+    "tva": "FR27 804174043",
+    "ape": "43.31Z",
+    "activity": "Travaux de plâtrerie – Artisan"
+  },
+
+  "services": {
+    "staff_ornements": {
+      "name": "Staff & Ornements",
+      "description": "Création d'ornements en staff : technique ancestrale pour des ornements d'une finesse exceptionnelle",
+      "offerings": [
+        "Création d'ornements en staff sur-mesure",
+        "Moulures et corniches décoratives",
+        "Rosaces de plafond et médaillons",
+        "Colonnes, pilastres et chapiteaux",
+        "Plafonds ornementaux et voûtes en staff",
+        "Éléments architecturaux complexes",
+        "Finitions artisanales (stucs, patines, dorures)"
+      ],
+      "why_choose": "Le staff offre une liberté créative infinie : léger, résistant et modelable, il permet de réaliser des ornements impossibles à obtenir avec d'autres matériaux."
+    },
+    "platrerie_traditionnelle": {
+      "name": "Plâtrerie Traditionnelle",
+      "description": "Techniques traditionnelles de plâtrerie transmises de génération en génération",
+      "offerings": [
+        "Plafonds traditionnels et plafonds à la française",
+        "Enduits à la chaux et enduits traditionnels",
+        "Finitions artisanales (talochées, lissées, brossées)",
+        "Plâtre traditionnel et mortier de chaux",
+        "Cloisons en plâtre massif",
+        "Travaux de rénovation et de création"
+      ],
+      "why_choose": "Respirabilité des murs, régulation hygrométrique naturelle, et rendu esthétique authentique"
+    },
+    "restauration_patrimoine": {
+      "name": "Restauration du Patrimoine",
+      "description": "Restauration et conservation d'ornements anciens sur monuments historiques et châteaux prestigieux",
+      "offerings": [
+        "Diagnostic patrimonial et analyse de l'existant",
+        "Restauration de décors en staff et ornements anciens",
+        "Reconstitution à l'identique de décors d'origine",
+        "Techniques de restauration respectant le patrimoine",
+        "Intervention sur monuments historiques classés",
+        "Collaboration avec architectes du patrimoine",
+        "Documentation et relevés des ouvrages"
+      ],
+      "references": "Châteaux Canon, Montrose, Pichon Longueville, Du Glana, Grand Théâtre de Bordeaux"
+    }
+  },
+
+  "staff_definition": {
+    "what_is_staff": "Le staff est un matériau composite traditionnel associant du plâtre, des fibres végétales et une armature métallique. Cette technique permet de créer des éléments décoratifs d'une finesse et d'une légèreté incomparables.",
+    "history": "Utilisé depuis l'Antiquité et perfectionné au fil des siècles",
+    "advantages": [
+      {"name": "Légèreté", "description": "Résistant mais léger, parfait pour les plafonds et les grandes surfaces"},
+      {"name": "Liberté de formes", "description": "Possibilités infinies de création : courbes, reliefs, ornements complexes"},
+      {"name": "Finitions impeccables", "description": "Surface lisse et uniforme, prête à recevoir peintures et patines"},
+      {"name": "Durabilité", "description": "Matériau pérenne qui traverse les siècles sans se dégrader"},
+      {"name": "Restauration fidèle", "description": "Idéal pour reproduire à l'identique des ornements anciens"},
+      {"name": "Écologique", "description": "Matériaux naturels et traditionnels, respectueux de l'environnement"}
+    ],
+    "applications": ["Moulures & Corniches", "Rosaces de Plafond", "Colonnes & Chapiteaux", "Plafonds Ornementaux"]
+  },
+
+  "pricing": {
+    "minimum_budget": "5000",
+    "currency": "EUR",
+    "note": "Chaque projet étant unique, il n'y a pas de budget minimum fixe. Les projets démarrent généralement à partir de 5 000 €.",
+    "quote": "gratuit et sans engagement",
+    "b2b_rates": "Tarifs préférentiels pour professionnels et partenaires réguliers"
+  },
+
+  "process": {
+    "steps": [
+      {"step": 1, "name": "Diagnostic & Relevés", "description": "Étude approfondie de l'existant, relevés précis et analyse des matériaux d'origine"},
+      {"step": 2, "name": "Conception", "description": "Dessin des moulures et éléments décoratifs en harmonie avec le style architectural"},
+      {"step": 3, "name": "Fabrication", "description": "Réalisation en atelier des éléments en staff avec techniques artisanales traditionnelles"},
+      {"step": 4, "name": "Pose & Finitions", "description": "Installation minutieuse sur site et finitions peintes pour un rendu impeccable"}
+    ]
+  },
+
+  "locations": {
+    "primary": "Ville-la-Grand, France (74100)",
+    "secondary": "Genève, Suisse",
+    "intervention_zones": [
+      {"zone": "Grand Est & Île-de-France", "frequency": "Régulier"},
+      {"zone": "Suisse (Genève, Lausanne)", "frequency": "Régulier"},
+      {"zone": "Toute la France", "frequency": "Sur projet"},
+      {"zone": "International", "frequency": "Sur demande"}
+    ]
+  },
+
+  "availability": {
+    "quote_delay": "24-48h",
+    "intervention_delay": "2-6 semaines après validation",
+    "b2b_quote_delay": "48h"
+  },
+
+  "guarantees": [
+    "Devis gratuit et sans engagement",
+    "Assurances professionnelles",
+    "Garantie décennale",
+    "Garantie de parfait achèvement",
+    "RC Pro"
+  ],
+
+  "values": [
+    {"name": "Exigence du Détail", "description": "Attention méticuleuse aux finitions, résultat impeccable"},
+    {"name": "Écoute du Client", "description": "Collaboration étroite et transparente à chaque étape"},
+    {"name": "Adaptabilité", "description": "Solutions innovantes face aux contraintes techniques spécifiques"},
+    {"name": "Excellence Artisanale", "description": "Savoir-faire alliant techniques traditionnelles et méthodes modernes"}
+  ],
+
+  "portfolio": {
+    "projects": [
+      {
+        "name": "Villa Privée Vandœuvres",
+        "location": "Vandœuvres, Suisse",
+        "year": 2022,
+        "type": "Résidentiel de Prestige",
+        "description": "Création d'un escalier monumental avec garde-corps sculpté en staff, véritable œuvre d'art architecturale",
+        "duration": "4 mois",
+        "testimonial": {
+          "text": "Le garde-corps sculpté en staff de notre escalier est une véritable œuvre d'art. Alexandre a transformé un élément fonctionnel en pièce maîtresse de notre villa.",
+          "author": "Pierre et Catherine Laurent",
+          "position": "Propriétaires"
+        }
+      },
+      {
+        "name": "Château du Glana",
+        "location": "Saint-Julien-Beychevelle, France",
+        "year": 2015,
+        "type": "Monument Historique",
+        "description": "Restauration alliant isolation thermique moderne et préservation du patrimoine architectural du XVIIIe siècle",
+        "surface": "450 m²",
+        "testimonial": {
+          "text": "Pour le Château du Glana, nous avions besoin d'allier performance thermique moderne et esthétique historique. Alexandre a relevé ce défi avec brio.",
+          "author": "François Delon",
+          "position": "Maître d'œuvre"
+        }
+      }
+    ],
+    "prestigious_references": [
+      "Château Canon",
+      "Château Montrose",
+      "Château Pichon Longueville",
+      "Château Du Glana",
+      "Grand Théâtre de Bordeaux",
+      "Églises classées monuments historiques"
+    ]
+  },
+
+  "faq": [
+    {
+      "id": "faq_001",
+      "question": "Qu'est-ce que le staff ?",
+      "answer_short": "Un matériau composite traditionnel (plâtre + fibres + armature) pour créer des ornements décoratifs d'exception.",
+      "answer_long": "Le staff est un matériau composite traditionnel associant du plâtre, des fibres végétales et une armature métallique. Utilisé depuis l'Antiquité, il permet de créer des éléments décoratifs d'une finesse et d'une légèreté incomparables : moulures, corniches, rosaces, colonnes et chapiteaux.",
+      "keywords": ["staff", "definition", "matériau", "plâtre", "ornements"]
+    },
+    {
+      "id": "faq_002",
+      "question": "Qui est Alexandre Chaligné ?",
+      "answer_short": "Staffeur ornemaniste et plâtrier traditionnel depuis 2006, spécialiste du staff.",
+      "answer_long": "Alexandre Chaligné est un staffeur ornemaniste et plâtrier traditionnel qui a débuté sa carrière en 2006 dans la région bordelaise. Spécialisé dans le staff, il a réalisé des projets prestigieux sur des châteaux bordelais, des monuments historiques et des villas de prestige en Suisse. Il cumule plus de 19 ans d'expérience et 200+ projets réalisés.",
+      "keywords": ["alexandre", "chaligné", "qui", "artisan", "parcours"]
+    },
+    {
+      "id": "faq_003",
+      "question": "Quels services proposez-vous ?",
+      "answer_short": "Staff & Ornements, Plâtrerie Traditionnelle, Restauration du Patrimoine.",
+      "answer_long": "L'entreprise propose trois grandes prestations : 1) Staff & Ornements (moulures, corniches, rosaces, colonnes, plafonds ornementaux), 2) Plâtrerie Traditionnelle (plafonds à la française, enduits à la chaux, finitions artisanales), 3) Restauration du Patrimoine (interventions sur monuments historiques et châteaux).",
+      "keywords": ["services", "prestations", "staff", "plâtrerie", "restauration"]
+    },
+    {
+      "id": "faq_004",
+      "question": "Où intervenez-vous ?",
+      "answer_short": "France entière, Suisse (Genève, Lausanne), international sur demande.",
+      "answer_long": "L'entreprise est basée à Ville-la-Grand (74), près de la frontière suisse. Elle intervient régulièrement dans le Grand Est, l'Île-de-France, et sur l'ensemble du territoire français. En Suisse, elle intervient fréquemment dans la région lémanique (Genève, Lausanne).",
+      "keywords": ["zone", "intervention", "suisse", "france", "genève", "région"]
+    },
+    {
+      "id": "faq_005",
+      "question": "Comment obtenir un devis ?",
+      "answer_short": "Remplissez le formulaire en ligne ou appelez directement. Réponse sous 24-48h.",
+      "answer_long": "Vous pouvez demander un devis gratuit via le formulaire de contact sur le site ou en appelant directement au +33 6 52 73 88 10 (France) ou +41 79 891 88 10 (Suisse). L'entreprise s'engage à vous répondre sous 24 à 48h.",
+      "keywords": ["devis", "contact", "prix", "estimation", "gratuit"]
+    },
+    {
+      "id": "faq_006",
+      "question": "Quel est le budget minimum ?",
+      "answer_short": "Les projets démarrent généralement à partir de 5 000 €.",
+      "answer_long": "Chaque projet étant unique, il n'y a pas de budget minimum fixe. Cependant, compte tenu de la nature haut de gamme des prestations, les projets démarrent généralement à partir de 5 000 €.",
+      "keywords": ["budget", "prix", "tarif", "coût", "minimum"]
+    },
+    {
+      "id": "faq_007",
+      "question": "Quels sont les délais d'intervention ?",
+      "answer_short": "2 à 6 semaines après validation du devis.",
+      "answer_long": "Les délais varient selon la nature et l'ampleur du projet. Pour une intervention standard, comptez généralement entre 2 et 6 semaines après validation du devis.",
+      "keywords": ["délai", "temps", "durée", "intervention", "disponibilité"]
+    },
+    {
+      "id": "faq_008",
+      "question": "Travaillez-vous sur des monuments historiques ?",
+      "answer_short": "Oui, avec expérience sur châteaux et bâtiments classés.",
+      "answer_long": "Oui, Alexandre Chaligné est formé aux techniques de restauration du patrimoine et travaille régulièrement sur des bâtiments classés monuments historiques, en collaboration avec les Architectes des Bâtiments de France.",
+      "keywords": ["monument", "historique", "classé", "patrimoine", "château", "ABF"]
+    },
+    {
+      "id": "faq_009",
+      "question": "Quelles garanties proposez-vous ?",
+      "answer_short": "Garantie décennale, garantie de parfait achèvement, assurances professionnelles.",
+      "answer_long": "Tous les travaux sont couverts par les garanties légales : garantie décennale et garantie de parfait achèvement. L'entreprise dispose de toutes les assurances professionnelles nécessaires, dont la RC Pro.",
+      "keywords": ["garantie", "décennale", "assurance", "couverture", "RC"]
+    },
+    {
+      "id": "faq_010",
+      "question": "Travaillez-vous avec des professionnels ?",
+      "answer_short": "Oui, partenariats avec architectes, décorateurs, maîtres d'œuvre.",
+      "answer_long": "L'entreprise collabore avec des professionnels : cabinets d'architecture, décorateurs, entreprises du bâtiment, maîtres d'œuvre, promoteurs, architectes du patrimoine. Elle propose des tarifs préférentiels et des devis sous 48h.",
+      "keywords": ["professionnel", "architecte", "décorateur", "partenaire", "B2B"]
+    }
+  ],
+
+  "intents": [
+    {
+      "intent": "demander_devis",
+      "utterances": ["Je voudrais un devis", "Combien ça coûte", "Pouvez-vous me faire un devis", "Prix pour", "Tarif pour", "Estimation pour"],
+      "response": "Je serai ravi de vous établir un devis gratuit et sans engagement. Pour vous répondre au mieux, pourriez-vous me préciser le type de projet, la localisation et vos coordonnées ? L'entreprise s'engage à vous répondre sous 24-48h."
+    },
+    {
+      "intent": "comprendre_staff",
+      "utterances": ["C'est quoi le staff", "Qu'est-ce que le staff", "Expliquez-moi le staff", "Je ne connais pas le staff", "Staff définition"],
+      "response": "Le staff est un matériau composite traditionnel associant du plâtre, des fibres végétales et une armature métallique. Il permet de créer des ornements d'une finesse exceptionnelle : moulures, corniches, rosaces, colonnes. Comme le dit Alexandre : \"Tout est possible et imaginable avec le Staff, il n'existe aucune limite...\""
+    },
+    {
+      "intent": "zone_intervention",
+      "utterances": ["Vous travaillez où", "Intervenez-vous en Suisse", "Zone d'intervention", "Vous vous déplacez", "Travaillez-vous à"],
+      "response": "L'entreprise est basée à Ville-la-Grand (74), à la frontière suisse. Zones d'intervention : Grand Est, Île-de-France, Suisse (Genève, Lausanne), toute la France pour les projets d'envergure, international sur demande."
+    },
+    {
+      "intent": "contact",
+      "utterances": ["Comment vous contacter", "Numéro de téléphone", "Email", "Prendre rendez-vous", "Vous joindre"],
+      "response": "Contactez Alexandre directement : +33 6 52 73 88 10 (France) ou +41 79 891 88 10 (Suisse). Email : alexandre.chaligne@gmail.com. Disponible du lundi au vendredi, 8h-18h. Réponse sous 24h."
+    },
+    {
+      "intent": "garanties",
+      "utterances": ["Garantie", "Êtes-vous assuré", "Décennale", "Assurance", "RC Pro"],
+      "response": "L'entreprise dispose de toutes les garanties légales : garantie décennale (10 ans), garantie de parfait achèvement, RC Professionnelle. SIRET 804 174 043 00039, Code APE 43.31Z."
+    },
+    {
+      "intent": "delais",
+      "utterances": ["Délai", "Combien de temps", "Quand pouvez-vous", "Disponibilité", "Urgence"],
+      "response": "Devis sous 24-48h. Intervention standard : 2 à 6 semaines après validation du devis. Ce délai inclut la fabrication en atelier et la pose sur site. Pour connaître la disponibilité actuelle, contactez Alexandre au +33 6 52 73 88 10."
+    },
+    {
+      "intent": "references",
+      "utterances": ["Exemples", "Réalisations", "Portfolio", "Projets", "Références", "Témoignages"],
+      "response": "Références prestigieuses : Châteaux Canon, Montrose, Pichon Longueville, Du Glana, Grand Théâtre de Bordeaux. Projets récents : Villa Vandœuvres (Suisse), Château du Glana (Bordeaux). Consultez le portfolio sur alexandrechaligne.com/pages/portfolio"
+    },
+    {
+      "intent": "salutation",
+      "utterances": ["Bonjour", "Bonsoir", "Salut", "Hello"],
+      "response": "Bienvenue ! Je suis l'assistant de Alexandre Chaligné, staffeur ornemaniste et plâtrier traditionnel depuis 2006. Comment puis-je vous aider ?"
+    }
+  ],
+
+  "objections": [
+    {
+      "objection": "C'est trop cher",
+      "response": "Je comprends. Le staff est un travail artisanal d'exception avec un savoir-faire rare. Le budget reflète la qualité des matériaux, le temps de fabrication et les garanties. C'est un investissement durable : le staff traverse les siècles."
+    },
+    {
+      "objection": "Vous êtes trop loin",
+      "response": "L'entreprise intervient dans toute la France, en Suisse et à l'international. Les projets d'exception méritent un artisan spécialisé, quelle que soit la distance."
+    },
+    {
+      "objection": "Les délais sont trop longs",
+      "response": "Un travail artisanal de qualité demande du temps. Les délais de 2 à 6 semaines permettent une fabrication soignée et une pose minutieuse. C'est la garantie d'un résultat impeccable et durable."
+    }
+  ],
+
+  "guardrails": {
+    "forbidden": [
+      "Donner un prix ferme sans visite sur site",
+      "Promettre des délais précis",
+      "Accepter un paiement",
+      "Inventer des références ou témoignages",
+      "Répondre sur des sujets hors métier"
+    ],
+    "fallback_info_missing": "Je n'ai pas cette information précise. Contactez Alexandre directement : +33 6 52 73 88 10 ou alexandre.chaligne@gmail.com",
+    "fallback_out_of_scope": "Cette question dépasse mon domaine d'expertise. Je suis spécialisé dans le staff et la plâtrerie traditionnelle."
+  },
+
+  "style_guide": {
+    "tone": ["Professionnel", "Chaleureux", "Expert", "Passionné"],
+    "vocabulary_preferred": ["savoir-faire", "techniques ancestrales", "artisanal", "finesse", "élégance", "exception", "sur-mesure", "patrimoine"],
+    "vocabulary_avoid": ["promo", "offre limitée", "pas cher", "facile", "rapide"],
+    "response_length": "2-3 phrases pour questions simples, listes structurées pour explications détaillées",
+    "always_include": "Une action suivante (appel, devis, lien)"
+  }
+}

@@ -9,14 +9,20 @@ const navLinks = document.querySelectorAll('.nav-link');
 
 // Scroll effect for navbar with luxury animations
 let lastScroll = 0;
-const pageHero = document.querySelector('.page-hero');
-const homeHero = document.querySelector('.hero');
-const contactHero = document.querySelector('.contact-hero-enhanced');
-const hasHero = pageHero !== null || homeHero !== null || contactHero !== null;
-const heroSection = pageHero || homeHero || contactHero;
 
-// Check if we're on a page with image background hero (not home page)
-const isPageWithImageHero = (pageHero !== null || contactHero !== null) && !homeHero;
+// Detect ALL hero types across the site
+const homeHero = document.querySelector('.hero');
+const pageHero = document.querySelector('.page-hero');
+const contactHero = document.querySelector('.contact-hero-enhanced');
+const legalHero = document.querySelector('.legal-hero');
+const projectHero = document.querySelector('.project-hero-premium');
+
+// Determine if page has any hero section
+const heroSection = homeHero || pageHero || contactHero || legalHero || projectHero;
+const hasHero = heroSection !== null;
+
+// Check if we're on a page with image/solid background hero (not home page video)
+const isPageWithImageHero = hasHero && !homeHero;
 
 // Initialize navbar state - transparent on pages with hero
 if (hasHero && window.pageYOffset === 0) {
@@ -38,8 +44,8 @@ function throttle(func, limit) {
 const handleNavbarScroll = throttle(() => {
     const currentScroll = window.pageYOffset;
 
-    // Handle transparent navbar for home page hero
-    if (homeHero && !isPageWithImageHero) {
+    // Home page: transparent over full video hero, solid when scrolled past
+    if (homeHero) {
         const heroHeight = homeHero.offsetHeight;
 
         if (currentScroll < heroHeight - 100) {
@@ -49,7 +55,9 @@ const handleNavbarScroll = throttle(() => {
             navbar.classList.remove('navbar-transparent');
             navbar.classList.add('scrolled');
         }
-    } else if (isPageWithImageHero) {
+    }
+    // Internal pages with hero: transparent at top, solid when scrolled
+    else if (isPageWithImageHero) {
         if (currentScroll > 50) {
             navbar.classList.remove('navbar-transparent');
             navbar.classList.add('scrolled');
@@ -57,7 +65,9 @@ const handleNavbarScroll = throttle(() => {
             navbar.classList.add('navbar-transparent');
             navbar.classList.remove('scrolled');
         }
-    } else {
+    }
+    // Pages without hero: always solid, add scrolled effect
+    else {
         navbar.classList.remove('navbar-transparent');
         if (currentScroll > 50) {
             navbar.classList.add('scrolled');
@@ -288,11 +298,10 @@ function createFixedContactButton() {
     fixedContactBtn.className = 'fixed-contact-btn';
     fixedContactBtn.setAttribute('aria-label', 'Demander un devis');
     fixedContactBtn.innerHTML = `
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
             <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
             <polyline points="22,6 12,13 2,6"></polyline>
         </svg>
-        <span class="fixed-contact-text">Contact</span>
     `;
 
     document.body.appendChild(fixedContactBtn);

@@ -62,14 +62,40 @@
         });
     }
 
+    // Ré-initialise l'observer pour les éléments injectés dynamiquement (ex: galerie Sanity)
+    function initScrollAnimationsForNewElements() {
+        const observerOptions = {
+            threshold: 0.15,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.gallery-item-premium:not(.animate-on-scroll)').forEach((el, index) => {
+            el.classList.add('animate-on-scroll');
+            el.classList.add(`delay-${(index % 4) + 1}`);
+            observer.observe(el);
+        });
+    }
+
     // === LIGHTBOX GALERIE ===
     function initLightbox() {
         const galleryItems = document.querySelectorAll('.gallery-item-premium');
         if (galleryItems.length === 0) return;
 
-        // Créer la structure lightbox
-        const lightbox = createLightboxElement();
-        document.body.appendChild(lightbox);
+        // Réutiliser la lightbox si déjà présente (galerie injectée dynamiquement)
+        let lightbox = document.querySelector('.lightbox-premium');
+        if (!lightbox) {
+            lightbox = createLightboxElement();
+            document.body.appendChild(lightbox);
+        }
 
         const lightboxImg = lightbox.querySelector('.lightbox-image-premium');
         const closeBtn = lightbox.querySelector('.lightbox-close-premium');
@@ -78,16 +104,21 @@
         const counter = lightbox.querySelector('.lightbox-counter-premium');
 
         let currentIndex = 0;
-        const images = Array.from(galleryItems).map(item => {
-            const img = item.querySelector('img');
-            return {
-                src: img.src,
-                alt: img.alt
-            };
-        });
 
-        // Ouvrir lightbox au clic
+        function getImages() {
+            return Array.from(document.querySelectorAll('.gallery-item-premium')).map(item => {
+                const img = item.querySelector('img');
+                return {
+                    src: img?.src || '',
+                    alt: img?.alt || ''
+                };
+            }).filter(i => i.src);
+        }
+
+        // Ouvrir lightbox au clic (bind une seule fois)
         galleryItems.forEach((item, index) => {
+            if (item.dataset.lightboxBound === '1') return;
+            item.dataset.lightboxBound = '1';
             item.addEventListener('click', () => {
                 currentIndex = index;
                 openLightbox();
@@ -166,6 +197,8 @@
         }
 
         function navigate(direction) {
+            const images = getImages();
+            if (images.length === 0) return;
             currentIndex += direction;
             if (currentIndex < 0) currentIndex = images.length - 1;
             if (currentIndex >= images.length) currentIndex = 0;
@@ -173,6 +206,9 @@
         }
 
         function updateImage() {
+            const images = getImages();
+            if (images.length === 0) return;
+            if (currentIndex >= images.length) currentIndex = images.length - 1;
             lightboxImg.src = images[currentIndex].src;
             lightboxImg.alt = images[currentIndex].alt;
             counter.textContent = `${currentIndex + 1} / ${images.length}`;
@@ -204,6 +240,12 @@
         `;
         return lightbox;
     }
+
+    // Ré-init lightbox quand la galerie est injectée par Sanity
+    window.addEventListener('galleryUpdated', () => {
+        initScrollAnimationsForNewElements();
+        initLightbox();
+    });
 
     // === ANIMATION DES COMPTEURS ===
     function initCounterAnimation() {

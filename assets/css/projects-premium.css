@@ -716,7 +716,7 @@
 .gallery-grid-premium {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 320px 280px;
+    grid-auto-rows: 280px;
     gap: 1rem;
 }
 
@@ -730,11 +730,7 @@
 
 .gallery-item-premium:nth-child(1) {
     grid-column: span 2;
-}
-
-.gallery-item-premium:nth-child(2),
-.gallery-item-premium:nth-child(3) {
-    grid-column: span 1;
+    grid-row: span 2;
 }
 
 .gallery-item-premium img {
@@ -1352,6 +1348,7 @@
     .gallery-grid-premium {
         grid-template-columns: 1fr;
         grid-template-rows: auto;
+        grid-auto-rows: 220px;
     }
 
     .gallery-item-premium,
@@ -1359,7 +1356,8 @@
     .gallery-item-premium:nth-child(2),
     .gallery-item-premium:nth-child(3) {
         grid-column: span 1;
-        height: 250px;
+        grid-row: auto;
+        height: auto;
     }
 
     .results-stats-premium {

@@ -13,6 +13,22 @@
       "destination": "/index.html"
     },
     {
+      "source": "/pages/projects/:slug",
+      "destination": "/pages/projects/project.html"
+    },
+    {
+      "source": "/pages/projects/:slug.html",
+      "destination": "/pages/projects/project.html"
+    },
+    {
+      "source": "/en/pages/projects/:slug",
+      "destination": "/pages/projects/project.html"
+    },
+    {
+      "source": "/en/pages/projects/:slug.html",
+      "destination": "/pages/projects/project.html"
+    },
+    {
       "source": "/en/pages/:path*.html",
       "destination": "/pages/:path*.html"
     },
@@ -21,8 +37,8 @@
       "destination": "/pages/:path*.html"
     },
     {
-      "source": "/pages/projects/:path*",
-      "destination": "/pages/projects/:path*.html"
+      "source": "/pages/projects/project.html",
+      "destination": "/pages/projects/project.html"
     }
   ],
   "headers": [

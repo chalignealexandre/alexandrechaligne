@@ -59,6 +59,7 @@
       "title_line2_word1": "en",
       "title_line2_word2": "Œuvre",
       "title_line2_word3": "d'Art",
+      "tagline": "Chaque projet est unique. Ensemble, créons quelque chose d'exceptionnel.",
       "tagline_line1": "Entreprise au service de la restauration et",
       "tagline_line2": "de la création sur mesure.",
       "cta_portfolio": "Découvrir nos réalisations",
@@ -68,7 +69,7 @@
       "eyebrow": "Staffeur Ornemaniste",
       "title_line1": "L'Excellence du Staff",
       "title_line2": "et de la Plâtrerie Traditionnelle",
-      "description1": "<strong>Staffeur ornemaniste et plâtrier traditionnel</strong>, Alexandre Chaligné est spécialisé dans l'art du staff, cette technique ancestrale qui permet de créer des ornements, moulures et corniches d'une finesse exceptionnelle.",
+      "description1": "<strong>Plâtrerie traditionnelle Staff Peinture</strong>, Alexandre Chaligné est spécialisé dans l'art du staff, cette technique ancestrale qui permet de créer des ornements, moulures et corniches d'une finesse exceptionnelle.",
       "description2": "Depuis 2006, l'entreprise met son expertise au service de projets prestigieux : châteaux bordelais (Canon, Montrose, Pichon Longueville, Du Glana), monuments historiques (Grand Théâtre de Bordeaux, églises), et projets uniques en Suisse et à l'international.",
       "description3": "Le staff offre des possibilités infinies pour sublimer vos espaces avec élégance et authenticité.",
       "cta": "Découvrir notre parcours",
@@ -89,7 +90,7 @@
       "definition_p2": "Utilisé depuis l'Antiquité et perfectionné au fil des siècles, le staff est le matériau de prédilection pour les ornements architecturaux d'exception : moulures, corniches, rosaces, colonnes, chapiteaux et bien plus encore.",
       "quote_text": "\"Tout est possible et imaginable avec le Staff, il n'existe aucune limite...\"",
       "quote_author": "Alexandre Chaligné",
-      "quote_title": "Staffeur Ornemaniste",
+      "quote_title": "Fondateur",
       "advantages_title": "Les Avantages du Staff",
       "advantages": {
         "lightness": {
@@ -160,7 +161,7 @@
     "portfolio": {
       "eyebrow": "Portfolio",
       "title": "Réalisations",
-      "title_accent": "Remarquables",
+      "title_accent": "Projets",
       "subtitle": "Découvrez une sélection des projets les plus emblématiques",
       "cta": "Voir toutes les réalisations",
       "projects": {
@@ -206,7 +207,7 @@
       "title": "Transformons votre vision en réalité",
       "text": "Bénéficiez d'un accompagnement personnalisé pour votre projet de décoration intérieure. Du conseil à la réalisation, l'entreprise met son expertise à votre service.",
       "button": "Demander un devis",
-      "or_call": "ou appelez-moi"
+      "or_call": "Ou Appelez-nous"
     }
   },
 
@@ -296,7 +297,7 @@
       "title": "Services",
       "subtitle": "Des prestations sur-mesure pour des réalisations d'exception"
     },
-    "intro": "En tant qu'entreprise spécialisée dans le <strong>staff ornemaniste et la plâtrerie traditionnelle</strong>, A.Chaligné intervient sur des projets variés qui ont tous en commun l'exigence de la qualité et du détail.",
+    "intro": "En tant qu'entreprise spécialisée dans le <strong>staff et la plâtrerie traditionnelle</strong>, A.Chaligné intervient sur des projets variés qui ont tous en commun l'exigence de la qualité et du détail.",
     "staff": {
       "title": "Staff & Ornements",
       "description": "Le <strong>staff</strong> est notre spécialité : cette technique ancestrale permet de créer des ornements d'une finesse exceptionnelle. Moulures, corniches, rosaces, colonnes et chapiteaux prennent vie avec précision et élégance.",
