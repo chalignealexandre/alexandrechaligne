@@ -655,8 +655,8 @@ if (contactForm) {
         });
     });
 
-    // Form submission with validation
-    contactForm.addEventListener('submit', (e) => {
+    // Form submission with validation + API send
+    contactForm.addEventListener('submit', async (e) => {
         e.preventDefault();
 
         // Validate all fields
@@ -685,8 +685,29 @@ if (contactForm) {
         submitBtn.disabled = true;
         submitBtn.setAttribute('aria-busy', 'true');
 
-        // Simulate form submission (replace with actual submission logic)
-        setTimeout(() => {
+        try {
+            const payload = {
+                name: contactForm.querySelector('#name')?.value?.trim() || '',
+                phone: contactForm.querySelector('#phone')?.value?.trim() || '',
+                email: contactForm.querySelector('#email')?.value?.trim() || '',
+                projectType: contactForm.querySelector('#project-type')?.value || '',
+                message: contactForm.querySelector('#message')?.value?.trim() || '',
+                consent: !!contactForm.querySelector('input[name="consent"]')?.checked
+            };
+
+            const response = await fetch('/api/contact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(payload)
+            });
+
+            const result = await response.json().catch(() => ({}));
+            if (!response.ok) {
+                throw new Error(result.error || "Erreur d'envoi.");
+            }
+
             submitBtn.innerHTML = '✓ Message envoyé !';
             submitBtn.style.background = '#4ade80';
             submitBtn.setAttribute('aria-busy', 'false');
@@ -705,8 +726,18 @@ if (contactForm) {
                 submitBtn.innerHTML = originalText;
                 submitBtn.disabled = false;
                 submitBtn.style.background = '';
-            }, 3000);
-        }, 2000);
+            }, 2500);
+        } catch (error) {
+            submitBtn.innerHTML = "Erreur d'envoi, réessayer";
+            submitBtn.style.background = '#ef4444';
+            submitBtn.setAttribute('aria-busy', 'false');
+
+            setTimeout(() => {
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+                submitBtn.style.background = '';
+            }, 2500);
+        }
     });
 }
 
