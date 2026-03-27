@@ -6,6 +6,7 @@
 import { fetchQuery } from './sanity-client.js';
 
 const REALISATION_QUERY = `*[_type == "realisation" && slug.current == $slug][0]{
+  "slug": slug.current,
   "heroImageUrl": heroImage.asset->url,
   heroBadge_fr, heroBadge_en, heroTitle_fr, heroTitle_en,
   heroTitleSuffix_fr, heroTitleSuffix_en, heroSubtitle_fr, heroSubtitle_en,
@@ -37,13 +38,101 @@ function getLang() {
   return lang === 'en' ? 'en' : 'fr';
 }
 
+function normalizeSlug(input) {
+  return String(input ?? '')
+    .trim()
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '') // diacritics
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '')
+    .replace(/-+/g, '-');
+}
+
 function getSlugFromPath() {
   const path = window.location.pathname.replace(/\/$/, '');
   const match = path.match(/\/projects\/([^/]+?)(?:\.html)?$/);
   if (!match) return null;
-  const slug = match[1];
+  const slug = normalizeSlug(decodeURIComponent(match[1]));
   if (!slug || slug === 'project') return null;
   return slug;
+}
+
+function getRawProjectSegmentFromPath() {
+  const path = window.location.pathname.replace(/\/$/, '');
+  const match = path.match(/\/projects\/([^/]+?)(?:\.html)?$/);
+  if (!match) return null;
+  return decodeURIComponent(match[1]).trim();
+}
+
+function showNotFound(slug) {
+  const subtitle = document.querySelector('.project-hero-premium .hero-subtitle-premium');
+  if (subtitle) subtitle.textContent = `Projet introuvable (${slug}).`;
+
+  const hideSelectors = [
+    '.project-meta-premium',
+    '.project-intro-premium',
+    '.challenge-solution-premium',
+    '.features-premium',
+    '.gallery-premium',
+    '.results-premium',
+  ];
+  hideSelectors.forEach((sel) => {
+    const el = document.querySelector(sel);
+    if (el) el.style.display = 'none';
+  });
+}
+
+function buildProjectUrl(slug) {
+  const isEn = window.location.pathname.startsWith('/en/');
+  const prefix = isEn ? '/en' : '';
+  return `${prefix}/pages/projects/${encodeURIComponent(slug)}.html`;
+}
+
+async function tryRedirectToClosestSlug(requestedSlug) {
+  const all = await fetchQuery(`*[_type == "realisation" && defined(slug.current)]{ "slug": slug.current }`);
+  if (!Array.isArray(all) || all.length === 0) return false;
+
+  const requested = normalizeSlug(requestedSlug);
+  const found = all.find((r) => normalizeSlug(r.slug) === requested);
+  if (!found || !found.slug) return false;
+
+  const targetUrl = buildProjectUrl(found.slug);
+  if (targetUrl && targetUrl !== window.location.pathname) {
+    window.location.replace(targetUrl);
+    return true;
+  }
+  return false;
+}
+
+async function tryRedirectByTitle(rawSegment) {
+  const q = String(rawSegment || '')
+    .trim()
+    .toLowerCase()
+    .replace(/[-_]+/g, ' ')
+    .replace(/\s+/g, ' ');
+
+  if (!q || q.length < 3) return false;
+
+  const hit = await fetchQuery(
+    `*[_type == "realisation" && defined(slug.current) && (
+      lower(coalesce(previewTitle_fr,"")) match $q ||
+      lower(coalesce(heroTitle_fr,"")) match $q ||
+      lower(coalesce(previewTitle_en,"")) match $q ||
+      lower(coalesce(heroTitle_en,"")) match $q
+    )][0]{ "slug": slug.current }`,
+    { q: `${q}*` }
+  );
+
+  const slug = hit?.slug;
+  if (!slug) return false;
+
+  const targetUrl = buildProjectUrl(slug);
+  if (targetUrl && targetUrl !== window.location.pathname) {
+    window.location.replace(targetUrl);
+    return true;
+  }
+  return false;
 }
 
 function applyHero(data) {
@@ -252,6 +341,7 @@ function applyResults(data) {
 }
 
 async function init() {
+  const rawSegment = getRawProjectSegmentFromPath();
   const slug = getSlugFromPath();
   if (!slug) return;
 
@@ -260,7 +350,26 @@ async function init() {
 
   try {
     const data = await fetchQuery(REALISATION_QUERY, { slug });
-    if (!data) return;
+    if (!data) {
+      // Si le slug d'URL ne match pas exactement (accents, tirets, casse),
+      // on tente de retrouver la bonne réalisation et de rediriger.
+      const redirected = await tryRedirectToClosestSlug(slug);
+      if (redirected) return;
+      const redirectedByTitle = await tryRedirectByTitle(rawSegment);
+      if (redirectedByTitle) return;
+      showNotFound(slug);
+      return;
+    }
+
+    // Même si on a trouvé le doc, on redirige vers l'URL canonique basée sur slug.current
+    // (évite les "URLs humaines" / variantes).
+    if (data.slug) {
+      const canonical = buildProjectUrl(data.slug);
+      if (canonical && canonical !== window.location.pathname) {
+        window.location.replace(canonical);
+        return;
+      }
+    }
 
     applyHero(data);
     applyMeta(data);

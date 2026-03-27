@@ -37,7 +37,8 @@
       },
       "service_ceilings": "Plafonds Décoratifs",
       "service_custom": "Projets Sur-Mesure",
-      "service_restoration": "Restauration du Patrimoine"
+      "service_restoration": "Restauration du Patrimoine",
+      "hours": "Lun – Ven : 8h – 18h<br>Sam : sur rendez-vous"
     },
     "cookies": {
       "title": "Votre expérience, notre priorité",
@@ -66,7 +67,7 @@
       "cta_contact": "Demander un devis"
     },
     "intro": {
-      "eyebrow": "Staffeur Ornemaniste",
+      "eyebrow": "Plâtrerie traditionnelle Staff Peinture",
       "title_line1": "L'Excellence du Staff",
       "title_line2": "et de la Plâtrerie Traditionnelle",
       "description1": "<strong>Plâtrerie traditionnelle Staff Peinture</strong>, Alexandre Chaligné est spécialisé dans l'art du staff, cette technique ancestrale qui permet de créer des ornements, moulures et corniches d'une finesse exceptionnelle.",
@@ -90,7 +91,7 @@
       "definition_p2": "Utilisé depuis l'Antiquité et perfectionné au fil des siècles, le staff est le matériau de prédilection pour les ornements architecturaux d'exception : moulures, corniches, rosaces, colonnes, chapiteaux et bien plus encore.",
       "quote_text": "\"Tout est possible et imaginable avec le Staff, il n'existe aucune limite...\"",
       "quote_author": "Alexandre Chaligné",
-      "quote_title": "Fondateur",
+      "quote_title": "Artisan staffeur ornemaniste",
       "advantages_title": "Les Avantages du Staff",
       "advantages": {
         "lightness": {
@@ -167,13 +168,22 @@
       "projects": {
         "villa": {
           "title": "Villa Privée à Vandœuvres",
-          "category": "Rénovation escaliers"
+          "category": "Rénovation escaliers",
+          "location": "Suisse",
+          "image_alt": "Rénovation d'escaliers en staff — Villa Privée Vandœuvres, Suisse — Alexandre Chaligné staffeur ornemaniste"
         },
         "glana": {
           "title": "Château du Glana",
-          "category": "Isolation & Design"
+          "category": "Isolation & Design",
+          "location": "France",
+          "image_alt": "Restauration de staffs et ornements — Château du Glana, Saint-Julien-Beychevelle — Alexandre Chaligné staffeur ornemaniste"
         }
       },
+      "stats": {
+        "projects": "Projets",
+        "countries": "Pays"
+      },
+      "view_btn": "Découvrir",
       "info_card": {
         "title": "Excellence reconnue",
         "desc": "Interventions en France, Suisse et à l'international pour une clientèle exigeante"
@@ -228,7 +238,7 @@
       "paragraph4": "Chaque projet représente un défi technique et artistique, alliant respect des techniques traditionnelles pour la restauration du patrimoine et exploration de nouvelles possibilités pour les créations contemporaines.",
       "paragraph5": "L'entreprise <strong>« A.Chaligné »</strong> a été créée pour développer le marché du staff et de la plâtrerie traditionnelle dans le Grand Est, perpétuant ces techniques exceptionnelles qui subliment les espaces avec authenticité.",
       "quote_text": "\"Tout est possible et imaginable avec le Staff, il n'existe aucune limite...\"",
-      "quote_author": "Alexandre Chaligné, Fondateur",
+      "quote_author": "Alexandre Chaligné, Artisan staffeur ornemaniste",
       "image_alt": "Alexandre CHALIGNÉ"
     },
     "timeline": {
@@ -384,13 +394,16 @@
         "title": "Villa Privée",
         "location": "Vandœuvres, Suisse",
         "category": "Création Sur-Mesure • 2022",
-        "description": "Quand le staff devient la pièce maîtresse d'une villa luxueuse avec ce garde-corps unique. Création d'un escalier monumental avec garde-corps sculpté en staff."
+        "description": "Quand le staff devient la pièce maîtresse d'une villa luxueuse avec ce garde-corps unique. Création d'un escalier monumental avec garde-corps sculpté en staff.",
+        "image_alt": "Création de décors en plâtre — Villa privée Vandœuvres, Suisse — Alexandre Chaligné staffeur ornemaniste"
       },
       "glana": {
         "title": "Château du Glana",
         "location": "Saint-Julien-Beychevelle, France",
         "category": "Isolation & Design • 2015",
-        "description": "La performance thermique de nos jours dissimulée derrière un design ancien. Rénovation complète du chai avec isolation thermique haute performance intégrée dans les voûtes en staff."
+        "_todo_year": "TODO: VÉRIFIER ANNÉE AVEC LE CLIENT — portfolio dit 2015, page projet dit 2021",
+        "description": "La performance thermique de nos jours dissimulée derrière un design ancien. Rénovation complète du chai avec isolation thermique haute performance intégrée dans les voûtes en staff.",
+        "image_alt": "Restauration de staffs et ornements — Château du Glana, Saint-Julien-Beychevelle — Alexandre Chaligné staffeur ornemaniste"
       }
     },
     "testimonials": {
@@ -715,13 +728,14 @@
     "owner": {
       "title": "Propriétaire du site",
       "content1": "<strong>CHALIGNÉ Alexandre</strong> – Entrepreneur individuel | BAT H APT 302, 14 impasse des Moulins Gaud, 74100 Ville-la-Grand – France",
-      "content2": "<strong>SIREN :</strong> 804 174 043 | <strong>SIRET :</strong> 804 174 043 00039 | <strong>TVA :</strong> FR27 804174043 | <strong>APE :</strong> 43.31Z"
+      "content2": "<strong>SIREN :</strong> 804 174 043 | <strong>SIRET :</strong> 804 174 043 00039 | <strong>TVA :</strong> FR27 804174043 | <strong>APE :</strong> 43.31Z",
+      "content3": "<strong>Téléphone :</strong> <a href=\"tel:+33652738810\">+33 6 52 73 88 10</a> / <a href=\"tel:+41798918810\">+41 79 891 88 10</a>"
     },
     "contact": {
       "title": "Contact",
-      "email": "<strong>Email :</strong>",
-      "phone_france": "<strong>Téléphone France :</strong>",
-      "phone_switzerland": "<strong>Téléphone Suisse :</strong>"
+      "email": "<strong>Email :</strong> <a href=\"mailto:alexandre.chaligne@gmail.com\">alexandre.chaligne@gmail.com</a>",
+      "phone_france": "<strong>Téléphone France :</strong> <a href=\"tel:+33652738810\">+33 6 52 73 88 10</a>",
+      "phone_switzerland": "<strong>Téléphone Suisse :</strong> <a href=\"tel:+41798918810\">+41 79 891 88 10</a>"
     },
     "hosting": {
       "title": "Hébergement",

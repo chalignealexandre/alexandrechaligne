@@ -37,7 +37,8 @@
       },
       "service_ceilings": "Ornamental Ceilings",
       "service_custom": "Bespoke Projects",
-      "service_restoration": "Heritage Restoration"
+      "service_restoration": "Heritage Restoration",
+      "hours": "Mon – Fri: 8am – 6pm<br>Sat: by appointment"
     },
     "cookies": {
       "title": "Your experience, our priority",
@@ -167,13 +168,22 @@
       "projects": {
         "villa": {
           "title": "Private Villa in Vandœuvres",
-          "category": "Staircase Renovation"
+          "category": "Staircase Renovation",
+          "location": "Switzerland",
+          "image_alt": "Staircase renovation in decorative plasterwork — Private Villa Vandœuvres, Switzerland — Alexandre Chaligné ornamental plasterer"
         },
         "glana": {
           "title": "Château du Glana",
-          "category": "Insulation & Design"
+          "category": "Insulation & Design",
+          "location": "France",
+          "image_alt": "Heritage restoration of decorative plasterwork — Château du Glana, Saint-Julien-Beychevelle — Alexandre Chaligné ornamental plasterer"
         }
       },
+      "stats": {
+        "projects": "Projects",
+        "countries": "Countries"
+      },
+      "view_btn": "Discover",
       "info_card": {
         "title": "Recognised Excellence",
         "desc": "Working in France, Switzerland and internationally for discerning clients"
@@ -228,7 +238,7 @@
       "paragraph4": "Each project represents a technical and artistic challenge, combining respect for traditional techniques in heritage restoration and exploration of new possibilities for contemporary creations.",
       "paragraph5": "The company <strong>\"A.Chaligné\"</strong> was created to develop the market for decorative plasterwork and traditional plastering in Eastern France, perpetuating these exceptional techniques that enhance spaces with authenticity.",
       "quote_text": "\"Everything is possible with decorative plasterwork, there are no limits...\"",
-      "quote_author": "Alexandre Chaligné, Founder",
+      "quote_author": "Alexandre Chaligné, Master Ornamental Plasterer",
       "image_alt": "Alexandre CHALIGNÉ"
     },
     "timeline": {
@@ -384,13 +394,15 @@
         "title": "Private Villa",
         "location": "Vandœuvres, Switzerland",
         "category": "Bespoke Creation • 2022",
-        "description": "When decorative plasterwork becomes the centrepiece of a luxurious villa with this unique balustrade. Creation of a monumental staircase with sculpted plaster balustrade."
+        "description": "When decorative plasterwork becomes the centrepiece of a luxurious villa with this unique balustrade. Creation of a monumental staircase with sculpted plaster balustrade.",
+        "image_alt": "Creation of decorative plasterwork — Private villa Vandœuvres, Switzerland — Alexandre Chaligné ornamental plasterer"
       },
       "glana": {
         "title": "Château du Glana",
         "location": "Saint-Julien-Beychevelle, France",
         "category": "Insulation & Design • 2015",
-        "description": "Modern thermal performance concealed behind historic design. Complete renovation of the chai with high-performance thermal insulation integrated into plaster vaults."
+        "description": "Modern thermal performance concealed behind historic design. Complete renovation of the chai with high-performance thermal insulation integrated into plaster vaults.",
+        "image_alt": "Heritage restoration of decorative plasterwork — Château du Glana, Saint-Julien-Beychevelle — Alexandre Chaligné ornamental plasterer"
       }
     },
     "testimonials": {

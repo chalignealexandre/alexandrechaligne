@@ -59,7 +59,7 @@ function escapeHtml(s) {
 function buildProjectCard(realisation, index, lang) {
   const isFr = lang === 'fr';
   const slug = realisation.slug || '';
-  const href = slug ? `/pages/projects/${slug}.html` : '#';
+  const href = slug ? `/pages/projects/${encodeURIComponent(slug)}.html` : '#';
   const num = String(index + 1).padStart(2, '0');
 
   const title = isFr ? realisation.previewTitle_fr : realisation.previewTitle_en;
