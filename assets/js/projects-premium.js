@@ -10,22 +10,9 @@
     document.addEventListener('DOMContentLoaded', init);
 
     function init() {
-        initHeroAnimation();
         initScrollAnimations();
         initLightbox();
         initCounterAnimation();
-        initParallax();
-    }
-
-    // === HERO ANIMATION ===
-    function initHeroAnimation() {
-        const hero = document.querySelector('.project-hero-premium');
-        if (!hero) return;
-
-        // Ajouter la classe loaded après un court délai pour l'animation
-        setTimeout(() => {
-            hero.classList.add('loaded');
-        }, 100);
     }
 
     // === ANIMATIONS AU SCROLL ===
@@ -294,36 +281,6 @@
         }
 
         requestAnimationFrame(update);
-    }
-
-    // === EFFET PARALLAX HERO ===
-    function initParallax() {
-        const hero = document.querySelector('.project-hero-premium');
-        if (!hero) return;
-
-        const heroImage = hero.querySelector('.hero-media img');
-        if (!heroImage) return;
-
-        let ticking = false;
-
-        function updateParallax() {
-            const scrolled = window.pageYOffset;
-            const heroHeight = hero.offsetHeight;
-
-            if (scrolled < heroHeight) {
-                const parallaxValue = scrolled * 0.4;
-                heroImage.style.transform = `scale(1) translateY(${parallaxValue}px)`;
-            }
-
-            ticking = false;
-        }
-
-        window.addEventListener('scroll', () => {
-            if (!ticking) {
-                requestAnimationFrame(updateParallax);
-                ticking = true;
-            }
-        }, { passive: true });
     }
 
 })();

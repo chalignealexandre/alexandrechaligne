@@ -140,6 +140,13 @@ export const realisation = defineType({
     },
     // ——— Méta-données ———
     {
+      name: 'showMetaSection',
+      title: 'Afficher la section Méta-données projet',
+      type: 'boolean',
+      initialValue: true,
+      group: 'meta',
+    },
+    {
       name: 'metaTypeLabel_fr',
       title: 'Label Type (FR)',
       type: 'string',
@@ -224,6 +231,13 @@ export const realisation = defineType({
     },
     // ——— Introduction (Le Projet) ———
     {
+      name: 'showIntroSection',
+      title: 'Afficher la section Introduction (Le Projet)',
+      type: 'boolean',
+      initialValue: true,
+      group: 'intro',
+    },
+    {
       name: 'introLabel_fr',
       title: 'Label section intro (FR)',
       type: 'string',
@@ -273,6 +287,13 @@ export const realisation = defineType({
       group: 'intro',
     },
     // ——— Défi & Solution ———
+    {
+      name: 'showApproachSection',
+      title: 'Afficher la section Défi & Solution (Notre Approche)',
+      type: 'boolean',
+      initialValue: true,
+      group: 'approach',
+    },
     {
       name: 'approachSectionTitle_fr',
       title: 'Titre section Approche (FR)',
@@ -335,6 +356,13 @@ export const realisation = defineType({
       group: 'approach',
     },
     // ——— Points Forts (4 cartes) ———
+    {
+      name: 'showFeaturesSection',
+      title: 'Afficher la section Points Forts',
+      type: 'boolean',
+      initialValue: true,
+      group: 'features',
+    },
     {
       name: 'featuresTitle_fr',
       title: 'Titre section Points Forts (FR)',
@@ -457,6 +485,13 @@ export const realisation = defineType({
     },
     // ——— Galerie ———
     {
+      name: 'showGallerySection',
+      title: 'Afficher la section Galerie',
+      type: 'boolean',
+      initialValue: true,
+      group: 'gallery',
+    },
+    {
       name: 'galleryTitle_fr',
       title: 'Titre galerie (FR)',
       type: 'string',
@@ -501,6 +536,13 @@ export const realisation = defineType({
       group: 'gallery',
     },
     // ——— Résultats & Témoignage ———
+    {
+      name: 'showResultsSection',
+      title: 'Afficher la section Résultats & Témoignage',
+      type: 'boolean',
+      initialValue: true,
+      group: 'results',
+    },
     {
       name: 'quoteText_fr',
       title: 'Citation (FR)',

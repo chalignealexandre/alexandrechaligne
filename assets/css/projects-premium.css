@@ -27,13 +27,7 @@
     height: 100%;
     object-fit: cover;
     object-position: center;
-    transform: scale(1.1);
-    transition: transform 8s ease-out;
     filter: brightness(0.85);
-}
-
-.project-hero-premium.loaded .hero-media img {
-    transform: scale(1);
 }
 
 /* Overlay artistique multicouche */
@@ -90,7 +84,7 @@
     letter-spacing: 0.15em;
     text-transform: uppercase;
     padding: 0.75rem 0;
-    margin-bottom: 2rem;
+    margin-bottom: 1.25rem;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
 }
@@ -136,7 +130,8 @@
     letter-spacing: 0.2em;
     text-transform: uppercase;
     color: var(--color-gold, #a6956b);
-    margin-bottom: 2rem;
+    margin-top: 0.5rem;
+    margin-bottom: 1.75rem;
     backdrop-filter: blur(10px);
 }
 
@@ -155,7 +150,7 @@
     font-weight: 300;
     line-height: 1;
     color: white;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     letter-spacing: -0.02em;
     text-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
 }
@@ -177,41 +172,6 @@
     max-width: 700px;
     font-weight: 300;
     letter-spacing: 0.01em;
-}
-
-/* Indicateur de scroll */
-.scroll-indicator-premium {
-    position: absolute;
-    bottom: 2rem;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 10;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.75rem;
-    color: rgba(255, 255, 255, 0.5);
-    font-size: 0.6875rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    animation: fadeInUp 1s ease 1s both;
-}
-
-.scroll-indicator-premium .scroll-line {
-    width: 1px;
-    height: 60px;
-    background: linear-gradient(180deg, var(--color-gold, #a6956b), transparent);
-    animation: scrollPulse 2s ease-in-out infinite;
-}
-
-@keyframes scrollPulse {
-    0%, 100% { transform: scaleY(1); opacity: 1; }
-    50% { transform: scaleY(0.5); opacity: 0.5; }
-}
-
-@keyframes fadeInUp {
-    from { opacity: 0; transform: translate(-50%, 20px); }
-    to { opacity: 1; transform: translate(-50%, 0); }
 }
 
 /* === SECTION MÉTA-DONNÉES PROJET === */
@@ -1412,9 +1372,6 @@
         padding: 0.5rem 1rem;
     }
 
-    .scroll-indicator-premium {
-        display: none;
-    }
 
     .cs-card-premium {
         padding: 2.5rem 2rem;

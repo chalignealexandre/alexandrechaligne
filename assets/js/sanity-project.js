@@ -10,6 +10,7 @@ const REALISATION_QUERY = `*[_type == "realisation" && slug.current == $slug][0]
   "heroImageUrl": heroImage.asset->url,
   heroBadge_fr, heroBadge_en, heroTitle_fr, heroTitle_en,
   heroTitleSuffix_fr, heroTitleSuffix_en, heroSubtitle_fr, heroSubtitle_en,
+  showMetaSection, showIntroSection, showApproachSection, showFeaturesSection, showGallerySection, showResultsSection,
   metaTypeLabel_fr, metaTypeLabel_en, metaTypeValue_fr, metaTypeValue_en, metaYear,
   metaLocationLabel_fr, metaLocationLabel_en, metaLocationValue_fr, metaLocationValue_en,
   metaFourthLabel_fr, metaFourthLabel_en, metaFourthValue_fr, metaFourthValue_en,
@@ -87,6 +88,122 @@ function buildProjectUrl(slug) {
   const isEn = window.location.pathname.startsWith('/en/');
   const prefix = isEn ? '/en' : '';
   return `${prefix}/pages/projects/${encodeURIComponent(slug)}.html`;
+}
+
+function toggleSection(selector, shouldShow) {
+  const el = document.querySelector(selector);
+  if (!el) return;
+  el.style.display = shouldShow ? '' : 'none';
+}
+
+function hasText(value) {
+  return typeof value === 'string' && value.trim() !== '';
+}
+
+function hasValue(value) {
+  return value !== null && value !== undefined && String(value).trim() !== '';
+}
+
+function hasVisibleGallery(items) {
+  return Array.isArray(items) && items.some((item) => item && item.imageUrl);
+}
+
+function shouldShowSection(flag, hasContent) {
+  if (flag === false) return false;
+  if (flag === true) return true;
+  return hasContent;
+}
+
+function applySectionVisibility(data) {
+  const hasMetaContent = [
+    data.metaTypeLabel_fr,
+    data.metaTypeLabel_en,
+    data.metaTypeValue_fr,
+    data.metaTypeValue_en,
+    data.metaYear,
+    data.metaLocationLabel_fr,
+    data.metaLocationLabel_en,
+    data.metaLocationValue_fr,
+    data.metaLocationValue_en,
+    data.metaFourthLabel_fr,
+    data.metaFourthLabel_en,
+    data.metaFourthValue_fr,
+    data.metaFourthValue_en,
+  ].some(hasValue);
+
+  const hasIntroContent = [
+    data.introLabel_fr,
+    data.introLabel_en,
+    data.introTitle_fr,
+    data.introTitle_en,
+    data.introLead_fr,
+    data.introLead_en,
+    data.introDescription_fr,
+    data.introDescription_en,
+  ].some(hasText);
+
+  const hasApproachContent = [
+    data.approachSectionTitle_fr,
+    data.approachSectionTitle_en,
+    data.challengeTitle_fr,
+    data.challengeTitle_en,
+    data.challengeDescription_fr,
+    data.challengeDescription_en,
+    data.solutionTitle_fr,
+    data.solutionTitle_en,
+    data.solutionDescription_fr,
+    data.solutionDescription_en,
+  ].some(hasText);
+
+  const hasFeaturesContent = [
+    data.featuresTitle_fr,
+    data.featuresTitle_en,
+    data.featuresSubtitle_fr,
+    data.featuresSubtitle_en,
+    data.feature1Title_fr,
+    data.feature1Title_en,
+    data.feature1Description_fr,
+    data.feature1Description_en,
+    data.feature2Title_fr,
+    data.feature2Title_en,
+    data.feature2Description_fr,
+    data.feature2Description_en,
+    data.feature3Title_fr,
+    data.feature3Title_en,
+    data.feature3Description_fr,
+    data.feature3Description_en,
+    data.feature4Title_fr,
+    data.feature4Title_en,
+    data.feature4Description_fr,
+    data.feature4Description_en,
+  ].some(hasText);
+
+  const hasGalleryContent = hasVisibleGallery(data.galleryItems);
+
+  const hasResultsContent = [
+    data.quoteText_fr,
+    data.quoteText_en,
+    data.quoteAuthor_fr,
+    data.quoteAuthor_en,
+    data.quotePosition_fr,
+    data.quotePosition_en,
+    data.stat1Number,
+    data.stat1Label_fr,
+    data.stat1Label_en,
+    data.stat2Number,
+    data.stat2Label_fr,
+    data.stat2Label_en,
+    data.stat3Number,
+    data.stat3Label_fr,
+    data.stat3Label_en,
+  ].some(hasValue);
+
+  toggleSection('.project-meta-premium', shouldShowSection(data.showMetaSection, hasMetaContent));
+  toggleSection('.project-intro-premium', shouldShowSection(data.showIntroSection, hasIntroContent));
+  toggleSection('.challenge-solution-premium', shouldShowSection(data.showApproachSection, hasApproachContent));
+  toggleSection('.features-premium', shouldShowSection(data.showFeaturesSection, hasFeaturesContent));
+  toggleSection('.gallery-premium', shouldShowSection(data.showGallerySection, hasGalleryContent));
+  toggleSection('.results-premium', shouldShowSection(data.showResultsSection, hasResultsContent));
 }
 
 async function tryRedirectToClosestSlug(requestedSlug) {
@@ -371,6 +488,7 @@ async function init() {
       }
     }
 
+    applySectionVisibility(data);
     applyHero(data);
     applyMeta(data);
     applyIntro(data);
