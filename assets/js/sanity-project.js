@@ -87,7 +87,16 @@ function showNotFound(slug) {
 function buildProjectUrl(slug) {
   const isEn = window.location.pathname.startsWith('/en/');
   const prefix = isEn ? '/en' : '';
-  return `${prefix}/pages/projects/${encodeURIComponent(slug)}.html`;
+  const cleanSlug = String(slug ?? '')
+    .trim()
+    .replace(/\.html$/i, '');
+  return `${prefix}/pages/projects/${encodeURIComponent(cleanSlug)}`;
+}
+
+function normalizeProjectPath(pathname) {
+  return String(pathname ?? '')
+    .replace(/\/$/, '')
+    .replace(/\.html$/i, '');
 }
 
 function toggleSection(selector, shouldShow) {
@@ -215,7 +224,7 @@ async function tryRedirectToClosestSlug(requestedSlug) {
   if (!found || !found.slug) return false;
 
   const targetUrl = buildProjectUrl(found.slug);
-  if (targetUrl && targetUrl !== window.location.pathname) {
+  if (targetUrl && normalizeProjectPath(targetUrl) !== normalizeProjectPath(window.location.pathname)) {
     window.location.replace(targetUrl);
     return true;
   }
@@ -245,7 +254,7 @@ async function tryRedirectByTitle(rawSegment) {
   if (!slug) return false;
 
   const targetUrl = buildProjectUrl(slug);
-  if (targetUrl && targetUrl !== window.location.pathname) {
+  if (targetUrl && normalizeProjectPath(targetUrl) !== normalizeProjectPath(window.location.pathname)) {
     window.location.replace(targetUrl);
     return true;
   }
@@ -482,7 +491,7 @@ async function init() {
     // (évite les "URLs humaines" / variantes).
     if (data.slug) {
       const canonical = buildProjectUrl(data.slug);
-      if (canonical && canonical !== window.location.pathname) {
+      if (canonical && normalizeProjectPath(canonical) !== normalizeProjectPath(window.location.pathname)) {
         window.location.replace(canonical);
         return;
       }

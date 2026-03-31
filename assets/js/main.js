@@ -98,6 +98,7 @@ if (mobileMenuToggle) {
     mobileMenuToggle.addEventListener('click', () => {
         navMenu.classList.toggle('active');
         mobileMenuToggle.classList.toggle('active');
+        navbar.classList.toggle('menu-open');
 
         // Animate hamburger
         const spans = mobileMenuToggle.querySelectorAll('span');
@@ -118,6 +119,7 @@ navLinks.forEach(link => {
     link.addEventListener('click', () => {
         navMenu.classList.remove('active');
         mobileMenuToggle.classList.remove('active');
+        navbar.classList.remove('menu-open');
 
         const spans = mobileMenuToggle.querySelectorAll('span');
         spans[0].style.transform = 'none';
@@ -372,6 +374,7 @@ document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && navMenu.classList.contains('active')) {
         navMenu.classList.remove('active');
         mobileMenuToggle.classList.remove('active');
+        navbar.classList.remove('menu-open');
     }
 });
 
