@@ -13,6 +13,16 @@ const PAGE_CONTACT_QUERY = `*[_id == "pageContact"][0]{
   phone2Label_fr, phone2Label_en, phone2Number, phone2Schedule_fr, phone2Schedule_en,
   emailLabel_fr, emailLabel_en, emailAddress, emailNote_fr, emailNote_en,
   zones_fr, zones_en,
+  trustTitle_fr, trustTitle_en,
+  trustItems_fr, trustItems_en,
+  benefitsTitle_fr, benefitsTitle_en,
+  benefitsItems[]{
+    isEnabled,
+    title_fr, title_en,
+    text_fr, text_en
+  },
+  preferCallText_fr, preferCallText_en,
+  preferCallPhone1, preferCallPhone2,
   faqItems[]{
     isEnabled,
     question_fr, question_en,
@@ -124,6 +134,109 @@ function applyZones(data) {
     .join('');
 }
 
+function sanitizeTel(value) {
+  return String(value || '').replace(/\s/g, '');
+}
+
+function applyTrust(data) {
+  if (!data) return;
+  const lang = getLang();
+  const isFr = lang === 'fr';
+
+  const card = document.querySelector('.trust-card');
+  if (!card) return;
+
+  const title = isFr ? data.trustTitle_fr : data.trustTitle_en;
+  const titleEl = card.querySelector('.sidebar-card-title');
+  if (titleEl && title) titleEl.textContent = title;
+
+  const items = isFr ? (data.trustItems_fr || []) : (data.trustItems_en || []);
+  const cleanItems = Array.isArray(items) ? items.map((s) => String(s || '').trim()).filter(Boolean) : [];
+  if (cleanItems.length === 0) return; // fallback to static HTML
+
+  const list = card.querySelector('.trust-list');
+  if (!list) return;
+
+  const iconSvg = list.querySelector('.trust-item svg')?.outerHTML || '';
+  list.innerHTML = cleanItems
+    .map((text) => {
+      return `<li class="trust-item">
+        ${iconSvg}
+        <span>${escapeHtml(text)}</span>
+      </li>`;
+    })
+    .join('');
+}
+
+function applyPartnershipBenefits(data) {
+  if (!data) return;
+  const lang = getLang();
+  const isFr = lang === 'fr';
+
+  const card = document.querySelector('.partnership-benefits .benefits-card');
+  if (!card) return;
+
+  const title = isFr ? data.benefitsTitle_fr : data.benefitsTitle_en;
+  const titleEl = card.querySelector('.benefits-title');
+  if (titleEl && title) titleEl.textContent = title;
+
+  const items = Array.isArray(data.benefitsItems) ? data.benefitsItems : [];
+  const enabled = items.filter((it) => it && it.isEnabled !== false);
+  if (enabled.length === 0) return; // fallback to static HTML
+
+  const iconSvg = card.querySelector('.benefit-item .benefit-icon')?.innerHTML || '';
+
+  const html = enabled
+    .map((it) => {
+      const t = (isFr ? it.title_fr : it.title_en) || '';
+      const p = (isFr ? it.text_fr : it.text_en) || '';
+      return `<div class="benefit-item">
+        <div class="benefit-icon">${iconSvg}</div>
+        <div class="benefit-content">
+          <h4>${escapeHtml(t)}</h4>
+          <p>${escapeHtml(p)}</p>
+        </div>
+      </div>`;
+    })
+    .join('');
+
+  const existingItems = Array.from(card.querySelectorAll('.benefit-item'));
+  existingItems.forEach((el) => el.remove());
+  card.insertAdjacentHTML('beforeend', html);
+}
+
+function applyPreferCall(data) {
+  if (!data) return;
+  const lang = getLang();
+  const isFr = lang === 'fr';
+
+  const block = document.querySelector('.partnership-contact-direct');
+  if (!block) return;
+
+  const text = isFr ? data.preferCallText_fr : data.preferCallText_en;
+  const p = block.querySelector('p');
+  if (p && text) p.textContent = text;
+
+  const links = block.querySelectorAll('a.partnership-phone');
+  if (links.length < 2) return;
+
+  if (data.preferCallPhone1) {
+    links[0].href = `tel:${sanitizeTel(data.preferCallPhone1)}`;
+    const svg = links[0].querySelector('svg');
+    links[0].innerHTML = '';
+    if (svg) links[0].appendChild(svg);
+    links[0].appendChild(document.createTextNode(`\n                            ${data.preferCallPhone1}`));
+  }
+
+  if (data.preferCallPhone2) {
+    links[1].href = `tel:${sanitizeTel(data.preferCallPhone2)}`;
+    const svg = links[1].querySelector('svg');
+    links[1].innerHTML = '';
+    if (svg) links[1].appendChild(svg);
+    links[1].appendChild(document.createTextNode(`\n                            ${data.preferCallPhone2}`));
+  }
+}
+
 function nl2br(text) {
   return escapeHtml(text).replace(/\n/g, '<br>');
 }
@@ -203,6 +316,9 @@ async function init() {
     applyHero(data);
     applyContactDirect(data);
     applyZones(data);
+    applyTrust(data);
+    applyPartnershipBenefits(data);
+    applyPreferCall(data);
     applyFaq(data);
   } catch (e) {
     console.warn('Sanity page Contact:', e.message);

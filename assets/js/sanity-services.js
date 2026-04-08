@@ -9,6 +9,13 @@ import { applyBackgroundOrientation, applyImgOrientation } from './image-orienta
 const PAGE_SERVICES_QUERY = `*[_id == "pageServices"][0]{
   "heroImageUrl": heroImage.asset->url,
   heroTitle_fr, heroTitle_en, heroSubtitle_fr, heroSubtitle_en,
+  areasTitle_fr, areasTitle_en,
+  areasSubtitle_fr, areasSubtitle_en,
+  areasItems[]{
+    isEnabled,
+    title_fr, title_en,
+    desc_fr, desc_en
+  },
   services[]{
     title_fr, title_en, description_fr, description_en,
     "imageUrl": image.asset->url,
@@ -86,6 +93,52 @@ function applyServices(data) {
   });
 }
 
+function escapeHtml(s) {
+  if (s == null) return '';
+  const div = document.createElement('div');
+  div.textContent = s;
+  return div.innerHTML;
+}
+
+function applyServiceAreas(data) {
+  if (!data) return;
+  const lang = getLang();
+  const isFr = lang === 'fr';
+
+  const section = document.querySelector('.service-areas');
+  if (!section) return;
+
+  const title = isFr ? data.areasTitle_fr : data.areasTitle_en;
+  const subtitle = isFr ? data.areasSubtitle_fr : data.areasSubtitle_en;
+  const titleEl = section.querySelector('.section-header .section-title');
+  const subEl = section.querySelector('.section-header .section-subtitle');
+  if (titleEl && title) titleEl.textContent = title;
+  if (subEl && subtitle) subEl.textContent = subtitle;
+
+  const items = Array.isArray(data.areasItems) ? data.areasItems : [];
+  const enabled = items.filter((it) => it && it.isEnabled !== false);
+  if (enabled.length === 0) return; // fallback to static HTML/i18n
+
+  const grid = section.querySelector('.areas-grid');
+  if (!grid) return;
+
+  // Reuse existing icons from current DOM (one per card)
+  const existingIcons = Array.from(grid.querySelectorAll('.area-icon')).map((el) => el.innerHTML);
+
+  grid.innerHTML = enabled
+    .map((it, idx) => {
+      const t = (isFr ? it.title_fr : it.title_en) || '';
+      const d = (isFr ? it.desc_fr : it.desc_en) || '';
+      const icon = existingIcons[idx] || existingIcons[0] || '';
+      return `<div class="area-card">
+        <div class="area-icon">${icon}</div>
+        <h3 class="area-title">${escapeHtml(t)}</h3>
+        <p class="area-description">${escapeHtml(d)}</p>
+      </div>`;
+    })
+    .join('');
+}
+
 async function init() {
   const path = window.location.pathname.replace(/\/$/, '');
   const isServices = path === '/pages/services.html' || path === '/en/pages/services.html';
@@ -95,6 +148,7 @@ async function init() {
     const data = await fetchQuery(PAGE_SERVICES_QUERY);
     if (!data) return;
     applyHero(data);
+    applyServiceAreas(data);
     applyServices(data);
   } catch (e) {
     console.warn('Sanity page Services:', e.message);

@@ -131,6 +131,103 @@ export const pageContact = defineType({
       of: [{ type: 'string' }],
     },
 
+    // Sidebar - "Nos Engagements"
+    {
+      name: 'trustTitle_fr',
+      title: 'Nos Engagements - Titre (FR)',
+      type: 'string',
+    },
+    {
+      name: 'trustTitle_en',
+      title: 'Nos Engagements - Titre (EN)',
+      type: 'string',
+    },
+    {
+      name: 'trustItems_fr',
+      title: 'Nos Engagements - Items (FR)',
+      type: 'array',
+      of: [{ type: 'string' }],
+      description: 'Liste affichée dans la sidebar. Ordre modifiable.',
+    },
+    {
+      name: 'trustItems_en',
+      title: 'Nos Engagements - Items (EN)',
+      type: 'array',
+      of: [{ type: 'string' }],
+      description: 'List displayed in the sidebar. Reorderable.',
+    },
+
+    // Partnership - "Pourquoi collaborer avec nous ?"
+    {
+      name: 'benefitsTitle_fr',
+      title: 'Pourquoi collaborer - Titre (FR)',
+      type: 'string',
+    },
+    {
+      name: 'benefitsTitle_en',
+      title: 'Pourquoi collaborer - Titre (EN)',
+      type: 'string',
+    },
+    {
+      name: 'benefitsItems',
+      title: 'Pourquoi collaborer - Items',
+      type: 'array',
+      of: [
+        {
+          type: 'object',
+          name: 'benefitItem',
+          title: 'Item',
+          fields: [
+            {
+              name: 'isEnabled',
+              title: 'Afficher cet item',
+              type: 'boolean',
+              initialValue: true,
+            },
+            { name: 'title_fr', title: 'Titre (FR)', type: 'string', validation: (Rule: any) => Rule.required() },
+            { name: 'title_en', title: 'Titre (EN)', type: 'string', validation: (Rule: any) => Rule.required() },
+            { name: 'text_fr', title: 'Texte (FR)', type: 'text', rows: 3, validation: (Rule: any) => Rule.required() },
+            { name: 'text_en', title: 'Texte (EN)', type: 'text', rows: 3, validation: (Rule: any) => Rule.required() },
+          ],
+          preview: {
+            select: { title: 'title_fr', subtitle: 'title_en', enabled: 'isEnabled' },
+            prepare(selection: any) {
+              const { title, subtitle, enabled } = selection || {};
+              return {
+                title: title || 'Titre (FR)',
+                subtitle: subtitle || 'Titre (EN)',
+                media: enabled === false ? '🙈' : '✨',
+              };
+            },
+          },
+        },
+      ],
+    },
+
+    // Partnership - "Vous préférez échanger directement ?"
+    {
+      name: 'preferCallText_fr',
+      title: 'Bloc téléphone - Texte (FR)',
+      type: 'string',
+    },
+    {
+      name: 'preferCallText_en',
+      title: 'Bloc téléphone - Texte (EN)',
+      type: 'string',
+    },
+    {
+      name: 'preferCallPhone1',
+      title: 'Bloc téléphone - Numéro 1',
+      type: 'string',
+      description: 'Ex: +33 6 52 73 88 10',
+    },
+    {
+      name: 'preferCallPhone2',
+      title: 'Bloc téléphone - Numéro 2',
+      type: 'string',
+      description: 'Ex: +41 79 891 88 10',
+    },
+
     // FAQ (Questions / Réponses)
     {
       name: 'faqItems',
