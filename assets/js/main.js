@@ -203,6 +203,240 @@ animateOnScroll.forEach((el) => {
 // Elements with [data-parallax] will not animate
 
 // ===================================
+// HOME - STAFF ADVANTAGES MOBILE CAROUSEL
+// ===================================
+
+function initStaffAdvantagesCarousel() {
+    const section = document.querySelector('.staff-features');
+    if (!section) return;
+
+    const list = section.querySelector('.features-list');
+    const dotsContainer = section.querySelector('.staff-advantages-dots');
+    if (!list || !dotsContainer) return;
+
+    const items = Array.from(list.querySelectorAll('.feature-item'));
+    dotsContainer.innerHTML = '';
+
+    if (items.length <= 1) {
+        dotsContainer.hidden = true;
+        return;
+    }
+
+    dotsContainer.hidden = false;
+
+    const updateDots = (activeIndex) => {
+        const dots = dotsContainer.querySelectorAll('.staff-advantages-dot');
+        dots.forEach((dot, index) => {
+            const isActive = index === activeIndex;
+            dot.classList.toggle('is-active', isActive);
+            dot.setAttribute('aria-current', isActive ? 'true' : 'false');
+        });
+    };
+
+    items.forEach((item, index) => {
+        const dot = document.createElement('button');
+        dot.type = 'button';
+        dot.className = 'staff-advantages-dot';
+        dot.setAttribute('aria-label', `Aller à l'avantage ${index + 1}`);
+        dot.setAttribute('aria-current', index === 0 ? 'true' : 'false');
+        dot.addEventListener('click', () => {
+            item.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+        });
+        dotsContainer.appendChild(dot);
+    });
+
+    let ticking = false;
+    const syncActiveDot = () => {
+        const listLeft = list.getBoundingClientRect().left;
+        let activeIndex = 0;
+        let minDistance = Number.POSITIVE_INFINITY;
+
+        items.forEach((item, index) => {
+            const distance = Math.abs(item.getBoundingClientRect().left - listLeft);
+            if (distance < minDistance) {
+                minDistance = distance;
+                activeIndex = index;
+            }
+        });
+
+        updateDots(activeIndex);
+        ticking = false;
+    };
+
+    list.addEventListener('scroll', () => {
+        if (window.innerWidth > 768 || ticking) return;
+        ticking = true;
+        window.requestAnimationFrame(syncActiveDot);
+    }, { passive: true });
+
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 768) {
+            updateDots(0);
+            return;
+        }
+        syncActiveDot();
+    });
+
+    syncActiveDot();
+}
+
+// ===================================
+// HOME - STAFF APPLICATIONS MOBILE CAROUSEL
+// ===================================
+
+function initStaffApplicationsCarousel() {
+    const section = document.querySelector('.staff-applications');
+    if (!section) return;
+
+    const grid = section.querySelector('.applications-grid');
+    const dotsContainer = section.querySelector('.staff-applications-dots');
+    if (!grid || !dotsContainer) return;
+
+    const cards = Array.from(grid.querySelectorAll('.application-card'));
+    dotsContainer.innerHTML = '';
+
+    if (cards.length <= 1) {
+        dotsContainer.hidden = true;
+        return;
+    }
+
+    dotsContainer.hidden = false;
+
+    const updateDots = (activeIndex) => {
+        const dots = dotsContainer.querySelectorAll('.staff-applications-dot');
+        dots.forEach((dot, index) => {
+            const isActive = index === activeIndex;
+            dot.classList.toggle('is-active', isActive);
+            dot.setAttribute('aria-current', isActive ? 'true' : 'false');
+        });
+    };
+
+    cards.forEach((card, index) => {
+        const dot = document.createElement('button');
+        dot.type = 'button';
+        dot.className = 'staff-applications-dot';
+        dot.setAttribute('aria-label', `Aller à l'application ${index + 1}`);
+        dot.setAttribute('aria-current', index === 0 ? 'true' : 'false');
+        dot.addEventListener('click', () => {
+            card.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+        });
+        dotsContainer.appendChild(dot);
+    });
+
+    let ticking = false;
+    const syncActiveDot = () => {
+        const gridLeft = grid.getBoundingClientRect().left;
+        let activeIndex = 0;
+        let minDistance = Number.POSITIVE_INFINITY;
+
+        cards.forEach((card, index) => {
+            const distance = Math.abs(card.getBoundingClientRect().left - gridLeft);
+            if (distance < minDistance) {
+                minDistance = distance;
+                activeIndex = index;
+            }
+        });
+
+        updateDots(activeIndex);
+        ticking = false;
+    };
+
+    grid.addEventListener('scroll', () => {
+        if (window.innerWidth > 768 || ticking) return;
+        ticking = true;
+        window.requestAnimationFrame(syncActiveDot);
+    }, { passive: true });
+
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 768) {
+            updateDots(0);
+            return;
+        }
+        syncActiveDot();
+    });
+
+    syncActiveDot();
+}
+
+// ===================================
+// HOME - VALUES (UNE APPROCHE UNIQUE) MOBILE CAROUSEL
+// ===================================
+
+function initValuesCarousel() {
+    const section = document.querySelector('.values-section-luxury');
+    if (!section) return;
+
+    const grid = section.querySelector('.values-grid-luxury');
+    const dotsContainer = section.querySelector('.values-dots');
+    if (!grid || !dotsContainer) return;
+
+    const cards = Array.from(grid.querySelectorAll('.value-card-luxury'));
+    dotsContainer.innerHTML = '';
+
+    if (cards.length <= 1) {
+        dotsContainer.hidden = true;
+        return;
+    }
+
+    dotsContainer.hidden = false;
+
+    const updateDots = (activeIndex) => {
+        const dots = dotsContainer.querySelectorAll('.values-dot');
+        dots.forEach((dot, index) => {
+            const isActive = index === activeIndex;
+            dot.classList.toggle('is-active', isActive);
+            dot.setAttribute('aria-current', isActive ? 'true' : 'false');
+        });
+    };
+
+    cards.forEach((card, index) => {
+        const dot = document.createElement('button');
+        dot.type = 'button';
+        dot.className = 'values-dot';
+        dot.setAttribute('aria-label', `Aller à la valeur ${index + 1}`);
+        dot.setAttribute('aria-current', index === 0 ? 'true' : 'false');
+        dot.addEventListener('click', () => {
+            card.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+        });
+        dotsContainer.appendChild(dot);
+    });
+
+    let ticking = false;
+    const syncActiveDot = () => {
+        const gridLeft = grid.getBoundingClientRect().left;
+        let activeIndex = 0;
+        let minDistance = Number.POSITIVE_INFINITY;
+
+        cards.forEach((card, index) => {
+            const distance = Math.abs(card.getBoundingClientRect().left - gridLeft);
+            if (distance < minDistance) {
+                minDistance = distance;
+                activeIndex = index;
+            }
+        });
+
+        updateDots(activeIndex);
+        ticking = false;
+    };
+
+    grid.addEventListener('scroll', () => {
+        if (window.innerWidth > 768 || ticking) return;
+        ticking = true;
+        window.requestAnimationFrame(syncActiveDot);
+    }, { passive: true });
+
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 768) {
+            updateDots(0);
+            return;
+        }
+        syncActiveDot();
+    });
+
+    syncActiveDot();
+}
+
+// ===================================
 // PORTFOLIO HOVER EFFECT
 // ===================================
 
@@ -217,6 +451,17 @@ portfolioItems.forEach(item => {
         this.style.zIndex = '1';
     });
 });
+
+// Init staff advantages carousel on load (home only, safe elsewhere)
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initStaffAdvantagesCarousel);
+    document.addEventListener('DOMContentLoaded', initStaffApplicationsCarousel);
+    document.addEventListener('DOMContentLoaded', initValuesCarousel);
+} else {
+    initStaffAdvantagesCarousel();
+    initStaffApplicationsCarousel();
+    initValuesCarousel();
+}
 
 // ===================================
 // LAZY LOADING IMAGES

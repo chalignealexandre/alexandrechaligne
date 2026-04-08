@@ -45,7 +45,8 @@
       "description": "We use cookies to improve your browsing experience and analyse our traffic. By continuing, you accept our <a href=\"/en/pages/politique-confidentialite.html\" class=\"cookie-link\">privacy policy</a>.",
       "accept": "Accept",
       "decline": "Decline"
-    }
+    },
+    "loading": "Loading"
   },
 
   "home": {
@@ -528,6 +529,12 @@
       "q5_answer": "Lead times vary depending on the nature and scale of the project. For standard work, allow generally 2 to 6 weeks after quote approval.",
       "q6_question": "Is there a minimum budget required?",
       "q6_answer": "As each project is unique, there is no fixed minimum budget. However, given the high-end nature of our services, projects generally start from €5,000."
+    }
+  },
+
+  "project": {
+    "overview": {
+      "year_label": "Year"
     }
   },
 

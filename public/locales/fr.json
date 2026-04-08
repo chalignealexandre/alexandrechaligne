@@ -45,7 +45,8 @@
       "description": "Nous utilisons des cookies pour améliorer votre navigation et analyser notre trafic. En poursuivant, vous acceptez notre <a href=\"/pages/politique-confidentialite.html\" class=\"cookie-link\">politique de confidentialité</a>.",
       "accept": "Accepter",
       "decline": "Refuser"
-    }
+    },
+    "loading": "Chargement"
   },
 
   "home": {
@@ -538,6 +539,12 @@
       "q5_answer": "Les délais varient selon la nature et l'ampleur du projet. Pour une intervention standard, comptez généralement entre 2 et 6 semaines après validation du devis.",
       "q6_question": "Faut-il prévoir un budget minimum ?",
       "q6_answer": "Chaque projet étant unique, il n'y a pas de budget minimum fixe. Cependant, compte tenu de la nature haut de gamme de nos prestations, les projets démarrent généralement à partir de 5 000 €."
+    }
+  },
+
+  "project": {
+    "overview": {
+      "year_label": "Année"
     }
   },
 

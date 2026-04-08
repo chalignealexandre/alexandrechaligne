@@ -34,6 +34,18 @@ export const pageAccueil = defineType({
       title: 'Sous-titre hero (EN)',
       type: 'string',
     },
+    {
+      name: 'heroBadge_fr',
+      title: 'Badge hero (FR)',
+      type: 'string',
+      description: 'Texte affiché dans le badge au-dessus du titre (entre les ✦).',
+    },
+    {
+      name: 'heroBadge_en',
+      title: 'Badge hero (EN)',
+      type: 'string',
+      description: 'Texte affiché dans le badge au-dessus du titre (entre les ✦).',
+    },
     // Section "L'Excellence du Staff et de la Plâtrerie Traditionnelle"
     {
       name: 'excellenceImage',

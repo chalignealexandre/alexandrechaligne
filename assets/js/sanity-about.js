@@ -4,6 +4,7 @@
  */
 
 import { fetchQuery } from './sanity-client.js';
+import { applyBackgroundOrientation, applyImgOrientation } from './image-orientation.js';
 
 const PAGE_A_PROPOS_QUERY = `*[_id == "pageAPropos"][0]{
   "heroImageUrl": heroImage.asset->url,
@@ -30,9 +31,7 @@ function applyHero(data) {
 
   const heroSection = document.querySelector('.page-hero');
   if (data.heroImageUrl && heroSection) {
-    heroSection.style.backgroundImage = `url(${data.heroImageUrl})`;
-    heroSection.style.backgroundSize = 'cover';
-    heroSection.style.backgroundPosition = 'center';
+    applyBackgroundOrientation(heroSection, data.heroImageUrl);
   }
 }
 
@@ -42,6 +41,8 @@ function applySectionArtStaff(data) {
   if (data.sectionArtStaffImageUrl && img) {
     img.src = data.sectionArtStaffImageUrl;
     img.removeAttribute('srcset');
+    img.dataset.autoOrient = '1';
+    applyImgOrientation(img);
   }
 }
 

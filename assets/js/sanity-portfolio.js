@@ -4,6 +4,7 @@
  */
 
 import { fetchQuery } from './sanity-client.js';
+import { applyBackgroundOrientation, applyOrientationWithin } from './image-orientation.js';
 
 const PAGE_REALISATIONS_QUERY = `*[_id == "pageRealisations"][0]{
   "heroImageUrl": heroImage.asset->url,
@@ -43,9 +44,7 @@ function applyHero(data) {
 
   const heroSection = document.querySelector('.portfolio-hero');
   if (data.heroImageUrl && heroSection) {
-    heroSection.style.backgroundImage = `url(${data.heroImageUrl})`;
-    heroSection.style.backgroundSize = 'cover';
-    heroSection.style.backgroundPosition = 'center';
+    applyBackgroundOrientation(heroSection, data.heroImageUrl);
   }
 }
 
@@ -59,7 +58,9 @@ function escapeHtml(s) {
 function buildProjectCard(realisation, index, lang) {
   const isFr = lang === 'fr';
   const slug = realisation.slug || '';
-  const href = slug ? `/pages/projects/${encodeURIComponent(slug)}.html` : '#';
+  const prefix = isFr ? '' : '/en';
+  const cleanSlug = String(slug).trim().replace(/\.html$/i, '');
+  const href = cleanSlug ? `${prefix}/pages/projects/${encodeURIComponent(cleanSlug)}` : '#';
   const num = String(index + 1).padStart(2, '0');
 
   const title = isFr ? realisation.previewTitle_fr : realisation.previewTitle_en;
@@ -71,7 +72,7 @@ function buildProjectCard(realisation, index, lang) {
 
   return `<a href="${escapeHtml(href)}" class="portfolio-luxury-card">
     <div class="portfolio-luxury-image">
-      <img src="${escapeHtml(imgUrl)}" alt="${escapeHtml(imgAlt)}" loading="lazy">
+      <img src="${escapeHtml(imgUrl)}" alt="${escapeHtml(imgAlt)}" loading="lazy" data-auto-orient="1">
       <div class="portfolio-luxury-overlay"></div>
     </div>
     <div class="portfolio-luxury-content">
@@ -170,6 +171,7 @@ function applyRealisations(data) {
 
   const lang = getLang();
   grid.innerHTML = data.realisations.map((r, i) => buildProjectCard(r, i, lang)).join('');
+  applyOrientationWithin(grid);
   initMobilePortfolioCarousel();
 }
 

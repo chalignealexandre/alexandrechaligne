@@ -130,5 +130,68 @@ export const pageContact = defineType({
       type: 'array',
       of: [{ type: 'string' }],
     },
+
+    // FAQ (Questions / Réponses)
+    {
+      name: 'faqItems',
+      title: 'FAQ - Questions / Réponses',
+      type: 'array',
+      of: [
+        {
+          type: 'object',
+          name: 'faqItem',
+          title: 'Item FAQ',
+          fields: [
+            {
+              name: 'isEnabled',
+              title: 'Afficher cet item',
+              type: 'boolean',
+              initialValue: true,
+            },
+            {
+              name: 'question_fr',
+              title: 'Question (FR)',
+              type: 'string',
+              validation: (Rule: any) => Rule.required(),
+            },
+            {
+              name: 'question_en',
+              title: 'Question (EN)',
+              type: 'string',
+              validation: (Rule: any) => Rule.required(),
+            },
+            {
+              name: 'answer_fr',
+              title: 'Réponse (FR)',
+              type: 'text',
+              rows: 3,
+              validation: (Rule: any) => Rule.required(),
+            },
+            {
+              name: 'answer_en',
+              title: 'Réponse (EN)',
+              type: 'text',
+              rows: 3,
+              validation: (Rule: any) => Rule.required(),
+            },
+          ],
+          preview: {
+            select: {
+              title: 'question_fr',
+              subtitle: 'question_en',
+              enabled: 'isEnabled',
+            },
+            prepare(selection: any) {
+              const { title, subtitle, enabled } = selection || {};
+              return {
+                title: title || 'Question (FR)',
+                subtitle: subtitle || 'Question (EN)',
+                media: enabled === false ? '🙈' : '💬',
+              };
+            },
+          },
+        },
+      ],
+    },
   ],
 })

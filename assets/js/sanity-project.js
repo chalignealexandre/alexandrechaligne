@@ -4,6 +4,7 @@
  */
 
 import { fetchQuery } from './sanity-client.js';
+import { applyImgOrientation, applyOrientationWithin } from './image-orientation.js';
 
 const REALISATION_QUERY = `*[_type == "realisation" && slug.current == $slug][0]{
   "slug": slug.current,
@@ -267,7 +268,11 @@ function applyHero(data) {
   const isFr = lang === 'fr';
 
   const heroMedia = document.querySelector('.project-hero-premium .hero-media img');
-  if (heroMedia && data.heroImageUrl) heroMedia.src = data.heroImageUrl;
+  if (heroMedia && data.heroImageUrl) {
+    heroMedia.src = data.heroImageUrl;
+    heroMedia.dataset.autoOrient = '1';
+    applyImgOrientation(heroMedia);
+  }
 
   const badge = document.querySelector('.project-hero-premium .category-badge-premium');
   if (badge) badge.textContent = isFr ? data.heroBadge_fr : data.heroBadge_en;
@@ -415,7 +420,7 @@ function applyGallery(data) {
     .map(
       (item) =>
         `<div class="gallery-item-premium">
-          <img src="${escapeHtml(item.imageUrl)}" alt="${escapeHtml(isFr ? item.caption_fr : item.caption_en) || ''}" loading="lazy" decoding="async">
+          <img src="${escapeHtml(item.imageUrl)}" alt="${escapeHtml(isFr ? item.caption_fr : item.caption_en) || ''}" loading="lazy" decoding="async" data-auto-orient="1">
           <div class="gallery-overlay-premium">
             <span class="gallery-caption-premium">${escapeHtml(isFr ? item.caption_fr : item.caption_en) || ''}</span>
             <div class="gallery-zoom-premium">${svgZoom}</div>
@@ -423,6 +428,8 @@ function applyGallery(data) {
         </div>`
     )
     .join('');
+
+  applyOrientationWithin(grid);
 
   // main.css masque les images lazy tant qu'elles n'ont pas la classe "loaded"
   grid.querySelectorAll('img[loading=\"lazy\"]').forEach((img) => {

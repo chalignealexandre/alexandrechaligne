@@ -30,6 +30,15 @@
     filter: brightness(0.85);
 }
 
+/* Auto orientation: prevent portrait images from being cropped */
+.project-hero-premium .hero-media img[data-auto-orient="1"][data-orientation="portrait"],
+.gallery-item-premium img[data-auto-orient="1"][data-orientation="portrait"] {
+    object-fit: contain !important;
+    object-position: center center;
+    background: transparent;
+    transform: scale(1.06);
+}
+
 /* Overlay artistique multicouche */
 .project-hero-premium .hero-overlay {
     position: absolute;

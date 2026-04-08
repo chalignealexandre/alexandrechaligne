@@ -4,10 +4,12 @@
  */
 
 import { fetchQuery } from './sanity-client.js';
+import { applyImgOrientation } from './image-orientation.js';
 
 const PAGE_ACCUEIL_QUERY = `*[_id == "pageAccueil"][0]{
   "heroVideoUrl": heroVideo.asset->url,
   heroTitle_fr, heroTitle_en, heroSubtitle_fr, heroSubtitle_en,
+  heroBadge_fr, heroBadge_en,
   "excellenceImageUrl": excellenceImage.asset->url,
   excellenceYears, excellenceProjectsCount,
   remarkableProjectsCount, remarkableCountriesCount,
@@ -33,6 +35,10 @@ function getLang() {
 function applyHero(data) {
   if (!data) return;
   const lang = getLang();
+
+  const badgeText = (lang === 'fr' ? data.heroBadge_fr : data.heroBadge_en) || '';
+  const badgeEl = document.querySelector('.hero-label [data-i18n="home.hero.badge"]');
+  if (badgeEl && badgeText.trim() !== '') badgeEl.textContent = badgeText.trim();
 
   const videoSource = document.querySelector('.hero .hero-video source');
   if (data.heroVideoUrl && videoSource) {
@@ -68,6 +74,8 @@ function applyExcellence(data) {
   if (data.excellenceImageUrl && introImage) {
     introImage.src = data.excellenceImageUrl;
     introImage.removeAttribute('srcset');
+    introImage.dataset.autoOrient = '1';
+    applyImgOrientation(introImage);
   }
 
   const statNumbers = document.querySelectorAll('.intro-stat-number');
@@ -116,7 +124,11 @@ function applyPortfolioCards(data) {
     if (item.tagName === 'A') item.href = `/pages/projects/${p.slug}.html`;
 
     const img = item.querySelector('.portfolio-gallery__image');
-    if (img && p.previewImageUrl) img.src = p.previewImageUrl;
+    if (img && p.previewImageUrl) {
+      img.src = p.previewImageUrl;
+      img.dataset.autoOrient = '1';
+      applyImgOrientation(img);
+    }
 
     const titleEl = item.querySelector('.portfolio-gallery__item-title');
     if (titleEl) titleEl.textContent = title || '';
