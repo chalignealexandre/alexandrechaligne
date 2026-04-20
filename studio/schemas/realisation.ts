@@ -19,7 +19,20 @@ export const realisation = defineType({
       name: 'slug',
       title: 'Slug (URL)',
       type: 'slug',
-      options: { source: 'previewTitle_fr', maxLength: 96 },
+      options: {
+        source: 'previewTitle_fr',
+        maxLength: 96,
+        slugify: (input: string) =>
+          String(input ?? '')
+            .trim()
+            .toLowerCase()
+            .normalize('NFD')
+            .replace(/[\u0300-\u036f]/g, '') // remove diacritics
+            .replace(/[^a-z0-9]+/g, '-')
+            .replace(/^-+|-+$/g, '')
+            .replace(/-+/g, '-'),
+      },
+      validation: (Rule) => Rule.required().error('Le slug (URL) est requis.'),
       group: 'preview',
     },
     // ——— Preview (carte sur la page Réalisations) ———

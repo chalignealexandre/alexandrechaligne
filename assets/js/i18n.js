@@ -118,13 +118,36 @@ class I18n {
     }
 
     /**
+     * Like get(), but returns null when missing.
+     * Useful to avoid flashing raw i18n keys in the UI.
+     */
+    getSafe(key) {
+        if (!key) return null;
+
+        const keys = key.split('.');
+        let result = this.translations;
+
+        for (const k of keys) {
+            if (result && typeof result === 'object' && k in result) {
+                result = result[k];
+            } else {
+                console.warn(`Translation not found for key: ${key}`);
+                return null;
+            }
+        }
+
+        return result;
+    }
+
+    /**
      * Apply all translations to the DOM
      */
     applyTranslations() {
         // 1. Translate text content (data-i18n)
         document.querySelectorAll('[data-i18n]').forEach(el => {
             const key = el.dataset.i18n;
-            const text = this.get(key);
+            const text = this.getSafe(key);
+            if (text == null) return; // Keep existing fallback text
 
             if (el.dataset.i18nHtml === 'true') {
                 el.innerHTML = text;
@@ -136,25 +159,33 @@ class I18n {
         // 2. Translate placeholders (data-i18n-placeholder)
         document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
             const key = el.dataset.i18nPlaceholder;
-            el.placeholder = this.get(key);
+            const text = this.getSafe(key);
+            if (text == null) return;
+            el.placeholder = text;
         });
 
         // 3. Translate alt attributes (data-i18n-alt)
         document.querySelectorAll('[data-i18n-alt]').forEach(el => {
             const key = el.dataset.i18nAlt;
-            el.alt = this.get(key);
+            const text = this.getSafe(key);
+            if (text == null) return;
+            el.alt = text;
         });
 
         // 4. Translate title attributes (data-i18n-title)
         document.querySelectorAll('[data-i18n-title]').forEach(el => {
             const key = el.dataset.i18nTitle;
-            el.title = this.get(key);
+            const text = this.getSafe(key);
+            if (text == null) return;
+            el.title = text;
         });
 
         // 5. Translate aria-label attributes (data-i18n-aria-label)
         document.querySelectorAll('[data-i18n-aria-label]').forEach(el => {
             const key = el.dataset.i18nAriaLabel;
-            el.setAttribute('aria-label', this.get(key));
+            const text = this.getSafe(key);
+            if (text == null) return;
+            el.setAttribute('aria-label', text);
         });
 
         // 6. Update meta tags

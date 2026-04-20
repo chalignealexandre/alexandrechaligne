@@ -44,6 +44,25 @@
 
     <!-- Preload critical resources -->
     <link rel="preload" href="/locales/fr.json" as="fetch" crossorigin>
+
+    <!-- Sanity performance hints -->
+    <link rel="preconnect" href="https://mkddilwp.api.sanity.io" crossorigin>
+    <link rel="preconnect" href="https://cdn.sanity.io" crossorigin>
+
+    <!-- Anti flash: hide static placeholders until Sanity data is ready -->
+    <style>
+        html:not(.project-data-ready) .project-hero-premium .hero-media img {
+            opacity: 0;
+        }
+        html:not(.project-data-ready) .gallery-premium {
+            display: none;
+        }
+        /* When Sanity sets a new hero image, wait for load before showing */
+        .project-hero-premium .hero-media img.loaded {
+            opacity: 1;
+            transition: opacity 0.25s ease-in-out;
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation -->

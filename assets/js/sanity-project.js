@@ -91,7 +91,9 @@ function buildProjectUrl(slug) {
   const cleanSlug = String(slug ?? '')
     .trim()
     .replace(/\.html$/i, '');
-  return `${prefix}/pages/projects/${encodeURIComponent(cleanSlug)}`;
+  // URLs canoniques: toujours sur un slug "propre" (minuscule, sans accents).
+  const normalized = normalizeSlug(cleanSlug);
+  return `${prefix}/pages/projects/${encodeURIComponent(normalized)}`;
 }
 
 function normalizeProjectPath(pathname) {
@@ -122,6 +124,66 @@ function shouldShowSection(flag, hasContent) {
   if (flag === false) return false;
   if (flag === true) return true;
   return hasContent;
+}
+
+function computeGalleryCount(items) {
+  if (!Array.isArray(items)) return 0;
+  return items.filter((it) => it && it.imageUrl).length;
+}
+
+function pickBestCandidate(candidates = []) {
+  const list = Array.isArray(candidates) ? candidates.filter(Boolean) : [];
+  if (list.length === 0) return null;
+  if (list.length === 1) return list[0];
+
+  const score = (c) => {
+    const galleryCount = Number(c.galleryCount ?? 0) || 0;
+    const showGallery = c.showGallerySection === true ? 1 : 0;
+    const updatedAt = Date.parse(c._updatedAt || '') || 0;
+    // Priorités:
+    // 1) doc avec galerie (évite "doublons" sans contenu)
+    // 2) doc dont l'option "afficher la galerie" est cochée
+    // 3) doc le plus récemment mis à jour
+    return (galleryCount * 1000000) + (showGallery * 10000) + updatedAt;
+  };
+
+  return list.slice().sort((a, b) => score(b) - score(a))[0];
+}
+
+async function resolveRealisationAmbiguity({ requestedSlug, currentData }) {
+  const normalizedRequested = normalizeSlug(requestedSlug);
+  const normalizedCurrent = normalizeSlug(currentData?.slug);
+  if (!normalizedRequested) return currentData;
+
+  // Si un autre document a le même slug normalisé, on choisit le "meilleur".
+  // Important: la recherche par slug côté GROQ est sensible à la casse/accents,
+  // donc on récupère une liste légère et on compare côté JS.
+  const hasGallery = hasVisibleGallery(currentData?.galleryItems);
+  const shouldProbe =
+    normalizedCurrent === normalizedRequested &&
+    (!hasGallery || currentData?.showGallerySection !== true);
+
+  if (!shouldProbe) return currentData;
+
+  const candidates = await fetchQuery(
+    `*[_type == "realisation" && defined(slug.current)]{
+      "slug": slug.current,
+      "_updatedAt": _updatedAt,
+      showGallerySection,
+      "galleryCount": count(galleryItems[defined(image.asset)])
+    }`
+  );
+
+  const matching = (Array.isArray(candidates) ? candidates : []).filter(
+    (c) => normalizeSlug(c?.slug) === normalizedRequested
+  );
+
+  const best = pickBestCandidate(matching);
+  if (!best?.slug) return currentData;
+  if (best.slug === currentData?.slug) return currentData;
+
+  const data = await fetchQuery(REALISATION_QUERY, { slug: best.slug });
+  return data || currentData;
 }
 
 function applySectionVisibility(data) {
@@ -269,9 +331,17 @@ function applyHero(data) {
 
   const heroMedia = document.querySelector('.project-hero-premium .hero-media img');
   if (heroMedia && data.heroImageUrl) {
+    heroMedia.classList.remove('loaded');
     heroMedia.src = data.heroImageUrl;
     heroMedia.dataset.autoOrient = '1';
     applyImgOrientation(heroMedia);
+    const markLoaded = () => heroMedia.classList.add('loaded');
+    if (heroMedia.complete && heroMedia.naturalWidth > 0) {
+      markLoaded();
+    } else {
+      heroMedia.addEventListener('load', markLoaded, { once: true });
+      heroMedia.addEventListener('error', markLoaded, { once: true });
+    }
   }
 
   const badge = document.querySelector('.project-hero-premium .category-badge-premium');
@@ -482,7 +552,7 @@ async function init() {
   if (!hasHero) return;
 
   try {
-    const data = await fetchQuery(REALISATION_QUERY, { slug });
+    let data = await fetchQuery(REALISATION_QUERY, { slug });
     if (!data) {
       // Si le slug d'URL ne match pas exactement (accents, tirets, casse),
       // on tente de retrouver la bonne réalisation et de rediriger.
@@ -494,9 +564,13 @@ async function init() {
       return;
     }
 
-    // Même si on a trouvé le doc, on redirige vers l'URL canonique basée sur slug.current
-    // (évite les "URLs humaines" / variantes).
-    if (data.slug) {
+    // Si plusieurs documents "équivalents" existent (slug variant: accents/majuscules),
+    // on choisit automatiquement le meilleur candidat (souvent celui avec galerie).
+    data = await resolveRealisationAmbiguity({ requestedSlug: slug, currentData: data });
+
+    // Même si on a trouvé le doc, on redirige vers l'URL canonique basée sur un slug normalisé.
+    // (évite les "URLs humaines" / variantes et stabilise le comportement).
+    if (data?.slug) {
       const canonical = buildProjectUrl(data.slug);
       if (canonical && normalizeProjectPath(canonical) !== normalizeProjectPath(window.location.pathname)) {
         window.location.replace(canonical);
@@ -512,6 +586,9 @@ async function init() {
     applyFeatures(data);
     applyGallery(data);
     applyResults(data);
+
+    // Flag used to avoid flashing static placeholders before Sanity is ready.
+    document.documentElement.classList.add('project-data-ready');
   } catch (e) {
     console.warn('Sanity réalisation (projet):', e.message);
   }
